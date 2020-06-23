@@ -1,0 +1,262 @@
+title: Process
+name: process
+type: BaseEntity
+extends_entities: null
+description: Event fields used to define metadata about processes in an system.
+attributes:
+- name: process_guid
+  type: string
+  description: Process global unique ID used by the operating system to identify a
+    process
+  sample_value: A98268C1-9C2E-5ACD-0000-0010396CAB00
+- name: process_id
+  type: integer
+  description: Process unique ID used by the operating system to identify a process
+  sample_value: 4756
+- name: process_name
+  type: string
+  description: The name of the file backing up the process in a system. File name
+    without full path.
+  sample_value: conhost.exe
+- name: process_path
+  type: string
+  description: The complete path and name of the file backing up the process in a
+    system.
+  sample_value: C:\Windows\System32\conhost.exe
+- name: process_command_line
+  type: string
+  description: Command arguments that were were executed by the process in a system.
+  sample_value: C:\WINDOWS\system32\conhost.exe 0xffffffff -ForceV1
+- name: process_current_directory
+  type: string
+  description: Currenr directory where the file backing up the process exists and
+    was executed from.
+  sample_value: C:\WINDOWS\system32\
+- name: process_integrity_level
+  type: string
+  description: Integrity label assigned to a process
+  sample_value: Medium
+- name: process_injected_address
+  type: string
+  description: The memory address where the subprocess is injected
+  sample_value: '0xFFFFBC6422DD9C20'
+- name: process_granted_access
+  type: string
+  description: granted access code requested/used to open a target process
+  sample_value: '0x1000'
+- name: process_call_trace
+  type: string
+  description: Stack trace of where open process is called
+  sample_value: C:\WINDOWS\SYSTEM32\ntdll.dll+a0344 | C:\WINDOWS\System32\KERNELBASE.dll+64794|
+    c:\windows\system32\lsm.dll+10e93| c:\windows\system32\lsm.dll+f9ea| C:\WINDOWS\System32\RPCRT4.dll+76d23|
+    C:\WINDOWS\System32\RPCRT4.dll+d9390| C:\WINDOWS\System32\RPCRT4.dll+a81c| C:\WINDOWS\System32\RPCRT4.dll+273b4|
+    C:\WINDOWS\System32\RPCRT4.dll+2654e| C:\WINDOWS\System32\RPCRT4.dll+26cfb| C:\WINDOWS\System32\RPCRT4.dll+3083f|
+    C:\WINDOWS\System32\RPCRT4.dll+313a6| C:\WINDOWS\System32\RPCRT4.dll+2d12e| C:\WINDOWS\System32\RPCRT4.dll+2e853|
+    C:\WINDOWS\System32\RPCRT4.dll+5cc68| C:\WINDOWS\SYSTEM32\ntdll.dll+365ce| C:\WINDOWS\SYSTEM32\ntdll.dll+34b46|
+    C:\WINDOWS\System32\KERNEL32.DLL+11fe4| C:\WINDOWS\SYSTEM32\ntdll.dll+6efc1
+- name: process_is_hidden
+  type: boolean
+  description: Describes if the process is hidden.
+  sample_value: 'True'
+- name: source_process_guid
+  type: string
+  description: Process global unique ID used by the operating system to identify a
+    process
+  sample_value: A98268C1-9C2E-5ACD-0000-0010396CAB00
+- name: source_process_id
+  type: integer
+  description: Process unique ID used by the operating system to identify a process
+  sample_value: 4756
+- name: source_process_name
+  type: string
+  description: The name of the file backing up the process in a system. File name
+    without full path.
+  sample_value: conhost.exe
+- name: source_process_path
+  type: string
+  description: The complete path and name of the file backing up the process in a
+    system.
+  sample_value: C:\Windows\System32\conhost.exe
+- name: source_process_command_line
+  type: string
+  description: Command arguments that were were executed by the process in a system.
+  sample_value: C:\WINDOWS\system32\conhost.exe 0xffffffff -ForceV1
+- name: source_process_current_directory
+  type: string
+  description: Currenr directory where the file backing up the process exists and
+    was executed from.
+  sample_value: C:\WINDOWS\system32\
+- name: source_process_integrity_level
+  type: string
+  description: Integrity label assigned to a process
+  sample_value: Medium
+- name: source_process_injected_address
+  type: string
+  description: The memory address where the subprocess is injected
+  sample_value: '0xFFFFBC6422DD9C20'
+- name: source_process_granted_access
+  type: string
+  description: granted access code requested/used to open a target process
+  sample_value: '0x1000'
+- name: source_process_call_trace
+  type: string
+  description: Stack trace of where open process is called
+  sample_value: C:\WINDOWS\SYSTEM32\ntdll.dll+a0344 | C:\WINDOWS\System32\KERNELBASE.dll+64794|
+    c:\windows\system32\lsm.dll+10e93| c:\windows\system32\lsm.dll+f9ea| C:\WINDOWS\System32\RPCRT4.dll+76d23|
+    C:\WINDOWS\System32\RPCRT4.dll+d9390| C:\WINDOWS\System32\RPCRT4.dll+a81c| C:\WINDOWS\System32\RPCRT4.dll+273b4|
+    C:\WINDOWS\System32\RPCRT4.dll+2654e| C:\WINDOWS\System32\RPCRT4.dll+26cfb| C:\WINDOWS\System32\RPCRT4.dll+3083f|
+    C:\WINDOWS\System32\RPCRT4.dll+313a6| C:\WINDOWS\System32\RPCRT4.dll+2d12e| C:\WINDOWS\System32\RPCRT4.dll+2e853|
+    C:\WINDOWS\System32\RPCRT4.dll+5cc68| C:\WINDOWS\SYSTEM32\ntdll.dll+365ce| C:\WINDOWS\SYSTEM32\ntdll.dll+34b46|
+    C:\WINDOWS\System32\KERNEL32.DLL+11fe4| C:\WINDOWS\SYSTEM32\ntdll.dll+6efc1
+- name: source_process_is_hidden
+  type: boolean
+  description: Describes if the process is hidden.
+  sample_value: 'True'
+- name: target_process_guid
+  type: string
+  description: Process global unique ID used by the operating system to identify a
+    process
+  sample_value: A98268C1-9C2E-5ACD-0000-0010396CAB00
+- name: target_process_id
+  type: integer
+  description: Process unique ID used by the operating system to identify a process
+  sample_value: 4756
+- name: target_process_name
+  type: string
+  description: The name of the file backing up the process in a system. File name
+    without full path.
+  sample_value: conhost.exe
+- name: target_process_path
+  type: string
+  description: The complete path and name of the file backing up the process in a
+    system.
+  sample_value: C:\Windows\System32\conhost.exe
+- name: target_process_command_line
+  type: string
+  description: Command arguments that were were executed by the process in a system.
+  sample_value: C:\WINDOWS\system32\conhost.exe 0xffffffff -ForceV1
+- name: target_process_current_directory
+  type: string
+  description: Currenr directory where the file backing up the process exists and
+    was executed from.
+  sample_value: C:\WINDOWS\system32\
+- name: target_process_integrity_level
+  type: string
+  description: Integrity label assigned to a process
+  sample_value: Medium
+- name: target_process_injected_address
+  type: string
+  description: The memory address where the subprocess is injected
+  sample_value: '0xFFFFBC6422DD9C20'
+- name: target_process_granted_access
+  type: string
+  description: granted access code requested/used to open a target process
+  sample_value: '0x1000'
+- name: target_process_call_trace
+  type: string
+  description: Stack trace of where open process is called
+  sample_value: C:\WINDOWS\SYSTEM32\ntdll.dll+a0344 | C:\WINDOWS\System32\KERNELBASE.dll+64794|
+    c:\windows\system32\lsm.dll+10e93| c:\windows\system32\lsm.dll+f9ea| C:\WINDOWS\System32\RPCRT4.dll+76d23|
+    C:\WINDOWS\System32\RPCRT4.dll+d9390| C:\WINDOWS\System32\RPCRT4.dll+a81c| C:\WINDOWS\System32\RPCRT4.dll+273b4|
+    C:\WINDOWS\System32\RPCRT4.dll+2654e| C:\WINDOWS\System32\RPCRT4.dll+26cfb| C:\WINDOWS\System32\RPCRT4.dll+3083f|
+    C:\WINDOWS\System32\RPCRT4.dll+313a6| C:\WINDOWS\System32\RPCRT4.dll+2d12e| C:\WINDOWS\System32\RPCRT4.dll+2e853|
+    C:\WINDOWS\System32\RPCRT4.dll+5cc68| C:\WINDOWS\SYSTEM32\ntdll.dll+365ce| C:\WINDOWS\SYSTEM32\ntdll.dll+34b46|
+    C:\WINDOWS\System32\KERNEL32.DLL+11fe4| C:\WINDOWS\SYSTEM32\ntdll.dll+6efc1
+- name: target_process_is_hidden
+  type: boolean
+  description: Describes if the process is hidden.
+  sample_value: 'True'
+- name: process_parent_guid
+  type: string
+  description: Process global unique ID used by the operating system to identify a
+    process
+  sample_value: A98268C1-9C2E-5ACD-0000-0010396CAB00
+- name: process_parent_id
+  type: integer
+  description: Process unique ID used by the operating system to identify a process
+  sample_value: 4756
+- name: process_parent_name
+  type: string
+  description: The name of the file backing up the process in a system. File name
+    without full path.
+  sample_value: conhost.exe
+- name: process_parent_path
+  type: string
+  description: The complete path and name of the file backing up the process in a
+    system.
+  sample_value: C:\Windows\System32\conhost.exe
+- name: process_parent_command_line
+  type: string
+  description: Command arguments that were were executed by the process in a system.
+  sample_value: C:\WINDOWS\system32\conhost.exe 0xffffffff -ForceV1
+- name: process_parent_current_directory
+  type: string
+  description: Currenr directory where the file backing up the process exists and
+    was executed from.
+  sample_value: C:\WINDOWS\system32\
+- name: process_parent_integrity_level
+  type: string
+  description: Integrity label assigned to a process
+  sample_value: Medium
+- name: process_parent_injected_address
+  type: string
+  description: The memory address where the subprocess is injected
+  sample_value: '0xFFFFBC6422DD9C20'
+- name: process_parent_granted_access
+  type: string
+  description: granted access code requested/used to open a target process
+  sample_value: '0x1000'
+- name: process_parent_call_trace
+  type: string
+  description: Stack trace of where open process is called
+  sample_value: C:\WINDOWS\SYSTEM32\ntdll.dll+a0344 | C:\WINDOWS\System32\KERNELBASE.dll+64794|
+    c:\windows\system32\lsm.dll+10e93| c:\windows\system32\lsm.dll+f9ea| C:\WINDOWS\System32\RPCRT4.dll+76d23|
+    C:\WINDOWS\System32\RPCRT4.dll+d9390| C:\WINDOWS\System32\RPCRT4.dll+a81c| C:\WINDOWS\System32\RPCRT4.dll+273b4|
+    C:\WINDOWS\System32\RPCRT4.dll+2654e| C:\WINDOWS\System32\RPCRT4.dll+26cfb| C:\WINDOWS\System32\RPCRT4.dll+3083f|
+    C:\WINDOWS\System32\RPCRT4.dll+313a6| C:\WINDOWS\System32\RPCRT4.dll+2d12e| C:\WINDOWS\System32\RPCRT4.dll+2e853|
+    C:\WINDOWS\System32\RPCRT4.dll+5cc68| C:\WINDOWS\SYSTEM32\ntdll.dll+365ce| C:\WINDOWS\SYSTEM32\ntdll.dll+34b46|
+    C:\WINDOWS\System32\KERNEL32.DLL+11fe4| C:\WINDOWS\SYSTEM32\ntdll.dll+6efc1
+- name: process_parent_is_hidden
+  type: boolean
+  description: Describes if the process is hidden.
+  sample_value: 'True'
+- name: process_hash_md5
+  type: string
+  description: MD5 hash of the image/binary/file
+  sample_value: 6A255BEBF3DBCD13585538ED47DBAFD7
+- name: process_hash_sha1
+  type: string
+  description: SHA1 hash of the image/binary/file
+  sample_value: B0BF5AC2E81BBF597FAD5F349FEEB32CAC449FA2
+- name: process_hash_sha256
+  type: string
+  description: SHA256 hash of the image/binary/file
+  sample_value: 4668BB2223FFB983A5F1273B9E3D9FA2C5CE4A0F1FB18CA5C1B285762020073C
+- name: process_hash_sha512
+  type: string
+  description: SHA512 hash of the image/binary/file
+  sample_value: 1AD1D79F85D8F6A50EA282F63898D652661DAA0C1FD361C22647CABC98A70E8CBCE83200D579D10DD0A3D46BE9496DCDFDDF28B0C5E9709343B032A8796FBECB
+- name: process_hash_imphash
+  type: string
+  description: IMPHASH hash of the image/binary/file
+  sample_value: 2505BD03D7BD285E50CE89CEC02B333B
+- name: process_parent_hash_md5
+  type: string
+  description: MD5 hash of the image/binary/file
+  sample_value: 6A255BEBF3DBCD13585538ED47DBAFD7
+- name: process_parent_hash_sha1
+  type: string
+  description: SHA1 hash of the image/binary/file
+  sample_value: B0BF5AC2E81BBF597FAD5F349FEEB32CAC449FA2
+- name: process_parent_hash_sha256
+  type: string
+  description: SHA256 hash of the image/binary/file
+  sample_value: 4668BB2223FFB983A5F1273B9E3D9FA2C5CE4A0F1FB18CA5C1B285762020073C
+- name: process_parent_hash_sha512
+  type: string
+  description: SHA512 hash of the image/binary/file
+  sample_value: 1AD1D79F85D8F6A50EA282F63898D652661DAA0C1FD361C22647CABC98A70E8CBCE83200D579D10DD0A3D46BE9496DCDFDDF28B0C5E9709343B032A8796FBECB
+- name: process_parent_hash_imphash
+  type: string
+  description: IMPHASH hash of the image/binary/file
+  sample_value: 2505BD03D7BD285E50CE89CEC02B333B

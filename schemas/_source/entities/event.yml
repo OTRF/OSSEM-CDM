@@ -1,0 +1,102 @@
+title: Event
+name: event
+id: 6483A215-4827-4F06-BC2C-EC9FCF41CA96
+type: BaseEntity
+extends_entities:
+extensions:
+description: Event fields used to define specific metadata of the event itself. For
+  example uid or creation_timestamp
+attributes:
+- name: timestamp
+  type: datetime
+  description: 'The most accurate timestamp of the log. Commonly this will be the
+    original reporting timestamp from the log. However, if you believe the log timestamp
+    has been altered or skewed (ie: either due to timezone issues or NTP skew)then
+    replace this field with the most likely timestamp. Always keep the original log
+    timestamp in the field creation_timestamp'
+  sample_value: '2017-01-21 09:12:34'
+- name: start_time
+  type: datetime
+  description: The time in which the event stated
+  sample_value: '2017-01-21 09:12:34'
+- name: creation_time
+  type: datetime
+  description: original time when event/log was created as reported from the log source itself
+  sample_value: '2017-01-21 09:12:34'
+- name: time_ingested
+  type: datetime
+  description: The time the event was ingested to SIEM or data pipeline.
+  sample_value: 2157-01-21 09:12:34
+- name: duration
+  type: float
+  description: The length/duration of the event in seconds  (e.g., 1 min is 60.0)
+  sample_value: '60'
+- name: error
+  type: string
+  description: Information about an error
+  sample_value: '``'
+- name: error_code
+  type: integer
+  description: Integer that defines a particular error
+  sample_value: '``'
+- name: id
+  type: integer
+  description: event identifier for specific event logs. Event ids might repeat across
+    different data sources. This is most common in Windows using EventID
+  sample_value: '4688'
+- name: original_message
+  type: string
+  description: The (original) log message from the source before any ETL manipulations/modifications
+  sample_value: '``'
+- name: severity
+  type: string
+  description: The severity of the event as defined manually or usually via the original
+    log, commonly this would be syslog severity. The number codes should be converted
+    to their corresponding string value.
+  sample_value: alert
+- name: status
+  type: string
+  description: Defines the status of a particular event
+  sample_value: User logon with expired account
+- name: status_code
+  type: integer
+  description: Integer that defines a particular status
+  sample_value: '3221225875'
+- name: sub_status
+  type: string
+  description: Additional status information
+  sample_value: Account expired 300 days ago
+- name: status_code
+  type: integer
+  description: Integer that defines a particular sub_status
+  sample_value: '0'
+- name: type
+  type: string
+  description: A description of the event, which can help with categorization.
+  sample_value: Login
+- name: type_detailed
+  type: string
+  description: Additional description of type if applicable
+  sample_value: '``'
+- name: original_uid
+  type: string
+  description: Original unique ID specific to the log/event as recorded from the source.
+  sample_value: CMzY3i4YoNZ3mT5yu5
+- name: uid
+  type: string
+  description: Original unique ID specific to the log/event assigned to the event (not original).
+  sample_value: CMzY3i4YoNZ3mT5yu5
+- name: count
+  type: integer
+  description: The number of aggregated events, if applicable
+  sample_value: 10
+- name: endtime
+  type: datetime
+  description: The time in which the event ended
+  sample_value: 2017-04-12 12:00:00
+- name: message
+  type: string
+  description: A general message or description, either included in, or generated from the record
+  sample_value: 'TCP access denied'
+references: []
+tags: []

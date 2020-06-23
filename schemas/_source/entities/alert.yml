@@ -1,0 +1,38 @@
+title: Alert
+name: alert
+id: C433BF57-A975-4950-9E67-4427199D6C5D
+type: BaseEntity
+extends_entities:
+extensions:
+description: Alert fields that describe an indicator from a tool of a possible issue.
+attributes:
+- name: id
+  type: integer
+  description: Alert ids might repeat across different data sources
+  sample_value: '1234'
+- name: signature
+  type: string
+  description: The name or title of an alert
+  sample_value: EvilActor:CnCv2
+- name: message
+  type: string
+  description: The message provided by the alert
+  sample_value: A file exhibiting behavior of the evil/actor command and control framework 2 was detected.
+- name: description
+  type: string
+  description: The expanded description of the event
+  sample_value: '...'
+- name: severity
+  type: string
+  description: The severity of an alert
+  sample_value: Priority 5
+- name: category
+  type: string
+  description: The category of an alert
+  sample_value: Malware
+- name: version
+  type: string
+  description: A signature or alert version
+  sample_value: '1.2'
+references: []
+tags: []
