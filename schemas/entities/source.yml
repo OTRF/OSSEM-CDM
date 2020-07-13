@@ -1,0 +1,67 @@
+name: source
+prefix:
+- src
+id: A72A1C38-7DEF-4E9F-8686-9372C16C76AE
+description: Event fields used to define the source (client) in a network connection event.
+attributes:
+- name: bytes
+  type: integer
+  description: network bytes sent by the src_ip_addr
+  sample_value: '100'
+- name: domain
+  type: string
+  description: The (DNS) hierarchy that encompasses multiple hosts (i.e a Windows Active Directory environment).
+  sample_value: bigwheel.corporation.local
+- name: fqdn
+  type: string
+  description: The absolute (entire) value of the DNS hierarchy from the lowest level to the top level domain (TLD). Consists of the Hostname and Domain. This is best defined in [this Wikipedia](https://en.wikipedia.org/w/index.php?title=Fully_qualified_domain_name&oldid=911195384#Syntax) article on FQDN.
+  sample_value: bob-berto-pc.bigwheel.corporation.local
+  sample_value: bob-berto-pc.bigwheel.corporation.local
+- name: mime_type
+  type: string
+  description: Source MIME type as seen in (layer 7) application layer details or
+    as defined by an application scanner such as an anti-virus/EDR. For HTTP this
+    is usually from the server's "Content-Type" header. https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+  sample_value: application/pdf
+- name: packets
+  type: integer
+  description: Network packets sent by the source
+  sample_value: '5'
+- name: vlan_id
+  type: integer
+  description: The Source VLAN ID if it can be determined. Most commonly if from a
+    firewall/switch/router then it can be determined
+  sample_value: '100'
+- name: vlan_name
+  type: string
+  description: The Source VLAN Name. Most commonly if from a firewall/switch/router
+    then it can be determined
+  sample_value: management
+- name: city
+  type: string
+  description: The city associated with the source IP address
+  sample_value: 'Burlington'
+- name: country
+  type: country
+  description: The country associated with the source IP address
+  sample_value: 'USA'
+- name: latitude
+  type: real
+  description: The latitude of the geographical coordinate associated with the source IP address
+  sample_value: 44.475833
+- name: region
+  type: string
+  description: The region within a country associated with the source IP address
+  sample_value: 'Vermont'
+- name: zone
+  type: string
+  description: The network zone of the source, as defined by the reporting device.
+  sample_value: 'dmz'
+- name: longitude
+  type: real
+  description: The longitude of the geographical coordinate associated with the source IP address
+  sample_value: -73.211944
+references:
+- text: Examples of MIME types
+  link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+tags: []

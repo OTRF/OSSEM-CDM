@@ -1,0 +1,33 @@
+name: meta
+prefix:
+- meta
+id: A87500A5-FD4D-4B64-8DC1-13E645AB20A6
+description: 'For example: <code>url_category</code> would be copied to <code>meta_url_category</code>'
+attributes:
+- name: category
+  type: string
+  description: 'Description to define a grouping of a value. Commonly used for URL/domain
+    category (ie: Adult, Abuse, Parked, RFC-1918, etc)'
+  sample_value: '``'
+- name: ttp
+  type: string
+  description: Tactic, technique, and procedure
+  sample_value: '``'
+- name: alert
+  type: string
+  description: Data describing an alert
+  sample_value: '``'
+- name: geo_location
+  type: geo_point
+  description: Geo longitude and latitude point of a field
+  sample_value: '``'
+- name: as_number
+  type: integer
+  description: Autonomous System (AS) number (BGP AS Number)
+  sample_value: '``'
+- name: as_org
+  type: string
+  description: Autonomous System (AS) organization (BGP AS Name)
+  sample_value: '``'
+references: []
+tags: []

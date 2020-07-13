@@ -1,115 +1,83 @@
-title: File
 name: file
-type: BaseEntity
-extends_entities: null
-description: Event fields used to define metadata about files either locally or over
-  the wire (Network Traffic).
+prefix:
+- file
+id: E94FB7C5-185A-459F-8C27-87600E32E598
+description: Event fields used to define metadata about files either locally or over the wire (Network Traffic). This entity and attributes can extend other entities such as source and destination.
+extends_entities:
+- source
+- destination
 attributes:
-- name: file_name
+- name: name
   type: string
-  description: name of a file without its full path
+  description: name of a file without its full path.
   sample_value: a.exe
-- name: file_path
+- name: path
   type: string
   description: full path of a file including the name of the file
   sample_value: C:\users\wardog\z.exe
-- name: file_extension
+- name: extension
   type: string
   description: The file extension of a file (.txt, .exe, etc)
   sample_value: exe
-- name: file_mime_type
+- name: mime_type
   type: string
   description: Specifies the MIME type name specified for a file
   sample_value: application/msword
-- name: file_size
+- name: size
   type: string
   description: Specifies the size of a file, in bytes
   sample_value: '45'
-- name: file_system_block_size
+- name: system_block_size
   type: integer
   description: Block size of filesystem
   sample_value: ''
-- name: file_version
-  type: string
-  description: Version of the image loaded
-  sample_value: 10.0.16299.15 (WinBuild.160101.0800)
-- name: file_description
-  type: string
-  description: Description of a file
-  sample_value: Console Window Host
-- name: file_product
-  type: string
-  description: The file's product name
-  sample_value: "Microsoft\xAE Windows\xAE Operating System"
-- name: file_company
-  type: string
-  description: Company name a file belongs to
-  sample_value: Microsoft Corporation
-- name: file_directory
+- name: directory
   type: string
   description: Directory of file(s). It does not include the file name
   sample_value: C:\users\wardog\
-- name: file_inode
+- name: inode
   type: integer
   description: Filesystem inode number
   sample_value: ''
-- name: file_hard_links
+- name: hard_links
   type: integer
   description: Number of hard links
   sample_value: '3'
-- name: file_symlink
+- name: symlink
   type: integer
   description: 1 if the path is a symlink, otherwise 0
   sample_value: '0'
-- name: file_symlink_name
+- name: symlink_name
   type: string
   description: path of the symlink
   sample_value: C:\Docs\My.exe
-- name: file_link_name
+- name: link_name
   type: string
   description: path of the hard link
   sample_value: C:\Docs\My.exe
-- name: file_accessed_time
+- name: accessed_time
   type: date
   description: When the file was last accessed . Also known as `atime`
   sample_value: 2016-11-25 18:21:47
-- name: file_creation_time
+- name: creation_time
   type: date
   description: When the file was created. Also known as `crtime`
   sample_value: 2016-11-25 18:21:47
-- name: file_changed_time
+- name: changed_time
   type: date
   description: When the file was last changed. Also known as `ctime`
   sample_value: 2016-11-25 18:21:47
-- name: file_modified_time
+- name: modified_time
   type: date
   description: When the file was last modified. Also known as `mtime`
   sample_value: 2016-11-25 18:21:47
-- name: file_previous_name
+- name: previous_name
   type: string
   description: The file's previous name
   sample_value: C:\\Windows\system32\cmd.exe
-- name: file_system_type
+- name: system_type
   type: string
   description: 'The file system type, ex:  fat32, ntfs, vmfs, ext3, ext4, xfs'
   sample_value: ntfs
-- name: file_hash_md5
-  type: string
-  description: MD5 hash of the image/binary/file
-  sample_value: 6A255BEBF3DBCD13585538ED47DBAFD7
-- name: file_hash_sha1
-  type: string
-  description: SHA1 hash of the image/binary/file
-  sample_value: B0BF5AC2E81BBF597FAD5F349FEEB32CAC449FA2
-- name: file_hash_sha256
-  type: string
-  description: SHA256 hash of the image/binary/file
-  sample_value: 4668BB2223FFB983A5F1273B9E3D9FA2C5CE4A0F1FB18CA5C1B285762020073C
-- name: file_hash_sha512
-  type: string
-  description: SHA512 hash of the image/binary/file
-  sample_value: 1AD1D79F85D8F6A50EA282F63898D652661DAA0C1FD361C22647CABC98A70E8CBCE83200D579D10DD0A3D46BE9496DCDFDDF28B0C5E9709343B032A8796FBECB
-- name: file_hash_imphash
-  type: string
-  description: IMPHASH hash of the image/binary/file
-  sample_value: 2505BD03D7BD285E50CE89CEC02B333B
+references: []
+tags: []

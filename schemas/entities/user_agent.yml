@@ -1,12 +1,12 @@
-title: User Agent
 name: user_agent
-type: BaseEntity
-extends_entities: null
-description: Document is a work in progress. Entity covering fields related to user
-  agents in http requests.
+prefix:
+- user_agent
+id: 219C796B-99A5-4CE3-B381-6B74EDDCF5F9
+description: Document is a work in progress. Entity covering fields related to user agents in http requests.
 attributes:
-- name: user_agent_user_agent_original
+- name: original
   type: string
   description: The User agent seen in an HTTP request
-  sample_value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-    like Gecko) Chrome/74.0.3729.169 Safari/537.36
+  sample_value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36
+references: []
+tags: []

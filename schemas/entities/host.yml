@@ -1,0 +1,53 @@
+name: host
+prefix:
+- host
+id: 28555436-DCD6-47F6-99A6-5A009C7DB42E
+description: Event fields used to define metadata about a host or device.
+extends_entities:
+  - source
+  - destination
+attributes:
+- name: name
+  type: string
+  description: The name of a host, device, node, or entity that is separate from the FQDN and Domain.
+  sample_value: WKHR001
+- name: domain
+  type: string
+  description: Name of the domain the host is part of or joined.
+  sample_value: hunt.wardog.com
+- name: fqdn
+  type: string
+  description: The fully qualified domain name of the host
+  sample_value: WKHR001.hunt.wardog.com
+- name: interface_guid
+  type: string
+  description: GUID of the network interface which was used for authentication request
+  sample_value: '{2BB33827-6BB6-48DB-8DE6-DB9E0B9F9C9B}'
+- name: interface_name
+  type: string
+  description: the name (description) of the network interface that was used for authentication
+    request. You can get the list of all available network adapters using "ipconfig
+    /all" command
+  sample_value: Microsoft Hyper-V Network Adapter
+- name: local_mac
+  type: string
+  description: local interface's MAC-address
+  sample_value: 18:64:72:F3:33:91
+- name: peer_mac
+  type: string
+  description: peer's (typically - access point) MAC-address
+  sample_value: 02:1A:C5:14:59:C9
+- name: os
+  type: string
+  description: The OS of the source device
+  sample_value: 'iOS'
+- name: model
+  type: string
+  description: The model of the source device
+  sample_value: 'Samsung Galaxy Note 10'
+- name: type
+  type: string
+  description: The type of the source device
+  sample_value: 'mobile'
+references: []
+tags: []

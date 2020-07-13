@@ -1,0 +1,64 @@
+name: destination
+prefix:
+- dst
+id: F02F775F-69EB-40D2-94F6-78207C015F46
+description: Event fields used to define the destination (server) in a network connection event.
+attributes:
+- name: bytes
+  type: integer
+  description: network bytes sent by the dst_ip_addr. Another field can also be provided after extending the IP entity. We can also define the dst_ip_bytes field.
+  sample_value: '100'
+- name: domain
+  type: string
+  description: The (DNS) hierarchy that encompasses multiple hosts (i.e a Windows Active Directory environment).
+  sample_value: bigwheel.corporation.local
+- name: fqdn
+  type: string
+  description: The absolute (entire) value of the DNS hierarchy from the lowest level to the top level domain (TLD). Consists of the Hostname and Domain. This is best defined in [this Wikipedia](https://en.wikipedia.org/w/index.php?title=Fully_qualified_domain_name&oldid=911195384#Syntax) article on FQDN.
+  sample_value: bob-berto-pc.bigwheel.corporation.local
+- name: mime_type
+  type: string
+  description: Destination MIME type as seen in (layer 7) application layer details
+    or as defined by an application scanner such as an anti-virus/EDR. For HTTP this
+    is usually from the server's "Content-Type" header. https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+  sample_value: application/pdf
+- name: packets
+  type: integer
+  description: Network packets sent by the destination (Reply)
+  sample_value: '5'
+- name: vlan_id
+  type: integer
+  description: The destination VLAN ID if it can be determined. Most commonly if from a firewall/switch/router then it can be determined
+  sample_value: '1000'
+- name: vlan_name
+  type: string
+  description: The destination VLAN Name. Most commonly if from a firewall/switch/router then it can be determined
+  sample_value: untrust-dmz
+- name: city
+  type: string
+  description: The city associated with the destination IP address
+  sample_value: 'Burlington'
+- name: country
+  type: country
+  description: The country associated with the destination IP address
+  sample_value: 'USA'
+- name: latitude
+  type: real
+  description: The latitude of the geographical coordinate associated with the destination IP address
+  sample_value: 44.475833
+- name: region
+  type: string
+  description: The region within a country associated with the destination IP address
+  sample_value: 'Vermont'
+- name: zone
+  type: string
+  description: The network zone of the destination, as defined by the reporting device.
+  sample_value: 'dmz'
+- name: longitude
+  type: real
+  description: The longitude of the geographical coordinate associated with the destination IP address
+  sample_value: -73.211944
+references:
+- text: Examples of MIME types
+  link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+tags: []

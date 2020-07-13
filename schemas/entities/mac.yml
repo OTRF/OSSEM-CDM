@@ -1,0 +1,16 @@
+name: mac
+prefix:
+- mac
+id: 616ABC0D-E91C-4B99-B292-239B54566A34
+description: Event fields used to define metadata about MAC addresses in a network.
+  It follows the standard from the Destination and Source categories.
+extends_entities:
+  - source
+  - destination
+attributes:
+- name: address
+  type: mac
+  description: MAC address of the endpoint where the log was created
+  sample_value: 00:11:22:33:44:55
+references: []
+tags: []

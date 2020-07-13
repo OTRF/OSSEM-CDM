@@ -1,0 +1,42 @@
+name: tls
+prefix:
+- tls
+id: 134FAD61-D073-4D9E-934D-EF7BDFFB1B74
+description: 'Event fields used to define metadata about a TLS(SSL) record.
+  This document is a work in progress, but is a foundational start there is included.
+  Specifically the main foundations of TLS info is already in here'
+attributes:
+- name: cipher
+  type: string
+  description: The cipher (encryption) parameters used to make the TLS connection
+  sample_value: TLS_RSA_WITH_AES_128_CBC_SHA
+- name: curve
+  type: string
+  description: Elliptic curve the server chose when using ECDH/ECDHE
+  sample_value: TLS_RSA_WITH_AES_128_CBC_SHA
+- name: established
+  type: boolean
+  description: Indicates if the session has been established successfully, or if it was aborted during the handshake
+  sample_value: 'true'
+- name: next_protocol
+  type: string
+  description: Next protocol the server chose using the application layer next protocol extension, if present.
+  sample_value: spdy/3.1
+- name: server_name
+  type: string
+  description: The name of the requested server/destination, this should be copied to dst_host_name
+  sample_value: www.google.com
+- name: resumed
+  type: boolean
+  description: If the session was resumed from previous established connection
+  sample_value: 'false'
+- name: version
+  type: string
+  description: 'Version of TLS/SSL used (ie: SSLv3.0, TLSv1.1, TLSv1.2, TLSv1.3'
+  sample_value: TLSv10
+- name: version_number
+  type: integer
+  description: Numeric value of the tls_version
+  sample_value: '``'
+references: []
+tags: []

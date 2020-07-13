@@ -1,7 +1,7 @@
-title: URL
 name: url
-type: BaseEntity
-extends_entities: null
+prefix:
+- url
+id: 46A0FFC5-91BC-46D9-947B-DF2A10114526
 description: 'Event fields used to define metadata about a URL/URI. There is a lot
   of ambiguity from the community on the difference URL vs URI. Granted, URL would
   normally include the domain, port (if applicable), user, password, query, fragment,
@@ -14,32 +14,27 @@ description: 'Event fields used to define metadata about a URL/URI. There is a l
   applications such as SIP. URLs, especially in HTTP, have a best practice implementation
   however it is not necessary to adhere for connections/data to be established.'
 attributes:
-- name: url_dst_host_name
+- name: dst_host_name
   type: string
   description: Copied from the host_name
   sample_value: google.com
-- name: url_category
+- name: category
   type: string
-  description: 'The defined grouping of a URL (or could be just based on the domain
-    in the URL) related to what it is (ie: adult, news, advertising, parked domains,
-    etc)'
+  description: 'The defined grouping of a URL (or could be just based on the domain in the URL) related to what it is (ie: adult, news, advertising, parked domains, etc)'
   sample_value: Search Engines
-- name: url_extension
+- name: extension
   type: string
   description: The extension (.dll, .php, zip, .msi, .txt, etc) without the "."
   sample_value: php
-- name: url_fragment
+- name: fragment
   type: string
-  description: The portion of the URL after the last "#", this is defined in https://tools.ietf.org/html/rfc3986#section-3.5.
-    This is also referred to as the "hash" in some implementations. This value does
-    not always exist
+  description: The portion of the URL after the last "#", this is defined in https://tools.ietf.org/html/rfc3986#section-3.5. This is also referred to as the "hash" in some implementations. This value does not always exist
   sample_value: '``'
-- name: url_host_name
+- name: host_name
   type: string
-  description: The domain/host/hostname of the URL. This could be an IP address or
-    any variation of a value but is more than likely a domain/hostname
+  description: The domain/host/hostname of the URL. This could be an IP address or any variation of a value but is more than likely a domain/hostname
   sample_value: google.com
-- name: url_original
+- name: original
   type: string
   description: The entirety of the URL combined together and or the URL in the truest
     form from the log source. Some log sources will already parse out portions of
@@ -49,21 +44,21 @@ attributes:
     RFC/implementation and thus any parsing/logging implementation could have any
     number of assumptions/mistakes - therefore it is best to keep a original value
   sample_value: ftp://BigwheelPassword:BigwheelBobUser@google.com:8088/common/Current/client/search/greatsearch.php?hash=215696fc36392ca70f89228b98060afb%20processname=example.exe#gid=l1k4h
-- name: url_path
+- name: path
   type: string
   description: Everything beginning with and after the first "/". This portion should
     usually exist in the log source / URL.. Even if the path is just "/". Also, even
-    if the query or fragment have not been parsed yet then you still include them
-    in this value
+    if the query or fragment have not been parsed yet then you still include
+    them in this value
   sample_value: '``'
-- name: url_port
+- name: port
   type: integer
   description: The port in the URL. This is not to be confused with destination.md.
     In your ETL pipeline you should check if the value derived from the URL is actually
     an integer (unless properly verified in the data source)... because as mentioned
     throughout, URLs can be manipulated/mis-implemented in many different ways
   sample_value: '8088'
-- name: url_query_names
+- name: query_names
   type: string
   description: 'The keys/fields derived from the query. Due to the limitless variations
     of implementations of a URL, providing a nested object of key/values is not recommened.
@@ -72,7 +67,7 @@ attributes:
     of anything you can imagine (ie: "%*%)%*#Nf..$2f>hr..n fa.fa s\\\\\"\\jhrwq":
     "somevalue"'
   sample_value: '[ "hash" , "processname" ]'
-- name: url_query_values
+- name: query_values
   type: string
   description: 'The values derived from the query. Due to the limitless variations
     of implementations of a URL, providing a nested object of key/values is not recommened.
@@ -81,22 +76,28 @@ attributes:
     of anything you can imagine (ie: "%*%)%*#Nf..$2f>hr..n fa.fa s\\\\\"\\jhrwq":
     "somevalue"'
   sample_value: '[ "215696fc36392ca70f89228b98060afb", "example.exe" ]'
-- name: url_scheme
+- name: scheme
   type: string
   description: 'Defines the network location (ie: smtp, ftp, smb, ldap, etc). This
     portion may not exist in many log sources. The is usually the value that comes
     before the first "://". This is also referred to as URN/origin'
   sample_value: ftp
-- name: url_user_name
+- name: user_name
   type: string
   description: The username defined in the URL. This is meant to be distinguished
     from something such as the value in the Authorization header in an HTTP request
     (or even the Proxy Authentication HTTP header). This value should be copied to
     any.md
   sample_value: BigwheelBobUser
-- name: url_user_password
+- name: user_password
   type: string
   description: The password defined in the URL. This is meant to be distinguished
     from something such as the value in the Authorization header in an HTTP request
     (or even the Proxy Authentication HTTP header)
   sample_value: BigwheelPassword
+references:
+- text: HTTP
+  link: http.md
+- text: RFC-3986
+  link: https://tools.ietf.org/html/rfc3986#section-3.5
+tags: []

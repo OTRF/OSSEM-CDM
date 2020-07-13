@@ -1,0 +1,29 @@
+name: module
+prefix:
+- module
+id: 10744F70-5EF6-4BA6-85D7-8BA86C435334
+description: Event fields used to define metadata about modules loaded into a process. A process module represents a .dll or .exe file that is loaded into a particular process.
+attributes:
+- name: name
+  type: string
+  description: name of the module loaded into a process without the full path
+  sample_value: msvcrt.dll
+- name: path
+  type: string
+  description: full path of a module loaded into a process
+  sample_value: C:\Windows\System32\msvcrt.dll
+- name: is_signed
+  type: boolean
+  description: is the module loaded signed?
+  sample_value: 'TRUE'
+- name: signature
+  type: string
+  description: The signer
+  sample_value: Microsoft Corporation
+- name: signature_status
+  type: string
+  description: status of the signature
+  sample_value: Valid
+references:
+  - https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.modules?view=netcore-3.1
+tags: []

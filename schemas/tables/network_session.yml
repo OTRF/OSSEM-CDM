@@ -1,0 +1,304 @@
+name: network_session
+id: 189BC2EE-44BF-4A8A-A257-5521C67D457B
+description: Event fields used to define network sessions in an endpoint.
+entities:
+- hash
+- user_agent
+- name: event
+  attributes:
+  - count
+  - endtime
+  - message
+  - start_time
+  - severity
+  - original_uid
+  - start_time
+  - time_ingested
+  - uid
+- name: http
+  attributes:
+  - request_time
+  - response_time
+  - request_method
+  - status_code
+  - content_type
+  - referrer_original
+  - xff
+- name: file
+  attributes:
+  - name
+  - path
+  - extension
+  - mimeType
+  - size
+- name: url
+  attributes:
+  - category
+  - original
+  - host_name
+- name: network
+  attributes:
+  - application_protocol
+  - bytes
+  - direction
+  - duration
+  - packets
+  - session_id
+  - protocol
+- name: destination
+  attributes:
+  - bytes
+  - city
+  - country
+  - host_name
+  - host_fqdn
+  - domain
+  - interface_name
+  - interface_guid
+  - ip_addr
+  - latitude
+  - longitude
+  - mac_address
+  - port_number
+  - user_sid
+  - user_name
+  - user_upn
+  - user_domain
+  - zone
+- name: source
+  attributes:
+  - bytes
+  - city
+  - country
+  - host_name
+  - host_fqdn
+  - host_os
+  - host_model
+  - host_type
+  - domain
+  - interface_name
+  - interface_guid
+  - ip_addr
+  - latitude
+  - longitude
+  - mac_address
+  - port_number
+  - user_sid
+  - user_name
+  - user_upn
+  - user_domain
+  - zone
+- name: custom
+  entities:
+  - name: reporter
+    prefix:
+    - rptr
+    attributes:
+    - name: host_ip_addr
+      type: ip
+      description: The IP address of the device generating the record
+      sample_value: 211.209.13.12
+    - name: mac
+      type: string
+      description: The MAC address of the network interface of the reporting device from which the event was send
+      sample_value: '06:10:9f:eb:8f:14'
+    - name: host_name
+      type: string
+      description: The device name of the device generating the message
+      sample_value: 'syslogserver1.contoso.com'
+    - name: product
+      type: string
+      description: The product generating the event.
+      sample_value: 'OfficeSharepoint'
+    - name: product_ver
+      type: string
+      description: The version of the product generating the event
+      sample_value: '0.2'
+    - name: resource_group
+      type: string
+      description: The resource group to which the device generating the record belongs. This might be an AWS account, or an Azure subscription or Resource Group
+      sample_value: 'DBVM'
+    - name: resource_id
+      type: string
+      description: The resource ID of the device generating the message.
+      sample_value: '/subscriptions/aaabbbcc-dddd-eeee-1234-1234567890ab/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine'
+    - name: report_url
+      type: string
+      description: url of the full analysis report, if applicable 
+      sample_value: 'https://192.168.1.1/reports/ade-123-afa.log'
+    - name: vendor
+      type: string
+      description: The vendor of the product generating the event
+      sample_value: 'Microsoft'
+  - name: schema
+    prefix:
+    - schema
+    attributes:
+    - name: Ver
+      type: real
+      description: Azure Sentinel Schema Version
+      sample_value: '0.1'
+  - name: destination
+    prefix:
+    - dst 
+    attributes:
+    - name: resource_id
+      type: string
+      description: The resource Id of the destination device
+      sample_value: '/subscriptions/33333333-8888-4444-a115-aaaaaaaaaaaa/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine2'
+    - name: nat_ip_addr
+      type: ip
+      description: If reported by an intermediary NAT device such as a firewall, the IP address used by the NAT device for communication with the source.
+      sample_value: 10.1.1.14
+    - name: nat_port
+      type: integer
+      description: If reported by an intermediary NAT device such as a firewall, the port used by the NAT device for communication with the source
+      sample_value: 443
+    - name: resource_group
+      type: string
+      description: The ID of the group to which the destination device belongs. This might be an AWS account, or an Azure subscription or Resource Group
+      sample_value: 'DatabaseVMs'
+    - name: resource_id
+      type: string
+      description: The resource ID of the device generating the message
+      sample_value: '/subscriptions/3c1bb38c-82e3-4f8d-a115-a7110ba70d05/resourcegroups/contoso77/providers/microsoft.compute/virtualmachines/syslogserver1'
+    - name: packets
+      type: integer
+      description: The number of packets sent from the destination to the source for the connection or session. The meaning of a packet is defined by the reporting device
+      sample_value: 446
+    - name: user_aadid
+      type: string
+      description: The User Azure AD ID of the identity associated with the session’s destination.
+      sample_value: '5e8b0f4d-2cd4-4e17-9467-b0f6a5c0c4d0'
+  - name: source
+    prefix:
+    - src
+    attributes:
+    - name: port
+      type: integer
+      description: The IP port from which the connection originated. May not be relevant for a session comprising multiple connections.
+      sample_value: 12341
+    - name: region
+      type: string
+      description: The region within a country associated with the source IP address
+      sample_value: 'Vermont'
+    - name: resource_group
+      type: string
+      description: The ID of the group to which the source device belongs. This might be an AWS account, or an Azure subscription or Resource Group
+      sample_value: 'Hosts'
+    - name: resource_id
+      type: string
+      description: The resource ID of the device generating the message
+      sample_value: '/subscriptions/3c1bb38c-82e3-4f8d-a115-a7110ba70d05/resourcegroups/contoso77/providers/microsoft.compute/virtualmachines/syslogserver1'
+    - name: nat_ip_addr
+      type: ip
+      description: If reported by an intermediary NAT device such as a firewall, the IP address used by the NAT device for communication with the destination
+      sample_value: 12.56.23.12
+    - name: nat_port
+      type: integer
+      description: If reported by an intermediary NAT device such as a firewall, the port used by the NAT device for communication with the destination
+      sample_value: 389
+    - name: user_aadid
+      type: string
+      description: The User Azure AD ID of the identity associated with the session’s source. 
+      sample_value: '5e8b0f4d-2cd4-4e17-9467-b0f6a5c0c4d0'
+  - name: device
+    prefix:
+    - dvc
+    attributes:
+    - name: action
+      type: string
+      description: If reported by an intermediary device such as a firewall, the action taken by device.
+      sample_value: 'allow'
+    - name: inbound_interface
+      type: string
+      description: If reported by an intermediary device such as a firewall, the network interface used by it for the connection to the source device
+      sample_value: 'eth0'
+    - name: outbound_interface
+      type: string
+      description: If reported by an intermediary device such as a firewall, the network interface used by it for the connection to the destination device.
+      sample_value: 'Ethernet 4'
+  - name: icmp
+    prefix:
+    - icmp
+    attributes:
+    - name: code
+      type: integer
+      description: For an ICMP message, ICMP message type numeric value (RFC 2780 or RFC 4443).
+      sample_value: 34
+    - name: type
+      type: string
+      description: For an ICMP message, ICMP message type text representation (RFC 2780 or RFC 4443)
+      sample_value: 'Destination Unreachable'
+  - name: rule
+    prefix:
+    - rule
+    attributes:
+    - name: name
+      type: string
+      description: The name or ID of the rule by which DeviceAction was decided upon
+      sample_value: 'Any Any Drop'
+    - name: number
+      type: string
+      description: Matched rule number
+      sample_value: 7
+  - name: cloud
+    prefix:
+    - cloud
+    attributes:
+    - name: app_name
+      type: string
+      description: The name of the destination application for an HTTP application as identified by a proxy
+      sample_value: 'Facebook'
+    - name: app_id
+      type: String
+      description: The ID of the destination application for an HTTP application as identified by a proxy. This value is usually specific to the proxy used
+      sample_value: '124'
+    - name: app_operation
+      type: string
+      description: The operation the user performed in the context of the destination application for an HTTP application as identified by a proxy. This value is usually specific to the proxy used.
+      sample_value: 'DeleteFile'
+    - name: app_risk_level
+      type: string
+      description: The risk level associated with an HTTP application as identified by a proxy. This value is usually specific to the proxy used.
+      sample_value: 'High'
+  - name: threat
+    prefix:
+    - threat
+    attributes:
+    - name: category
+      type: string
+      description: The category of a threat identified by a security system such as Web Security Gateway of an IPS and is associated with this network session.
+      sample_value: 'Trojan'
+    - name: id
+      type: string
+      description: The ID of a threat identified by a security system such as Web Security Gateway of an IPS and is associated with this network session.
+      sample_value: 'tr.076'
+    - name: name
+      type: string
+      description: The name of the threat or malware identified
+      sample_value: 'Win32.Small.ahif(90603579)'
+  - name: operation
+    prefix:
+    - op
+    attributes:
+    - name: name
+      type: string
+      description: The activity associated with the record. Possible specific values are determined by the relevant schema.
+      sample_value: 'Traffic'
+  - name: result
+    prefix: 
+    - result
+    attributes:
+    - name: reason_type
+      type: string
+      description: Reason for the result reported in ResultType
+      sample_value: 'Traffic'
+    - name: type
+      type: string
+      description: The result reported for the activity. Empty value when not applicable.
+      sample_value: 'Success'
+functions:
+  - rename:
+    - EventCreationTime: TimeGenerated
+    - HttpRequestVersion: HttpRequestVer
