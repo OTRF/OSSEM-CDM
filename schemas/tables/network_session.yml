@@ -5,9 +5,19 @@ entities:
 - cloud
 - hash
 - user_agent
-- destination_nat
-- source_nat
 - device
+- name: source_nat
+  prefix:
+  - src_nat
+  attributes:
+  - ip_addr
+  - port_number
+- name: destination_nat
+  prefix:
+  - dst_nat
+  attributes:
+  - ip_addr
+  - port_number
 - name: destination
   prefix:
   - dst
