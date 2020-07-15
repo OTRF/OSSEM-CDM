@@ -5,12 +5,14 @@ id: 3D673B51-773A-433E-AE6B-EA4CD6B5F775
 description: Event fields used to define metadata about IP addresses in a network. It follows the standard from the Destination and Source categories.
 extends_entities:
   - destination
+  - destination_nat
   - source
+  - source_nat
   - any
 attributes:
 - name: addr
   type: ip
-  description: IP address.
+  description: IP address captured in a network connection. This could be used in the context of source, destination and even NAT when it is provided by an intermediary NAT device such as a firewall.
   sample_value: 192.168.1.2
 - name: bytes
   type: integer

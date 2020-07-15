@@ -5,7 +5,9 @@ id: 1BF5FD61-BDC1-4E13-84B8-D973BAA3A7E8
 description: Event fields used to define metadata about ports in a network connection.
 extends_entities:
   - source
+  - source_nat
   - destination
+  - destination_nat
 attributes:
 - name: number
   type: integer

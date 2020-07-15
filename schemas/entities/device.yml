@@ -1,0 +1,20 @@
+name: device
+prefix: 
+- dvc
+id: 4DA0ECFA-E640-44E7-B374-E31DA9EB8BE4
+description: Events used to provide information about a network device.
+attributes:
+- name: action
+  type: string
+  description: If reported by an intermediary device such as a firewall, the action taken by device.
+  sample_value: 'allow'
+- name: inbound_interface
+  type: string
+  description: If reported by an intermediary device such as a firewall, the network interface used by it for the connection to the source device
+  sample_value: 'eth0'
+- name: outbound_interface
+  type: string
+  description: If reported by an intermediary device such as a firewall, the network interface used by it for the connection to the destination device.
+  sample_value: 'Ethernet 4'
+references: []
+tags: []

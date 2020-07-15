@@ -76,7 +76,7 @@ attributes:
   type: inte
   description: The amount of time in milliseconds it took to receive a response in the server, if applicable.
   sample_value: 800
-- name: request_version
+- name: request_ver
   type: string
   description: The HTTP Request Version for HTTP/HTTPS network connections.
   sample_value: '2.0'

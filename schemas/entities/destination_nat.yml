@@ -1,0 +1,8 @@
+name: destination_nat
+prefix:
+- dst_nat
+id: 7F538EC3-4A7D-45C7-A135-0C4C0513F161
+description: Event fields used to define the destination NAT (network address translation) in a network connection event.
+attributes:
+references: []
+tags: []

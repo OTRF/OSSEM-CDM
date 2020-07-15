@@ -61,6 +61,22 @@ attributes:
   type: real
   description: The longitude of the geographical coordinate associated with the source IP address
   sample_value: -73.211944
+- name: interface_guid
+  type: string
+  description: GUID of the network interface which was used for authentication request.
+  sample_value: 7C202E90-2FBE-4275-AB0E-9BF67E04BEDF
+- name: interface_name
+  type: string
+  description: The network interface used for the connection or session by the source device.
+  sample_value: eth02
+- name: resource_id
+  type: string
+  description: The resource Id of the source device in a network connection
+  sample_value: '/subscriptions/33333333-8888-4444-a115-aaaaaaaaaaaa/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine2'
+- name: resource_group
+  type: string
+  description: The ID of the group to which the source device belongs in a network connection. This might be an AWS account, or an Azure subscription or Resource Group
+  sample_value: 'DatabaseVMs'
 references:
 - text: Examples of MIME types
   link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types

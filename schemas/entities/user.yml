@@ -85,5 +85,9 @@ attributes:
   type: string
   description: User password if seen in the request. Commonly seen in network logs and authentication proxy/logs.
   sample_value: bobspassword
+- name: user_aadid
+  type: string
+  description: The User Azure AD ID of the identity associated with a cloud network session. It applies to source and destination entities.
+  sample_value: '5e8b0f4d-2cd4-4e17-9467-b0f6a5c0c4d0'
 references: []
 tags: []

@@ -14,6 +14,7 @@ Event fields used to define metadata about network information seen in a typical
  | network_connection_state | string | The end state of the session/connection as defined in short abbreviation | `````` |
  | network_connection_state_detailed | string | Detailed description of the information in network_connection_state | `````` |
  | network_direction | string | User/Device defined name of the direction of the connection | ```outbound``` |
+ | network_duration | integer | The amount of time, in millisecond, for the completion of the network session or connection. | ```1500``` |
  | network_fingerprint_network_community_id | string | Network community ID as outlined by the standard from https://github.com/corelight/community-id-spec. Standardized hashing of network tuple. The combination, most commonly, of Source IP, Source Port, Destination IP, Destination Port, and IP Protocol allows pivoting between multiple log types | ```1:EeVyZ07VGj1n0rld+xCLFdM+u8M=``` |
  | network_initiated | boolean | Whether the session was initiated or received. Most commonly used in relation to an endpoint/device. False = the endpoint did not initiate the session (ie: was scanned or RDP connection made to it) | ```TRUE``` |
  | network_inner_vlan_id | integer | Normally the VLAN can not be determined as source/destination and VLANs are stacked/wrapped. This is the VLAN "inside" | ```150``` |

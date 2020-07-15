@@ -23,6 +23,8 @@
   - file: cdm/entities/user_agent
   - file: cdm/entities/any
   - file: cdm/entities/module
+  - file: cdm/entities/cloud
+  - file: cdm/entities/device
   - file: cdm/entities/logon
   - file: cdm/entities/file
   - file: cdm/entities/registry
@@ -35,12 +37,14 @@
   - file: cdm/entities/tls
   - file: cdm/entities/target
   - file: cdm/entities/mac
+  - file: cdm/entities/destination_nat
   - file: cdm/entities/port
   - file: cdm/entities/hash
   - file: cdm/entities/event
   - file: cdm/entities/dns
   - file: cdm/entities/group
   - file: cdm/entities/certificate
+  - file: cdm/entities/source_nat
   - file: cdm/entities/kerberos
   - file: cdm/entities/host
 - file: cdm/tables/intro

@@ -38,8 +38,8 @@ Event fields used to define the destination (server) in a network connection eve
  | dst_file_link_name | string | path of the hard link | ```C:\Docs\My.exe``` |
  | dst_file_mime_type | string | Specifies the MIME type name specified for a file | ```application/msword``` |
  | dst_file_modified_time | date | When the file was last modified. Also known as `mtime` | ```2016-11-25 18:21:47``` |
- | dst_file_name | string | name of a file without its full path. | ```a.exe``` |
- | dst_file_path | string | full path of a file including the name of the file | ```C:\users\wardog\z.exe``` |
+ | dst_file_name | string | name of a file without its full path. This could be a local file or transmitted over the network. | ```a.exe``` |
+ | dst_file_path | string | full path of a file including the name of the file. | ```C:\users\wardog\z.exe``` |
  | dst_file_previous_name | string | The file's previous name | ```C:\\Windows\system32\cmd.exe``` |
  | dst_file_size | string | Specifies the size of a file, in bytes | ```45``` |
  | dst_file_symlink | integer | 1 if the path is a symlink, otherwise 0 | ```0``` |
@@ -57,18 +57,22 @@ Event fields used to define the destination (server) in a network connection eve
  | dst_host_os | string | The OS of the source device | ```iOS``` |
  | dst_host_peer_mac | string | peer's (typically - access point) MAC-address | ```02:1A:C5:14:59:C9``` |
  | dst_host_type | string | The type of the source device | ```mobile``` |
- | dst_ip_addr | ip | IP address. | ```192.168.1.2``` |
+ | dst_interface_guid | string | GUID of the network interface which was used for authentication request. | ```7C202E90-2FBE-4275-AB0E-9BF67E04BEDF``` |
+ | dst_interface_name | string | The network interface used for the connection or session by the destination device. | ```eth02``` |
+ | dst_ip_addr | ip | IP address captured in a network connection. This could be used in the context of source, destination and even NAT when it is provided by an intermediary NAT device such as a firewall. | ```192.168.1.2``` |
  | dst_ip_bytes | integer | network IP (header) bytes sent by the either the source or destination ip address | ```100``` |
  | dst_ip_dhcp_assigned_ip_addr | ip | IP address assigned by the DHCP server. | ```192.168.1.2``` |
  | dst_ip_is_ipv6 | boolean | If source or destination IP address is IP version 6 | ```false``` |
  | dst_latitude | real | The latitude of the geographical coordinate associated with the destination IP address | ```44.475833``` |
  | dst_longitude | real | The longitude of the geographical coordinate associated with the destination IP address | ```-73.211944``` |
- | dst_mac_address | mac | MAC address of the endpoint where the log was created | ```00:11:22:33:44:55``` |
+ | dst_mac_address | mac | MAC address of an endpoint or network interface where a connection starts or ends. | ```00:11:22:33:44:55``` |
  | dst_mime_type | string | Destination MIME type as seen in (layer 7) application layer details or as defined by an application scanner such as an anti-virus/EDR. For HTTP this is usually from the server's "Content-Type" header. https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types | ```application/pdf``` |
  | dst_packets | integer | Network packets sent by the destination (Reply) | ```5``` |
  | dst_port_name | string | Name of the port used in a network connection. This is usually determined by IANA common port assignment. Therefore, this means its a guess and NOT actually what the application/ is what the actually. | ```netbios-dgm``` |
  | dst_port_number | integer | Source port number used in a network connection. | ```138``` |
  | dst_region | string | The region within a country associated with the destination IP address | ```Vermont``` |
+ | dst_resource_group | string | The ID of the group to which the destination device belongs in a network connection. This might be an AWS account, or an Azure subscription or Resource Group | ```DatabaseVMs``` |
+ | dst_resource_id | string | The resource Id of the destination device in a network connection | ```/subscriptions/33333333-8888-4444-a115-aaaaaaaaaaaa/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine2``` |
  | dst_vlan_id | integer | The destination VLAN ID if it can be determined. Most commonly if from a firewall/switch/router then it can be determined | ```1000``` |
  | dst_vlan_name | string | The destination VLAN Name. Most commonly if from a firewall/switch/router then it can be determined | ```untrust-dmz``` |
  | dst_zone | string | The network zone of the destination, as defined by the reporting device. | ```dmz``` |

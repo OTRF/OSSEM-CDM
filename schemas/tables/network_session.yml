@@ -1,10 +1,72 @@
 name: network_session
 id: 189BC2EE-44BF-4A8A-A257-5521C67D457B
-description: Event fields used to define network sessions in an endpoint.
+description: Event fields used to define network sessions.
 entities:
+- cloud
 - hash
 - user_agent
+- destination_nat
+- source_nat
+- device
+- name: destination
+  prefix:
+  - dst
+  attributes:
+  - bytes
+  - city
+  - country
+  - region
+  - domain
+  - host_fqdn
+  - host_name
+  - interface_name
+  - interface_guid
+  - mac_address
+  - ip_addr
+  - latitude
+  - longitude
+  - nat_port_number
+  - port_number
+  - packets
+  - resource_id
+  - resource_group
+  - user_aadid
+  - user_sid
+  - user_name
+  - user_upn
+  - user_domain
+  - zone
+- name: source
+  prefix:
+  - src
+  attributes:
+  - bytes
+  - city
+  - country
+  - region
+  - domain
+  - host_fqdn
+  - host_name
+  - interface_name
+  - interface_guid
+  - mac_address
+  - ip_addr
+  - latitude
+  - longitude
+  - nat_port_number
+  - port_number
+  - packets
+  - resource_id
+  - resource_group
+  - user_aadid
+  - user_sid
+  - user_name
+  - user_upn
+  - user_domain
+  - zone
 - name: event
+  prefix:
+  - event
   attributes:
   - count
   - endtime
@@ -16,15 +78,21 @@ entities:
   - time_ingested
   - uid
 - name: http
+  prefix:
+  - http
   attributes:
   - request_time
+  - request_ver
   - response_time
+  - response_ver
   - request_method
   - status_code
   - content_type
   - referrer_original
   - xff
 - name: file
+  prefix:
+  - file
   attributes:
   - name
   - path
@@ -32,11 +100,15 @@ entities:
   - mimeType
   - size
 - name: url
+  prefix:
+  - url
   attributes:
   - category
   - original
   - host_name
 - name: network
+  prefix:
+  - network
   attributes:
   - application_protocol
   - bytes
@@ -45,49 +117,6 @@ entities:
   - packets
   - session_id
   - protocol
-- name: destination
-  attributes:
-  - bytes
-  - city
-  - country
-  - host_name
-  - host_fqdn
-  - domain
-  - interface_name
-  - interface_guid
-  - ip_addr
-  - latitude
-  - longitude
-  - mac_address
-  - port_number
-  - user_sid
-  - user_name
-  - user_upn
-  - user_domain
-  - zone
-- name: source
-  attributes:
-  - bytes
-  - city
-  - country
-  - host_name
-  - host_fqdn
-  - host_os
-  - host_model
-  - host_type
-  - domain
-  - interface_name
-  - interface_guid
-  - ip_addr
-  - latitude
-  - longitude
-  - mac_address
-  - port_number
-  - user_sid
-  - user_name
-  - user_upn
-  - user_domain
-  - zone
 - name: custom
   entities:
   - name: reporter
@@ -138,86 +167,6 @@ entities:
       type: real
       description: Azure Sentinel Schema Version
       sample_value: '0.1'
-  - name: destination
-    prefix:
-    - dst 
-    attributes:
-    - name: resource_id
-      type: string
-      description: The resource Id of the destination device
-      sample_value: '/subscriptions/33333333-8888-4444-a115-aaaaaaaaaaaa/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine2'
-    - name: nat_ip_addr
-      type: ip
-      description: If reported by an intermediary NAT device such as a firewall, the IP address used by the NAT device for communication with the source.
-      sample_value: 10.1.1.14
-    - name: nat_port
-      type: integer
-      description: If reported by an intermediary NAT device such as a firewall, the port used by the NAT device for communication with the source
-      sample_value: 443
-    - name: resource_group
-      type: string
-      description: The ID of the group to which the destination device belongs. This might be an AWS account, or an Azure subscription or Resource Group
-      sample_value: 'DatabaseVMs'
-    - name: resource_id
-      type: string
-      description: The resource ID of the device generating the message
-      sample_value: '/subscriptions/3c1bb38c-82e3-4f8d-a115-a7110ba70d05/resourcegroups/contoso77/providers/microsoft.compute/virtualmachines/syslogserver1'
-    - name: packets
-      type: integer
-      description: The number of packets sent from the destination to the source for the connection or session. The meaning of a packet is defined by the reporting device
-      sample_value: 446
-    - name: user_aadid
-      type: string
-      description: The User Azure AD ID of the identity associated with the session’s destination.
-      sample_value: '5e8b0f4d-2cd4-4e17-9467-b0f6a5c0c4d0'
-  - name: source
-    prefix:
-    - src
-    attributes:
-    - name: port
-      type: integer
-      description: The IP port from which the connection originated. May not be relevant for a session comprising multiple connections.
-      sample_value: 12341
-    - name: region
-      type: string
-      description: The region within a country associated with the source IP address
-      sample_value: 'Vermont'
-    - name: resource_group
-      type: string
-      description: The ID of the group to which the source device belongs. This might be an AWS account, or an Azure subscription or Resource Group
-      sample_value: 'Hosts'
-    - name: resource_id
-      type: string
-      description: The resource ID of the device generating the message
-      sample_value: '/subscriptions/3c1bb38c-82e3-4f8d-a115-a7110ba70d05/resourcegroups/contoso77/providers/microsoft.compute/virtualmachines/syslogserver1'
-    - name: nat_ip_addr
-      type: ip
-      description: If reported by an intermediary NAT device such as a firewall, the IP address used by the NAT device for communication with the destination
-      sample_value: 12.56.23.12
-    - name: nat_port
-      type: integer
-      description: If reported by an intermediary NAT device such as a firewall, the port used by the NAT device for communication with the destination
-      sample_value: 389
-    - name: user_aadid
-      type: string
-      description: The User Azure AD ID of the identity associated with the session’s source. 
-      sample_value: '5e8b0f4d-2cd4-4e17-9467-b0f6a5c0c4d0'
-  - name: device
-    prefix:
-    - dvc
-    attributes:
-    - name: action
-      type: string
-      description: If reported by an intermediary device such as a firewall, the action taken by device.
-      sample_value: 'allow'
-    - name: inbound_interface
-      type: string
-      description: If reported by an intermediary device such as a firewall, the network interface used by it for the connection to the source device
-      sample_value: 'eth0'
-    - name: outbound_interface
-      type: string
-      description: If reported by an intermediary device such as a firewall, the network interface used by it for the connection to the destination device.
-      sample_value: 'Ethernet 4'
   - name: icmp
     prefix:
     - icmp
@@ -242,26 +191,6 @@ entities:
       type: string
       description: Matched rule number
       sample_value: 7
-  - name: cloud
-    prefix:
-    - cloud
-    attributes:
-    - name: app_name
-      type: string
-      description: The name of the destination application for an HTTP application as identified by a proxy
-      sample_value: 'Facebook'
-    - name: app_id
-      type: String
-      description: The ID of the destination application for an HTTP application as identified by a proxy. This value is usually specific to the proxy used
-      sample_value: '124'
-    - name: app_operation
-      type: string
-      description: The operation the user performed in the context of the destination application for an HTTP application as identified by a proxy. This value is usually specific to the proxy used.
-      sample_value: 'DeleteFile'
-    - name: app_risk_level
-      type: string
-      description: The risk level associated with an HTTP application as identified by a proxy. This value is usually specific to the proxy used.
-      sample_value: 'High'
   - name: threat
     prefix:
     - threat

@@ -16,7 +16,7 @@ Event fields used to define metadata about HTTP (Hypertext Transfer Protocol) in
  | http_request_header_values | string | Values for the request_header_names parameters | ```10.1.1.1``` |
  | http_request_method | string | Type of HTTP request that was made. Other examples could be (anything) PUT, POST, HEAD, DELETE | ```GET``` |
  | http_request_time | integer | The amount of time in milliseconds it took to send the request to the server, if applicable. | ```700``` |
- | http_request_version | string | The HTTP Request Version for HTTP/HTTPS network connections. | ```2.0``` |
+ | http_request_ver | string | The HTTP Request Version for HTTP/HTTPS network connections. | ```2.0``` |
  | http_response_body_bytes | integer | Amount of bytes that the destination/server returned | ```87``` |
  | http_response_body_original | string | The raw HTTP (response) body | ```<html> <header><title>This is title</title></header> <body> Hello world </body> </html>``` |
  | http_response_header_names | string | List of any additional (or all) HTTP headers. Because a server can use any HTTP header they want and there are already hundreds of https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers it would be impossible to define a specific field for each one. | ```X-Forwarded-For``` |

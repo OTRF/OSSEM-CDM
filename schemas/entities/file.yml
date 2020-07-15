@@ -9,11 +9,11 @@ extends_entities:
 attributes:
 - name: name
   type: string
-  description: name of a file without its full path.
+  description: name of a file without its full path. This could be a local file or transmitted over the network.
   sample_value: a.exe
 - name: path
   type: string
-  description: full path of a file including the name of the file
+  description: full path of a file including the name of the file.
   sample_value: C:\users\wardog\z.exe
 - name: extension
   type: string

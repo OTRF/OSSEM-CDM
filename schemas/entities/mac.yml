@@ -10,7 +10,7 @@ extends_entities:
 attributes:
 - name: address
   type: mac
-  description: MAC address of the endpoint where the log was created
+  description: MAC address of an endpoint or network interface where a connection starts or ends.
   sample_value: 00:11:22:33:44:55
 references: []
 tags: []

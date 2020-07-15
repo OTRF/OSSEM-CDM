@@ -25,8 +25,8 @@ Event fields used to define the source (client) in a network connection event.
  | src_file_link_name | string | path of the hard link | ```C:\Docs\My.exe``` |
  | src_file_mime_type | string | Specifies the MIME type name specified for a file | ```application/msword``` |
  | src_file_modified_time | date | When the file was last modified. Also known as `mtime` | ```2016-11-25 18:21:47``` |
- | src_file_name | string | name of a file without its full path. | ```a.exe``` |
- | src_file_path | string | full path of a file including the name of the file | ```C:\users\wardog\z.exe``` |
+ | src_file_name | string | name of a file without its full path. This could be a local file or transmitted over the network. | ```a.exe``` |
+ | src_file_path | string | full path of a file including the name of the file. | ```C:\users\wardog\z.exe``` |
  | src_file_previous_name | string | The file's previous name | ```C:\\Windows\system32\cmd.exe``` |
  | src_file_size | string | Specifies the size of a file, in bytes | ```45``` |
  | src_file_symlink | integer | 1 if the path is a symlink, otherwise 0 | ```0``` |
@@ -44,13 +44,15 @@ Event fields used to define the source (client) in a network connection event.
  | src_host_os | string | The OS of the source device | ```iOS``` |
  | src_host_peer_mac | string | peer's (typically - access point) MAC-address | ```02:1A:C5:14:59:C9``` |
  | src_host_type | string | The type of the source device | ```mobile``` |
- | src_ip_addr | ip | IP address. | ```192.168.1.2``` |
+ | src_interface_guid | string | GUID of the network interface which was used for authentication request. | ```7C202E90-2FBE-4275-AB0E-9BF67E04BEDF``` |
+ | src_interface_name | string | The network interface used for the connection or session by the source device. | ```eth02``` |
+ | src_ip_addr | ip | IP address captured in a network connection. This could be used in the context of source, destination and even NAT when it is provided by an intermediary NAT device such as a firewall. | ```192.168.1.2``` |
  | src_ip_bytes | integer | network IP (header) bytes sent by the either the source or destination ip address | ```100``` |
  | src_ip_dhcp_assigned_ip_addr | ip | IP address assigned by the DHCP server. | ```192.168.1.2``` |
  | src_ip_is_ipv6 | boolean | If source or destination IP address is IP version 6 | ```false``` |
  | src_latitude | real | The latitude of the geographical coordinate associated with the source IP address | ```44.475833``` |
  | src_longitude | real | The longitude of the geographical coordinate associated with the source IP address | ```-73.211944``` |
- | src_mac_address | mac | MAC address of the endpoint where the log was created | ```00:11:22:33:44:55``` |
+ | src_mac_address | mac | MAC address of an endpoint or network interface where a connection starts or ends. | ```00:11:22:33:44:55``` |
  | src_mime_type | string | Source MIME type as seen in (layer 7) application layer details or as defined by an application scanner such as an anti-virus/EDR. For HTTP this is usually from the server's "Content-Type" header. https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types | ```application/pdf``` |
  | src_packets | integer | Network packets sent by the source | ```5``` |
  | src_port_name | string | Name of the port used in a network connection. This is usually determined by IANA common port assignment. Therefore, this means its a guess and NOT actually what the application/ is what the actually. | ```netbios-dgm``` |
@@ -98,6 +100,8 @@ Event fields used to define the source (client) in a network connection event.
  | src_process_parent_is_hidden | boolean | Describes if the process is hidden. | ```True``` |
  | src_process_parent_name | string | Name of the process derived from the Image file or executable file used to define the initial code and data mapped into the process' virtual address space. This does not contain the full patth of the Image file. | ```conhost.exe``` |
  | src_region | string | The region within a country associated with the source IP address | ```Vermont``` |
+ | src_resource_group | string | The ID of the group to which the source device belongs in a network connection. This might be an AWS account, or an Azure subscription or Resource Group | ```DatabaseVMs``` |
+ | src_resource_id | string | The resource Id of the source device in a network connection | ```/subscriptions/33333333-8888-4444-a115-aaaaaaaaaaaa/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine2``` |
  | src_user_cred_type | string | types of credentials which were presented for delegation | ```%%8098``` |
  | src_user_dentity | string | User Principal Name (UPN) or another type of account identifier for which 802.1x authentication request was made. | ```host/XXXXXXXX.redmond.corp.microsoft.com``` |
  | src_user_domain | string | subject's domain or computer name of the account that performed the main action in the event | ```WIN-GG82ULGC9GO``` |
@@ -145,6 +149,7 @@ Event fields used to define the source (client) in a network connection event.
  | src_user_sid | string | Security identifier of the account that performed the main action in the event | ```S-1-5-21-1377283216-344919071-3415362939-500``` |
  | src_user_sid_list | string | the list of special group SIDs, which New Logon\Security ID is a member of. | ```{S-1-5-21-3457937927-2839227994-823803824-512}``` |
  | src_user_upn | string | UPN of the account for which delegation was requested. | ```dadmin@contoso``` |
+ | src_user_user_aadid | string | The User Azure AD ID of the identity associated with a cloud network session. It applies to source and destination entities. | ```5e8b0f4d-2cd4-4e17-9467-b0f6a5c0c4d0``` |
  | src_vlan_id | integer | The Source VLAN ID if it can be determined. Most commonly if from a firewall/switch/router then it can be determined | ```100``` |
  | src_vlan_name | string | The Source VLAN Name. Most commonly if from a firewall/switch/router then it can be determined | ```management``` |
  | src_zone | string | The network zone of the source, as defined by the reporting device. | ```dmz``` |

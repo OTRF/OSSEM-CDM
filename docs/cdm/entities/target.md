@@ -96,3 +96,4 @@ Event fields used to define entities being targeted by other entities locally in
  | target_user_sid | string | Security identifier of the account that performed the main action in the event | ```S-1-5-21-1377283216-344919071-3415362939-500``` |
  | target_user_sid_list | string | the list of special group SIDs, which New Logon\Security ID is a member of. | ```{S-1-5-21-3457937927-2839227994-823803824-512}``` |
  | target_user_upn | string | UPN of the account for which delegation was requested. | ```dadmin@contoso``` |
+ | target_user_user_aadid | string | The User Azure AD ID of the identity associated with a cloud network session. It applies to source and destination entities. | ```5e8b0f4d-2cd4-4e17-9467-b0f6a5c0c4d0``` |
