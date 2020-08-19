@@ -41,10 +41,30 @@ attributes:
   description: event identifier for specific event logs. Event ids might repeat across
     different data sources. This is most common in Windows using EventID
   sample_value: 4688
+- name: category_type
+  type: string
+  description: A description of the event, which can help with categorization. If the vendor defines a category/grouping for its log. i.e. Zeek has a few category types for its many logs (network-protocols, network-observations, etc...). Example. sysmon event id 12 is EventType field is this.
+  sample_value: network-protocols
+- name: event_ip_addr
+  type: string
+  description: The IP address from which the event/log came from. There may be multiple IP addresses in an event (i.e. syslog could have forwarder IP), this field is to be the most true log IP (i.e. NOT the forwarders IP).
+  sample_value: 10.10.10.10
+- name: event_host_name
+  type: string
+  description: The host name from which the event/log came from. There may be multiple host names in an event (i.e. syslog could have forwarder host name), this field is to be the most true log host name (i.e. NOT the forwarders name).
+  sample_value: bobs.uncle-pc
 - name: original_message
   type: string
   description: The (original) log message from the source before any ETL manipulations/modifications
   sample_value: 'a long message'
+- name: original_time
+  type: datetime
+  description: original time when event/log was created as reported from the log source itself.
+  sample_value: 4/11/2018 5:46:18
+- name: recorded_time
+  type: datetime
+  description: The time the log was recorded on disk or data plane or if there is another timestamp with the log (common scenario if there is a a manager of many devices or the log itself tracks log time and log written/recorded time) (e.g., 1 min is 60.0).
+  sample_value: 4/11/2018 5:46:18
 - name: severity
   type: string
   description: The severity of the event as defined manually or usually via the original
@@ -63,10 +83,22 @@ attributes:
   type: string
   description: Additional status information
   sample_value: Account expired 300 days ago
-- name: status_code
+- name: sub_status_code
   type: integer
-  description: Integer that defines a particular sub_status
+  description: Integer that defines a particular event_sub_status
   sample_value: '0'
+- name: sub_category_type
+  type: string
+  description: What sub type is for the given event_category_type, #TODO: this need fleshed out more...
+  sample_value: Microsoft-Windows-Sysmon/Operational
+- name: sub_type
+  type: string
+  description: What sub type is for the given event_type, this should be closest to what the vendor calls it. i.e. Zeek Conn log would be conn. PaloAlto traffic log would be traffic. Additonal example, for wef the channel Sysmon would be Microsoft-Windows-Sysmon/Operational
+  sample_value: Microsoft-Windows-Sysmon/Operational
+- name: timezone
+  type: string
+  description: Timezone of the event if it can be determined. Format such as UTC, UTC+1, UTC-5, etc..
+  sample_value: UTC
 - name: type
   type: string
   description: A description of the event, which can help with categorization.
@@ -95,5 +127,29 @@ attributes:
   type: string
   description: A general message or description, either included in, or generated from the record
   sample_value: 'TCP access denied'
+- name: product
+  type: string
+  description: The product generating the event.
+  sample_value: 'OfficeSharepoint'
+- name: product_ver
+  type: string
+  description: The version of the product generating the event
+  sample_value: '0.2'
+- name: resource_group
+  type: string
+  description: The resource group to which the device generating the record belongs. This might be an AWS account, or an Azure subscription or Resource Group
+  sample_value: 'DBVM'
+- name: resource_id
+  type: string
+  description: The resource ID of the device generating the message.
+  sample_value: '/subscriptions/aaabbbcc-dddd-eeee-1234-1234567890ab/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine'
+- name: report_url
+  type: string
+  description: url of the full analysis report, if applicable 
+  sample_value: 'https://192.168.1.1/reports/ade-123-afa.log'
+- name: vendor
+  type: string
+  description: The vendor of the product generating the event
+  sample_value: 'Microsoft'
 references: []
 tags: []

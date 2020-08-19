@@ -69,7 +69,7 @@ for k,v in all_standard_entities.items():
                         "description": attribute['description'],
                         "sample_value": attribute['sample_value']
                     }
-                    # append extended stardized attributes to the extended entity
+                    # append extended standardized attributes to the extended entity
                     all_standard_entities[entity]['attributes'].append(attribute_object)
                     # Loop through extended entities -> extending other entities
                     for extentity in all_standard_entities[entity]['extends_entities']:
@@ -90,7 +90,7 @@ for k,v in all_standard_entities.items():
     # ******** Process Entities for DOCS ********
     entity_for_render = copy.deepcopy(v)
     entity_md = entity_template.render(entidad=entity_for_render)
-    open(f"../docs/cdm/entities/{v['name']}.md", 'w').write(entity_md)
+    open(f"../docs/entities/{v['name']}.md", 'w').write(entity_md)
 
 # ***********************************************
 # ******** Processing OSSEM CDM Tables **********
@@ -168,7 +168,7 @@ for k,v in all_standard_tables.items():
     # ******** Process Entities for DOCS ********
     table_for_render = copy.deepcopy(v)
     table_md = table_template.render(table_metadata=table_for_render)
-    open(f"../docs/cdm/tables/{v['name']}.md", 'w').write(table_md)
+    open(f"../docs/tables/{v['name']}.md", 'w').write(table_md)
 
 # ***********************************************
 # ********** Updating TOC File ******************
@@ -184,14 +184,14 @@ print("  [>] Updating Entities sections..")
 for k,v in all_standard_entities.items():
     # ******** Process Entities for TOC ********
     entity_dict = {"file" : f"cdm/entities/{v['name']}"}
-    toc_template[7]['sections'].append(entity_dict)
+    toc_template[0]['sections'].append(entity_dict)
 
 # ******* Process Tables *******
 print("  [>] Updating Tables sections..")
 for k,v in all_standard_tables.items():
     # ******** Process Entities for TOC ********
     entity_dict = {"file" : f"cdm/tables/{v['name']}"}
-    toc_template[8]['sections'].append(entity_dict)
+    toc_template[1]['sections'].append(entity_dict)
 
 print("[+] Writing final TOC file for Jupyter book..")
 with open(r'../docs/_toc.yml', 'w') as file:

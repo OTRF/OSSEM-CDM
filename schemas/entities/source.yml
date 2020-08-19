@@ -37,22 +37,6 @@ attributes:
   description: The Source VLAN Name. Most commonly if from a firewall/switch/router
     then it can be determined
   sample_value: management
-- name: city
-  type: string
-  description: The city associated with the source IP address
-  sample_value: 'Burlington'
-- name: country
-  type: country
-  description: The country associated with the source IP address
-  sample_value: 'USA'
-- name: latitude
-  type: real
-  description: The latitude of the geographical coordinate associated with the source IP address
-  sample_value: 44.475833
-- name: region
-  type: string
-  description: The region within a country associated with the source IP address
-  sample_value: 'Vermont'
 - name: zone
   type: string
   description: The network zone of the source, as defined by the reporting device.

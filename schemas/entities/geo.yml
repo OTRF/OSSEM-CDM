@@ -1,0 +1,43 @@
+name: geo
+prefix:
+- geo
+id: F5C320EA-B930-4AEA-BE49-AC424D39760E
+description: Event fields used to define metadata about a geographical.
+extends_entities:
+  - source
+  - destination
+attributes:
+- name: latitude
+  type: string
+  description: Latitude is a measurement on a globe or map of location north or south of the Equator.
+  sample_value: "38.8951"
+- name: longitude
+  type: string
+  description: Longitude is a measurement of location east or west of the prime meridian at Greenwich, the specially designated imaginary north-south line that passes through both geographic poles and Greenwich, London.
+  sample_value: "-77.0364"
+- name: continent
+  type: string
+  description: continent in the world
+  sample_value: South America
+- name: country
+  type: string
+  description: name of the country
+  sample_value: Peru
+- name: country_capital
+  type: string
+  description: capital of the country
+  sample_value: Lima
+- name: country_code
+  type: string
+  description: 51
+  sample_value: Country code
+- name: city
+  type: string
+  description: name of the city
+  sample_value: San Miguel
+- name: region
+  type: string
+  description: name of region
+  sample_value: East US
+references: []
+tags: []

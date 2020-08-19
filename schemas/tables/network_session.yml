@@ -3,21 +3,8 @@ id: 189BC2EE-44BF-4A8A-A257-5521C67D457B
 description: Event fields used to define network sessions.
 entities:
 - cloud
-- hash
 - user_agent
 - device
-- name: source_nat
-  prefix:
-  - src_nat
-  attributes:
-  - ip_addr
-  - port_number
-- name: destination_nat
-  prefix:
-  - dst_nat
-  attributes:
-  - ip_addr
-  - port_number
 - name: destination
   prefix:
   - dst
@@ -31,11 +18,10 @@ entities:
   - host_name
   - interface_name
   - interface_guid
-  - mac_address
   - ip_addr
   - latitude
   - longitude
-  - nat_port_number
+  - mac_addr
   - port_number
   - packets
   - resource_id
@@ -46,6 +32,12 @@ entities:
   - user_upn
   - user_domain
   - zone
+- name: destination_nat
+  prefix:
+  - dst_nat
+  attributes:
+  - ip_addr
+  - port_number
 - name: source
   prefix:
   - src
@@ -57,13 +49,15 @@ entities:
   - domain
   - host_fqdn
   - host_name
+  - host_os
+  - host_model
+  - host_type
   - interface_name
   - interface_guid
-  - mac_address
   - ip_addr
   - latitude
   - longitude
-  - nat_port_number
+  - mac_addr
   - port_number
   - packets
   - resource_id
@@ -74,19 +68,12 @@ entities:
   - user_upn
   - user_domain
   - zone
-- name: event
+- name: source_nat
   prefix:
-  - event
+  - src_nat
   attributes:
-  - count
-  - endtime
-  - message
-  - start_time
-  - severity
-  - original_uid
-  - start_time
-  - time_ingested
-  - uid
+  - ip_addr
+  - port_number
 - name: http
   prefix:
   - http
@@ -109,6 +96,10 @@ entities:
   - extension
   - mimeType
   - size
+  - hash_sha1
+  - hash_md5
+  - hash_sha256
+  - hash_sha512
 - name: url
   prefix:
   - url
@@ -127,53 +118,34 @@ entities:
   - packets
   - session_id
   - protocol
+- name: event
+  prefix:
+  - event
+  attributes:
+  - count
+  - endtime
+  - message
+  - start_time
+  - severity
+  - original_uid
+  - time_ingested
+  - uid
+  - ip_addr
+  - mac_addr
+  - host_name
+  - product
+  - product_ver
+  - resource_group
+  - resource_id
+  - report_url
+  - vendor
 - name: custom
   entities:
-  - name: reporter
-    prefix:
-    - rptr
-    attributes:
-    - name: host_ip_addr
-      type: ip
-      description: The IP address of the device generating the record
-      sample_value: 211.209.13.12
-    - name: mac
-      type: string
-      description: The MAC address of the network interface of the reporting device from which the event was send
-      sample_value: '06:10:9f:eb:8f:14'
-    - name: host_name
-      type: string
-      description: The device name of the device generating the message
-      sample_value: 'syslogserver1.contoso.com'
-    - name: product
-      type: string
-      description: The product generating the event.
-      sample_value: 'OfficeSharepoint'
-    - name: product_ver
-      type: string
-      description: The version of the product generating the event
-      sample_value: '0.2'
-    - name: resource_group
-      type: string
-      description: The resource group to which the device generating the record belongs. This might be an AWS account, or an Azure subscription or Resource Group
-      sample_value: 'DBVM'
-    - name: resource_id
-      type: string
-      description: The resource ID of the device generating the message.
-      sample_value: '/subscriptions/aaabbbcc-dddd-eeee-1234-1234567890ab/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine'
-    - name: report_url
-      type: string
-      description: url of the full analysis report, if applicable 
-      sample_value: 'https://192.168.1.1/reports/ade-123-afa.log'
-    - name: vendor
-      type: string
-      description: The vendor of the product generating the event
-      sample_value: 'Microsoft'
   - name: schema
     prefix:
     - schema
     attributes:
-    - name: Ver
+    - name: ver
       type: real
       description: Azure Sentinel Schema Version
       sample_value: '0.1'
@@ -237,7 +209,3 @@ entities:
       type: string
       description: The result reported for the activity. Empty value when not applicable.
       sample_value: 'Success'
-functions:
-  - rename:
-    - EventCreationTime: TimeGenerated
-    - HttpRequestVersion: HttpRequestVer

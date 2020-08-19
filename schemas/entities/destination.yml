@@ -34,30 +34,10 @@ attributes:
   type: string
   description: The destination VLAN Name. Most commonly if from a firewall/switch/router then it can be determined
   sample_value: untrust-dmz
-- name: city
-  type: string
-  description: The city associated with the destination IP address
-  sample_value: 'Burlington'
-- name: country
-  type: country
-  description: The country associated with the destination IP address
-  sample_value: 'USA'
-- name: latitude
-  type: real
-  description: The latitude of the geographical coordinate associated with the destination IP address
-  sample_value: 44.475833
-- name: region
-  type: string
-  description: The region within a country associated with the destination IP address
-  sample_value: 'Vermont'
 - name: zone
   type: string
   description: The network zone of the destination, as defined by the reporting device.
   sample_value: 'dmz'
-- name: longitude
-  type: real
-  description: The longitude of the geographical coordinate associated with the destination IP address
-  sample_value: -73.211944
 - name: interface_guid
   type: string
   description: GUID of the network interface which was used for authentication request.
