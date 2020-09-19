@@ -7,9 +7,10 @@ description: Event fields used to define metadata about MAC addresses in a netwo
 extends_entities:
   - source
   - destination
+  - device
 attributes:
 - name: addr
-  type: mac
+  type: string
   description: MAC address of an endpoint or network interface where a connection starts or ends.
   sample_value: 00:11:22:33:44:55
 references: []

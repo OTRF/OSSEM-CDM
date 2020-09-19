@@ -81,16 +81,23 @@ attributes:
   sample_value: '143'
 - name: protocol
   type: string
-  description: 'Transport layer in the OSI model. Also known as, IP Protocol. Ex:
-    TCP,UDP,ICMP,ICMP-v6, etc. Convert to lowercase'
+  description: 'Transport layer in the OSI model. Also known as, IP Protocol. Ex: TCP,UDP,ICMP,ICMP-v6, etc. Convert to lowercase'
   sample_value: tcp
 - name: session_id
   type: string
-  description: The session identifier as reported by the reporting device. Typically, not available for connections.
+  description: The session identifier as reported by the network sensor device. Typically, not available for connections.
   sample_value: 'S198_13_1_27_12321_D205_13_1_27_443_0012'
 - name: duration
   type: integer
   description: The amount of time, in millisecond, for the completion of the network session or connection.
   sample_value: 1500
+- name: icmp_code
+  type: integer
+  description: For an ICMP message, ICMP message type numeric value (RFC 2780 or RFC 4443).
+  sample_value: 34
+- name: icmp_type
+  type: string
+  description: For an ICMP message, ICMP message type text representation (RFC 2780 or RFC 4443)
+  sample_value: 'Destination Unreachable'
 references: []
 tags: []

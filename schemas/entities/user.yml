@@ -5,17 +5,16 @@ id: CA1218A4-D188-4B95-8793-882A58AA3F89
 description: Event fields used to define metadata about users in an network environment.
 extends_entities:
   - source
+  - destination
   - target
 attributes:
 - name: name
   type: string
-  description: Name of the account that performed the main action in the event. (i.e.
-    user_name authenticated to the box x or user_name spawned a process)
+  description: Name of the account that performed the main action in the event. (i.e. user_name authenticated to the box x or user_name spawned a process)
   sample_value: DESKTOP-WARDOG\wardog
 - name: session_id
   type: integer
-  description: ID of the session the account tha performed the main action in the
-    event belongs to
+  description: ID of the session the account tha performed the main action in the event belongs to
   sample_value: '1'
 - name: reporter_sid
   type: string

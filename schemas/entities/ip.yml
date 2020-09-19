@@ -9,15 +9,12 @@ extends_entities:
   - source
   - source_nat
   - any
+  - device
 attributes:
 - name: addr
   type: ip
-  description: IP address captured in a network connection. This could be used in the context of source, destination and even NAT when it is provided by an intermediary NAT device such as a firewall.
+  description: Ip address of the network destination. This could be used in the context of source, destination and even NAT when it is provided by an intermediary NAT device such as a firewall.
   sample_value: 192.168.1.2
-- name: bytes
-  type: integer
-  description: network IP (header) bytes sent by the either the source or destination ip address
-  sample_value: '100'
 - name: is_ipv6
   type: boolean
   description: If source or destination IP address is IP version 6

@@ -4,5 +4,9 @@ prefix:
 id: 7F538EC3-4A7D-45C7-A135-0C4C0513F161
 description: Event fields used to define the destination NAT (network address translation) in a network connection event.
 attributes:
+- name: original_value
+  type: string 
+  description: original value of a destination NAT before any modifications. For example, if wanting to cleanup a network share and keep the IP - this field would be used to keep the original value
+  sample_value: "8.8.8.8"
 references: []
 tags: []

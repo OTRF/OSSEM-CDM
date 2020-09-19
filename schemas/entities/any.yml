@@ -9,7 +9,7 @@ description: 'Fields used to define metadata for a single field to include data 
   However, because of a common schema we can still find are values for a specific
   common type, without duplicating or copying everything to one field!'
 attributes:
-- name: event_uid
+- name: event_id
   type: string
   description: Allows searching a single field for all log IDs. All log ID fields copied/duplicated to a single field as an array.
   sample_value: '``'

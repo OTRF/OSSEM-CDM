@@ -14,7 +14,7 @@ description: 'Event fields used to define metadata about a URL/URI. There is a l
   applications such as SIP. URLs, especially in HTTP, have a best practice implementation
   however it is not necessary to adhere for connections/data to be established.'
 attributes:
-- name: dst_host_name
+- name: host_name
   type: string
   description: Copied from the host_name
   sample_value: google.com

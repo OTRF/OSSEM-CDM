@@ -16,6 +16,10 @@ attributes:
   type: string
   description: message/text of the integer response code that was 100-199
   sample_value: Switching Protocols
+- name: proxied_headers
+  type: string
+  description: All of the headers that may indicate if the request was proxied. i.e. FORWARDED;X-FORWARDED-FOR;X-FORWARDED-FROM;CLIENT-IP;VIA;XROXY-CONNECTION;PROXY-CONNECTION
+  sample_value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36
 - name: referrer_original
   type: string
   description: HTTP header "Referer". The HTTP referer header for HTTP/HTTPS network sessions.
@@ -24,10 +28,18 @@ attributes:
   type: integer
   description: Amount of bytes that the source/client sent
   sample_value: '2'
+- name: request_header_host
+  type: string
+  description: Value of the HOST header from the client. This should be copied to dst_host_name
+  sample_value: www.activewebsoftwares.com
 - name: request_header_names
   type: string
   description: List of any additional (or all) HTTP headers. Because a client can use any HTTP header they want and there are already hundreds of https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers it would be impossible to define a specific field for each one.
   sample_value: X-Forwarded-For
+- name: request_header_origin
+  type: string
+  description: Value of the Origin header from the client
+  sample_value: origin
 - name: request_header_values
   type: string
   description: Values for the request_header_names parameters
@@ -76,10 +88,6 @@ attributes:
   type: inte
   description: The amount of time in milliseconds it took to receive a response in the server, if applicable.
   sample_value: 800
-- name: request_ver
-  type: string
-  description: The HTTP Request Version for HTTP/HTTPS network connections.
-  sample_value: '2.0'
 - name: content_type
   type: string
   description: The HTTP Response content type header for HTTP/HTTPS network sessions.

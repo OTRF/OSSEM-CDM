@@ -40,8 +40,12 @@ for entity in entities_loaded:
     if entity['attributes']: 
         for prefix in entity['prefix']:    
             for attribute in entity['attributes']:
+                if prefix == attribute['name']:
+                    field_name = attribute['name']
+                else:
+                    field_name = prefix + '_' + attribute['name']
                 attribute_object = {
-                    "name": prefix + '_' + attribute['name'],
+                    "name": field_name,
                     "type": attribute['type'],
                     "description": attribute['description'],
                     "sample_value": attribute['sample_value']
@@ -181,7 +185,7 @@ with open('templates/toc_template.json') as json_file:
 
 # ******* Process Entities *******
 print("  [>] Updating Entities sections..")
-for k,v in all_standard_entities.items():
+for k,v in sorted(all_standard_entities.items()):
     # ******** Process Entities for TOC ********
     entity_dict = {"file" : f"cdm/entities/{v['name']}"}
     toc_template[0]['sections'].append(entity_dict)

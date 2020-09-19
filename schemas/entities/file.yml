@@ -19,6 +19,18 @@ attributes:
   type: string
   description: The file extension of a file (.txt, .exe, etc)
   sample_value: exe
+- name: company
+  type: string
+  description: Company name a file belongs to
+  sample_value: Microsoft Corporation
+- name: product
+  type: string
+  description: The file's product name
+  sample_value: Microsoft® Windows® Operating System
+- name: description
+  type: string
+  description: Description of a file
+  sample_value: Console Window Host
 - name: mime_type
   type: string
   description: Specifies the MIME type name specified for a file
@@ -71,6 +83,23 @@ attributes:
   type: date
   description: When the file was last modified. Also known as `mtime`
   sample_value: 2016-11-25 18:21:47
+- name: previous_accessed_time
+  type: date
+  description: When the file was previously accessed
+  sample_value: 2016-11-25 18:21:47
+- name: previous_changed_time
+  type: date
+  description: When the file was previously changed
+  type: date
+  sample_value: 2016-11-25 18:21:47
+- name: previous_creation_time
+  type: date
+  description: When the file was previously created
+  sample_value: 2016-11-25 18:21:47
+- name: previous_modified_time
+  type: date
+  description: When the file was previously modified
+  sample_value: 2016-11-25 18:21:47
 - name: previous_name
   type: string
   description: The file's previous name
@@ -79,5 +108,9 @@ attributes:
   type: string
   description: 'The file system type, ex:  fat32, ntfs, vmfs, ext3, ext4, xfs'
   sample_value: ntfs
+- name: version
+  type: string
+  description: file version. i.e. image loaded version
+  sample_value: 10.0.16299.15 (WinBuild.160101.0800)
 references: []
 tags: []

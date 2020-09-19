@@ -4,23 +4,17 @@ prefix:
 id: F02F775F-69EB-40D2-94F6-78207C015F46
 description: Event fields used to define the destination (server) in a network connection event.
 attributes:
+- name: domain_hostname
+  type: string
+  description: The destination server, host, hostname, domain, domain name or what people commonly might refer to as a domain or website when someone is browsing the Internet. Some examples, would include the TLS server name, HTTP Host, DNS Query Name, etc. For information on how to define and use this field refer to the documentation [here](https://ossemproject.com/cdm/guidelines/domain_or_hostname_or_fqdn.html)
+  sample_value: www.google.com
 - name: bytes
   type: integer
-  description: network bytes sent by the dst_ip_addr. Another field can also be provided after extending the IP entity. We can also define the dst_ip_bytes field.
+  description: network bytes sent by the dst_ip_addr.
   sample_value: '100'
-- name: domain
-  type: string
-  description: The (DNS) hierarchy that encompasses multiple hosts (i.e a Windows Active Directory environment).
-  sample_value: bigwheel.corporation.local
-- name: fqdn
-  type: string
-  description: The absolute (entire) value of the DNS hierarchy from the lowest level to the top level domain (TLD). Consists of the Hostname and Domain. This is best defined in [this Wikipedia](https://en.wikipedia.org/w/index.php?title=Fully_qualified_domain_name&oldid=911195384#Syntax) article on FQDN.
-  sample_value: bob-berto-pc.bigwheel.corporation.local
 - name: mime_type
   type: string
-  description: Destination MIME type as seen in (layer 7) application layer details
-    or as defined by an application scanner such as an anti-virus/EDR. For HTTP this
-    is usually from the server's "Content-Type" header. https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+  description: Destination MIME type as seen in (layer 7) application layer details or as defined by an application scanner such as an anti-virus/EDR. For HTTP this is usually from the server's "Content-Type" header. https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
   sample_value: application/pdf
 - name: packets
   type: integer
@@ -34,13 +28,17 @@ attributes:
   type: string
   description: The destination VLAN Name. Most commonly if from a firewall/switch/router then it can be determined
   sample_value: untrust-dmz
+- name: meta_dst_host_name_category
+  type: string
+  description: The defined grouping of a URL (or could be just based on the domain in the URL) related to what it is (ie adult, news, advertising, parked domains, etc)
+  sample_value: Search Engines
 - name: zone
   type: string
   description: The network zone of the destination, as defined by the reporting device.
   sample_value: 'dmz'
 - name: interface_guid
   type: string
-  description: GUID of the network interface which was used for authentication request.
+  description: GUID of the network interface which was used for authentication request (if applicable). Most of the time you would use the interface_name field for the uid.
   sample_value: 7C202E90-2FBE-4275-AB0E-9BF67E04BEDF
 - name: interface_name
   type: string
@@ -54,6 +52,10 @@ attributes:
   type: string
   description: The ID of the group to which the destination device belongs in a network connection. This might be an AWS account, or an Azure subscription or Resource Group
   sample_value: 'DatabaseVMs'
+- name: original_value
+  type: string
+  description: original value of a destination before any ETL modifications. For example, if wanting to cleanup a network share and keep the IP - this field would be used to keep the original value
+  sample_value: "8.8.8.8"
 references:
 - text: Examples of MIME types
   link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types

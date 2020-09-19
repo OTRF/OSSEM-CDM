@@ -1,0 +1,16 @@
+name: rule
+prefix:
+- rule
+id: 37BBC207-8AD2-4DAC-BFE9-B5B77A84CF5E
+description: Event fields used to define metadata about rules.
+attributes:
+- name: name
+  type: string
+  description: The name or ID of the rule by which DeviceAction was decided upon
+  sample_value: 'Any Any Drop'
+- name: number
+  type: string
+  description: Matched rule number
+  sample_value: 7
+references: []
+tags: []

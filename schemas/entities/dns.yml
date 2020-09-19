@@ -91,8 +91,7 @@ attributes:
   sample_value: 'false'
 - name: response_code
   type: integer
-  description: The response code returned from the server for the request in decimal
-    format
+  description: The response code returned from the server for the request in decimal format
   sample_value: '0'
 - name: response_code_name
   type: string
@@ -100,8 +99,7 @@ attributes:
   sample_value: NOERROR
 - name: response_name
   type: array_string
-  description: The results returned for the dns query. can contain a mix of IPs or
-    domains
+  description: The results returned for the dns query. can contain a mix of IPs or domains
   sample_value: 8.8.8.8
 - name: response_ttl
   type: array_float
@@ -113,8 +111,7 @@ attributes:
   sample_value: '0.006946'
 - name: transaction_id
   type: integer
-  description: Hexadecimal identifier assigned by the program that generated the DNS
-    query. Is 16-bit. Can be used to match up DNS requests across software/clients
+  description: Hexadecimal identifier assigned by the program that generated the DNS query. Is 16-bit. Can be used to match up DNS requests across software/clients
   sample_value: 4D11
 - name: transaction_id_hex
   type: string

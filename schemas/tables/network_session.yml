@@ -4,25 +4,35 @@ description: Event fields used to define network sessions.
 entities:
 - cloud
 - user_agent
-- device
+- name: device
+  prefix:
+  - dvc
+  attributes:
+  - action
+  - inbound_interface
+  - outbound_interface
+  - host_name
+  - ip_addr
+  - domain
+  - fqdn
+  - interface_guid
+  - interface_name
 - name: destination
   prefix:
   - dst
   attributes:
   - bytes
-  - city
-  - country
-  - region
-  - domain
-  - host_fqdn
   - host_name
   - interface_name
   - interface_guid
   - ip_addr
-  - latitude
-  - longitude
+  - geo_city
+  - geo_country
+  - geo_region
+  - geo_latitude
+  - geo_longitude
   - mac_addr
-  - port_number
+  - port
   - packets
   - resource_id
   - resource_group
@@ -37,28 +47,23 @@ entities:
   - dst_nat
   attributes:
   - ip_addr
-  - port_number
+  - port
 - name: source
   prefix:
   - src
   attributes:
   - bytes
-  - city
-  - country
-  - region
-  - domain
-  - host_fqdn
   - host_name
-  - host_os
-  - host_model
-  - host_type
   - interface_name
   - interface_guid
   - ip_addr
-  - latitude
-  - longitude
+  - geo_city
+  - geo_country
+  - geo_region
+  - geo_latitude
+  - geo_longitude
   - mac_addr
-  - port_number
+  - port
   - packets
   - resource_id
   - resource_group
@@ -73,15 +78,14 @@ entities:
   - src_nat
   attributes:
   - ip_addr
-  - port_number
+  - port
 - name: http
   prefix:
   - http
   attributes:
+  - version
   - request_time
-  - request_ver
   - response_time
-  - response_ver
   - request_method
   - status_code
   - content_type
@@ -94,7 +98,7 @@ entities:
   - name
   - path
   - extension
-  - mimeType
+  - mime_type
   - size
   - hash_sha1
   - hash_md5
@@ -118,61 +122,29 @@ entities:
   - packets
   - session_id
   - protocol
+  - icmp_code
+  - icmp_type
 - name: event
   prefix:
   - event
   attributes:
   - count
-  - endtime
   - message
   - start_time
+  - end_time
   - severity
   - original_uid
   - time_ingested
   - uid
-  - ip_addr
-  - mac_addr
-  - host_name
+  - vendor
   - product
-  - product_ver
+  - product_version
   - resource_group
   - resource_id
   - report_url
-  - vendor
+  - schema_version
 - name: custom
   entities:
-  - name: schema
-    prefix:
-    - schema
-    attributes:
-    - name: ver
-      type: real
-      description: Azure Sentinel Schema Version
-      sample_value: '0.1'
-  - name: icmp
-    prefix:
-    - icmp
-    attributes:
-    - name: code
-      type: integer
-      description: For an ICMP message, ICMP message type numeric value (RFC 2780 or RFC 4443).
-      sample_value: 34
-    - name: type
-      type: string
-      description: For an ICMP message, ICMP message type text representation (RFC 2780 or RFC 4443)
-      sample_value: 'Destination Unreachable'
-  - name: rule
-    prefix:
-    - rule
-    attributes:
-    - name: name
-      type: string
-      description: The name or ID of the rule by which DeviceAction was decided upon
-      sample_value: 'Any Any Drop'
-    - name: number
-      type: string
-      description: Matched rule number
-      sample_value: 7
   - name: threat
     prefix:
     - threat
@@ -203,7 +175,7 @@ entities:
     attributes:
     - name: reason_type
       type: string
-      description: Reason for the result reported in ResultType
+      description: Reason for the result reported in ResultType.
       sample_value: 'Traffic'
     - name: type
       type: string

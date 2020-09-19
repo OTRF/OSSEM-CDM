@@ -2,7 +2,7 @@ name: device
 prefix: 
 - dvc
 id: 4DA0ECFA-E640-44E7-B374-E31DA9EB8BE4
-description: Events used to provide information about a network device.
+description: Events used to provide information about the device or endpoint that generated the event.
 attributes:
 - name: action
   type: string
@@ -16,5 +16,41 @@ attributes:
   type: string
   description: If reported by an intermediary device such as a firewall, the network interface used by it for the connection to the destination device.
   sample_value: 'Ethernet 4'
+- name: host_name
+  type: string
+  description: The host name from which the event/log came from. There may be multiple host names in an event (i.e. syslog could have forwarder host name), this field is to be the most true log host name (i.e. NOT the forwarders name).
+  sample_value: bobs.uncle-pc
+- name: domain
+  type: string
+  description: Name of the domain the host is part of or joined.
+  sample_value: hunt.wardog.com
+- name: fqdn
+  type: string
+  description: The fully qualified domain name of the host
+  sample_value: WKHR001.hunt.wardog.com
+- name: interface_guid
+  type: string
+  description: GUID of the network interface which was used for authentication request
+  sample_value: '{2BB33827-6BB6-48DB-8DE6-DB9E0B9F9C9B}'
+- name: interface_name
+  type: string
+  description: the name (description) of the network interface that was used for authentication request. You can get the list of all available network adapters using "ipconfig /all" command
+  sample_value: Microsoft Hyper-V Network Adapter
+- name: os
+  type: string
+  description: The OS of the source device
+  sample_value: 'iOS'
+- name: model_name
+  type: string
+  description: The model name of the device
+  sample_value: 'Samsung Galaxy Note'
+- name: model_number
+  type: string
+  description: The model number of the device
+  sample_value: '10'
+- name: type
+  type: string
+  description: The type of the source device
+  sample_value: 'mobile'
 references: []
 tags: []

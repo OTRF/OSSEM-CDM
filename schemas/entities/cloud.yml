@@ -12,7 +12,7 @@ attributes:
   type: string
   description: The name of an application provided by a cloud service.
   sample_value: AppOne
-- name: operation
+- name: app_operation
   type: string
   description: Operation performed by an application provided by a cloud service.
   sample_value: DELETE
