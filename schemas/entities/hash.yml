@@ -2,7 +2,7 @@ name: hash
 prefix:
 - hash
 id: 42C1A34E-D474-468D-8EFB-09454CA8BFC2
-description: Event fields used to capture metadata about hashes of an image/binary/file.
+description: Event fields used to define/normalize data related to hashes of an image/binary/file.
 extends_entities:
 - file
 - certificate

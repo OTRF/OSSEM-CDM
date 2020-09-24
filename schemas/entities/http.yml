@@ -2,7 +2,7 @@ name: http
 prefix:
 - http
 id: 841A8C9B-EFE2-40E6-9917-DB6784944D75
-description: Event fields used to define metadata about HTTP (Hypertext Transfer Protocol) information. This is based on information in the layer 7 (HTTP) application, however can also include HTTP information from an endpoint/server. IIS, Apache, NGINX, proxy logs, and other variances of logs that have HTTP information would go in here. Also, if the HTTP connection is from a decrypted/MITM HTTPS/TLS session then portions of that information, where applicable, would go in here.
+description: Event fields used to define/normalize metadata about HTTP (Hypertext Transfer Protocol) information. This is based on information in the layer 7 (HTTP) application, however can also include HTTP information from an endpoint/server. IIS, Apache, NGINX, proxy logs, and other variances of logs that have HTTP information would go in here. Also, if the HTTP connection is from a decrypted/MITM HTTPS/TLS session then portions of that information, where applicable, would go in here.
 attributes:
 - name: cookie_variables
   type: string
@@ -74,12 +74,8 @@ attributes:
   sample_value: OK
 - name: version
   type: string
-  description: HTTP version
+  description: HTTP request version
   sample_value: '1.1'
-- name: user_agent_original
-  type: string
-  description: The User agent seen in an HTTP request
-  sample_value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36
 - name: request_time
   type: integer
   description: The amount of time in milliseconds it took to send the request to the server, if applicable.
@@ -92,7 +88,7 @@ attributes:
   type: string
   description: The HTTP Response content type header for HTTP/HTTPS network sessions.
   sample_value: ''
-- name: xff
+- name: request_xff
   type: string
   description: The HTTP X-Forwarded-For header for HTTP/HTTPS network sessions.
   sample_value: '203.0.113.195'

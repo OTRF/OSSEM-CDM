@@ -2,7 +2,7 @@ name: event
 prefix:
 - event
 id: 6483A215-4827-4F06-BC2C-EC9FCF41CA96
-description: Event attributes used to define specific metadata of the event itself. This also includes information about the host where the event was originally generated. In scenarios where an event is forwarded (Windows Event Forwarding, Syslog, etc), the ETL entity must be used. 
+description: Event attributes used to define/normalize specific metadata of the event itself. This also includes information about the host where the event was originally generated. In scenarios where an event is forwarded (Windows Event Forwarding, Syslog, etc), the ETL entity must be used. 
 attributes:
 - name: timestamp
   type: datetime
@@ -127,7 +127,7 @@ attributes:
 - name: uid
   type: string
   description: Original unique ID specific to the log/event assigned to the event (not original).
-  sample_value: CMzY3i4YoNZ3mT5yu5
+  sample_value: 516a64e3-8360-4f1e-a67c-d96b3d52df54
 - name: count
   type: integer
   description: The number of aggregated events, if applicable
@@ -148,5 +148,13 @@ attributes:
   type: string
   description: url of the full analysis report, if applicable 
   sample_value: 'https://192.168.1.1/reports/ade-123-afa.log'
+- name: result 
+  type: string
+  description: The result reported for the activity. Empty value when not applicable
+  sample_value: success
+- name: result_details
+  type: string
+  description: Reason or details for the result reported in event_result
+  sample_value: Wrong Password
 references: []
 tags: []

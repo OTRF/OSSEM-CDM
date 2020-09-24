@@ -24,9 +24,8 @@ attributes:
   description: 'Layer 7 (application) in the OSI model. Ex: HTTP,SMB,FTP,SSH, etc.'
   sample_value: HTTP
 - name: bytes
-  type: long
-  description: Total bytes for the session. If this field does not exist in the log
-    source, then its possible in your ETL pipeline to combine the source and destination bytes
+  type: integer
+  description: Total bytes for the session. If this field does not exist in the log source, then its possible in your ETL pipeline to combine the source and destination bytes.
   sample_value: '102034'
 - name: connection_history
   type: string
@@ -46,13 +45,11 @@ attributes:
   sample_value: ''
 - name: direction
   type: string
-  description: User/Device defined name of the direction of the connection
+  description: User/Device defined name of the direction of the connection or session (Inbound or Outbound).
   sample_value: outbound
 - name: initiated
   type: boolean
-  description: 'Whether the session was initiated or received. Most commonly used
-    in relation to an endpoint/device. False = the endpoint did not initiate the session
-    (ie: was scanned or RDP connection made to it)'
+  description: 'Whether the session was initiated or received. Most commonly used in relation to an endpoint/device. False = the endpoint did not initiate the session (ie: was scanned or RDP connection made to it)'
   sample_value: 'TRUE'
 - name: inner_vlan_id
   type: integer
@@ -60,9 +57,7 @@ attributes:
   sample_value: '150'
 - name: ip_bytes
   type: long
-  description: Total IP bytes, according to ip headers, for the session. If this field
-    does not exist in the log source, then its possible in your ETL pipeline to combine
-    the source and destination bytes
+  description: Total IP bytes, according to ip headers, for the session. If this field does not exist in the log source, then its possible in your ETL pipeline to combine the source and destination bytes
   sample_value: '14564'
 - name: missed_bytes
   type: long
@@ -70,14 +65,11 @@ attributes:
   sample_value: '5'
 - name: outer_vlan_id
   type: integer
-  description: Normally the VLAN can not be determined as source/destination and VLANs
-    are stacked/wrapped. This is the VLAN on the "outside"
+  description: Normally the VLAN can not be determined as source/destination and VLANs are stacked/wrapped. This is the VLAN on the "outside"
   sample_value: '160'
 - name: packets
   type: long
-  description: Total packets for the session. If this field does not exist in the
-    log source, then its possible in your ETL pipeline to combine the source and destination
-    packets
+  description: Total packets for the session. If this field does not exist in the log source, then its possible in your ETL pipeline to combine the source and destination packets
   sample_value: '143'
 - name: protocol
   type: string
@@ -99,5 +91,13 @@ attributes:
   type: string
   description: For an ICMP message, ICMP message type text representation (RFC 2780 or RFC 4443)
   sample_value: 'Destination Unreachable'
+- name: rule_name
+  type: string
+  description: The name or ID of the rule by which DeviceAction was decided upon
+  sample_value: AnyAnyDrop
+- name: rule_number
+  type: integer
+  description: Matched rule number
+  sample_value: 23
 references: []
 tags: []

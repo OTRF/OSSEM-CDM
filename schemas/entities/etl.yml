@@ -2,7 +2,7 @@ name: etl
 prefix:
   - etl
 id: D3BAF300-8CA2-4B2D-A908-62294220B8D9
-description: Event fields used to define specific metadata about the event during the processing of an ETL (Extract, Transform, Load) pipeline.
+description: Event fields used to define/normalize specific metadata about the event during the processing of an ETL (Extract, Transform, Load) pipeline.
 attributes:
 - name: format_applied
   type: string

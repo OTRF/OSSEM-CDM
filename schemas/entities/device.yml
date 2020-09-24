@@ -2,7 +2,10 @@ name: device
 prefix: 
 - dvc
 id: 4DA0ECFA-E640-44E7-B374-E31DA9EB8BE4
-description: Events used to provide information about the device or endpoint that generated the event.
+description: Events used to normalize events for the device or endpoint that generated the event (source or destination).
+extends_entities:
+  - source
+  - destination
 attributes:
 - name: action
   type: string
@@ -16,13 +19,13 @@ attributes:
   type: string
   description: If reported by an intermediary device such as a firewall, the network interface used by it for the connection to the destination device.
   sample_value: 'Ethernet 4'
-- name: host_name
+- name: hostname
   type: string
   description: The host name from which the event/log came from. There may be multiple host names in an event (i.e. syslog could have forwarder host name), this field is to be the most true log host name (i.e. NOT the forwarders name).
   sample_value: bobs.uncle-pc
 - name: domain
   type: string
-  description: Name of the domain the host is part of or joined.
+  description: Name of the domain the device is part of.
   sample_value: hunt.wardog.com
 - name: fqdn
   type: string
@@ -38,7 +41,7 @@ attributes:
   sample_value: Microsoft Hyper-V Network Adapter
 - name: os
   type: string
-  description: The OS of the source device
+  description: The OS of the device
   sample_value: 'iOS'
 - name: model_name
   type: string
@@ -50,7 +53,7 @@ attributes:
   sample_value: '10'
 - name: type
   type: string
-  description: The type of the source device
+  description: The type of the device
   sample_value: 'mobile'
 references: []
 tags: []

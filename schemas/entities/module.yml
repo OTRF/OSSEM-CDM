@@ -2,11 +2,11 @@ name: module
 prefix:
 - module
 id: 10744F70-5EF6-4BA6-85D7-8BA86C435334
-description: Event fields used to define metadata about modules loaded into a process. A process module represents a .dll or .exe file that is loaded into a particular process.
+description: Event fields used to define/normalize metadata about modules loaded into a process. A process module represents a .dll or .exe file that is loaded into a particular process.
 attributes:
 - name: name
   type: string
-  description: name of the module loaded into a process without the full path
+  description: name of the modules loaded into a process without the full path
   sample_value: msvcrt.dll
 - name: path
   type: string

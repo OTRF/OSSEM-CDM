@@ -2,7 +2,7 @@ name: alert
 prefix: 
 - alert
 id: C433BF57-A975-4950-9E67-4427199D6C5D
-description: Alert fields that describe an indicator from a tool of a possible issue.
+description: Alert fields that describe/normalize an indicator from a tool of a possible issue.
 attributes:
 - name: id
   type: integer

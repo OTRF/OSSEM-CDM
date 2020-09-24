@@ -2,7 +2,7 @@ name: user
 prefix:
 - user
 id: CA1218A4-D188-4B95-8793-882A58AA3F89
-description: Event fields used to define metadata about users in an network environment.
+description: Event fields used to define/normalize metadata about users in a network environment.
 extends_entities:
   - source
   - destination
@@ -10,11 +10,15 @@ extends_entities:
 attributes:
 - name: name
   type: string
-  description: Name of the account that performed the main action in the event. (i.e. user_name authenticated to the box x or user_name spawned a process)
-  sample_value: DESKTOP-WARDOG\wardog
+  description: Name of the user associated with the main event (i.e. Network session). There could be a sense of direction depending how it is used together with other entities (i.e. src_user_name or dst_user_name)
+  sample_value: wardog
+- name: domain
+  type: string
+  description: The domain or computer name associated to the user in a session. In active directory, this would be the name of the domain the user belongs to.
+  sample_value: CONTOSO
 - name: session_id
   type: integer
-  description: ID of the session the account tha performed the main action in the event belongs to
+  description: ID of the session the user belongs to.
   sample_value: '1'
 - name: reporter_sid
   type: string
@@ -26,38 +30,27 @@ attributes:
   sample_value: WIN-GG82ULGC9GO$
 - name: reporter_domain
   type: string
-  description: subject's domain or computer name of the account that reported information
-    about the main event
+  description: domain name of the user that reported the main event
   sample_value: WORKGROUP
 - name: reporter_id
   type: integer
-  description: hexadecimal value that can help you correlate an event with recent
-    events that might contain the same Logon ID for the account that reported information
-    about the main event
+  description: unique identifier of the user that reported the main event
   sample_value: '0x3e7'
 - name: sid
   type: string
-  description: Security identifier of the account that performed the main action in the event
+  description: Security identifier of the user. Typically, the identity used to authenticate a server.
   sample_value: S-1-5-21-1377283216-344919071-3415362939-500
-- name: domain
-  type: string
-  description: subject's domain or computer name of the account that performed the
-    main action in the event
-  sample_value: WIN-GG82ULGC9GO
 - name: network_account_name
   type: string
-  description: User name that will be used for outbound (network) connections. Valid
-    only for NewCredentials logon type. If not NewCredentials logon, then this will be a "-" string.
+  description: User name used for outbound (network) connections
   sample_value: '-'
 - name: network_account_domain
   type: string
   description: Domain for the user that will be used for outbound (network) connections.
-    Valid only for NewCredentials logon type. If not NewCredentials logon, then this will be a "-" string.
   sample_value: '-'
 - name: linked_logon_id
   type: integer
-  description: A hexadecimal value of the paired logon session. If there is no other
-    logon session associated with this logon session, then the value is "0x0".
+  description: A hexadecimal value of the paired logon session.
   sample_value: '0x0'
 - name: sid_list
   type: string
@@ -65,18 +58,17 @@ attributes:
   sample_value: '{S-1-5-21-3457937927-2839227994-823803824-512}'
 - name: security_package
   type: string
-  description: the name of Security Package which was used by the account that performed
-    the main action in the event. Always CREDSSP for this event.
+  description: the name of Security Package used during an authentication event.
   sample_value: CREDSSP
 - name: upn
   type: string
-  description: UPN of the account for which delegation was requested.
+  description: In Active Directory, the User Principal Name (UPN) attribute is a user identifier for logging in, separate from a Windows domain login.
   sample_value: dadmin@contoso
 - name: cred_type
   type: string
   description: types of credentials which were presented for delegation
   sample_value: '%%8098'
-- name: dentity
+- name: identity
   type: string
   description: User Principal Name (UPN) or another type of account identifier for which 802.1x authentication request was made.
   sample_value: host/XXXXXXXX.redmond.corp.microsoft.com
@@ -84,7 +76,7 @@ attributes:
   type: string
   description: User password if seen in the request. Commonly seen in network logs and authentication proxy/logs.
   sample_value: bobspassword
-- name: user_aadid
+- name: aadid
   type: string
   description: The User Azure AD ID of the identity associated with a cloud network session. It applies to source and destination entities.
   sample_value: '5e8b0f4d-2cd4-4e17-9467-b0f6a5c0c4d0'

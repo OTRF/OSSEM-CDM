@@ -2,7 +2,7 @@ name: pipe
 prefix:
 - pipe
 id: 7192E569-54E3-4979-89F8-12342AC4B38E
-description: Event fields used to define metadata about pipes being created or connected in an endpoint.
+description: Event fields used to define/normalize metadata about pipes being created or connected for inter-process communication locally or remotely.
 attributes:
 - name: name
   type: string

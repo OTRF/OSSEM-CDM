@@ -2,7 +2,7 @@ name: group
 prefix:
 - group
 id: 1DB9799D-8463-4962-92D3-93F0D6AD65F1
-description: Event fields used to define metadata about a security group, or distribution group that is created changed or deleted.
+description: Event fields used to define/normalize metadata about a security group, or distribution group that is created changed or deleted.
 attributes:
 - name: name
   type: string

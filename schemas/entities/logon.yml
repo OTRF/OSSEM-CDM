@@ -4,7 +4,7 @@ prefix:
 id: E25FD5C0-5553-4A8D-888F-12500C2FCB31
 extends_entities:
   - user
-description: Event fields used to define metadata about logon events.
+description: Event fields used to define/normalize metadata about logon events.
 attributes:
 - name: id
   type: integer

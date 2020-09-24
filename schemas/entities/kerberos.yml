@@ -2,7 +2,7 @@ name: kerberos
 prefix:
 - krb
 id: 76E77A91-9DBB-4B5F-BFC8-B788023DC824
-description: 'Event fields used to define Kerberos Ticket Granting Service and Kerberos Ticket Granting Tickets. For certificate information within Kerberos see the ./x509_and_certificates.md'
+description: 'Event fields used to define/normalize Kerberos Ticket Granting Service and Kerberos Ticket Granting Tickets. For certificate information within Kerberos see the ./x509_and_certificates.md'
 attributes:
 - name: service_name
   type: string

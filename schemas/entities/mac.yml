@@ -2,8 +2,7 @@ name: mac
 prefix:
 - mac
 id: 616ABC0D-E91C-4B99-B292-239B54566A34
-description: Event fields used to define metadata about MAC addresses in a network.
-  It follows the standard from the Destination and Source categories.
+description: Event fields used to define/normalize metadata about MAC addresses in a network.
 extends_entities:
   - source
   - destination
@@ -11,7 +10,7 @@ extends_entities:
 attributes:
 - name: addr
   type: string
-  description: MAC address of an endpoint or network interface where a connection starts or ends.
+  description: MAC address of the device where the event was generated or network interface where a connection starts or ends.
   sample_value: 00:11:22:33:44:55
 references: []
 tags: []

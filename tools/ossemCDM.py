@@ -74,7 +74,8 @@ for k,v in all_standard_entities.items():
                         "sample_value": attribute['sample_value']
                     }
                     # append extended standardized attributes to the extended entity
-                    all_standard_entities[entity]['attributes'].append(attribute_object)
+                    if attribute_object not in all_standard_entities[entity]['attributes']:
+                        all_standard_entities[entity]['attributes'].append(attribute_object)
                     # Loop through extended entities -> extending other entities
                     for extentity in all_standard_entities[entity]['extends_entities']:
                         # Loop through every prefix also if the extended -> extended entities
@@ -85,7 +86,8 @@ for k,v in all_standard_entities.items():
                                 "description": attribute['description'],
                                 "sample_value": attribute['sample_value']
                             }
-                            all_standard_entities[extentity]['attributes'].append(attribute_object)
+                            if attribute_object not in all_standard_entities[extentity]['attributes']:
+                                all_standard_entities[extentity]['attributes'].append(attribute_object)
 
 # ***** Creating Entity Files (snake_case) *****
 #  Entity Jinja Template

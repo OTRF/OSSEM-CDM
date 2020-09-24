@@ -2,22 +2,22 @@ name: file
 prefix:
 - file
 id: E94FB7C5-185A-459F-8C27-87600E32E598
-description: Event fields used to define metadata about files either locally or over the wire (Network Traffic). This entity and attributes can extend other entities such as source and destination.
+description: Event fields used to define/normalize metadata about files either locally or over the wire (Network Traffic). This entity and attributes can extend other entities such as source and destination.
 extends_entities:
 - source
 - destination
 attributes:
 - name: name
   type: string
-  description: name of a file without its full path. This could be a local file or transmitted over the network.
+  description: name of the file without its full path. This could be a local file or one transmitted over the network.
   sample_value: a.exe
 - name: path
   type: string
-  description: full path of a file including the name of the file.
+  description: full path of a file including the name of the file. This could be a local file or one transmitted over the network.
   sample_value: C:\users\wardog\z.exe
 - name: extension
   type: string
-  description: The file extension of a file (.txt, .exe, etc)
+  description: The extension name or type of the file.
   sample_value: exe
 - name: company
   type: string
@@ -33,11 +33,11 @@ attributes:
   sample_value: Console Window Host
 - name: mime_type
   type: string
-  description: Specifies the MIME type name specified for a file
+  description: MIME type name specified for the file
   sample_value: application/msword
 - name: size
-  type: string
-  description: Specifies the size of a file, in bytes
+  type: integer
+  description: Size of the file, in bytes.
   sample_value: '45'
 - name: system_block_size
   type: integer

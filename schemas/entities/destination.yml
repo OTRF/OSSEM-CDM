@@ -2,7 +2,7 @@ name: destination
 prefix:
 - dst
 id: F02F775F-69EB-40D2-94F6-78207C015F46
-description: Event fields used to define the destination (server) in a network connection event.
+description: Event fields used to define/normalize the destination (server) in a network connection event.
 attributes:
 - name: domain_hostname
   type: string
@@ -10,7 +10,7 @@ attributes:
   sample_value: www.google.com
 - name: bytes
   type: integer
-  description: network bytes sent by the dst_ip_addr.
+  description: The number of bytes sent from the destination to the source for the connection or session.
   sample_value: '100'
 - name: mime_type
   type: string
@@ -18,7 +18,7 @@ attributes:
   sample_value: application/pdf
 - name: packets
   type: integer
-  description: Network packets sent by the destination (Reply)
+  description: The number of packets sent from the destination to the source for the connection or session (Reply). The meaning of a packet is defined by the reporting device.
   sample_value: '5'
 - name: vlan_id
   type: integer

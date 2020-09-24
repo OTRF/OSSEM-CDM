@@ -2,8 +2,7 @@ name: certificate
 prefix:
 - certificate
 id: 0CBE0892-F642-4F26-A31D-636386749B05
-description: This document is a work in progress, but is a foundational.
-  Specifically the main foundations of certificate information is already in here.
+description: This document is a work in progress, but is a foundational. Specifically the main foundations of certificate information is already in here.
 extends_entities:
   - destination
 attributes:

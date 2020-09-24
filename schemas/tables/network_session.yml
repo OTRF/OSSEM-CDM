@@ -1,9 +1,9 @@
 name: network_session
 id: 189BC2EE-44BF-4A8A-A257-5521C67D457B
-description: Event fields used to define network sessions.
+version: 1.0.0
+description: Event fields used to normalize data related to network sessions.
 entities:
 - cloud
-- user_agent
 - name: device
   prefix:
   - dvc
@@ -11,8 +11,9 @@ entities:
   - action
   - inbound_interface
   - outbound_interface
-  - host_name
+  - hostname
   - ip_addr
+  - mac_addr
   - domain
   - fqdn
   - interface_guid
@@ -22,7 +23,11 @@ entities:
   - dst
   attributes:
   - bytes
-  - host_name
+  - dvc_hostname
+  - dvc_fqdn
+  - dvc_ip_addr
+  - dvc_mac_addr
+  - dvc_domain
   - interface_name
   - interface_guid
   - ip_addr
@@ -32,10 +37,10 @@ entities:
   - geo_latitude
   - geo_longitude
   - mac_addr
-  - port
+  - domain_hostname
+  - port_number
   - packets
   - resource_id
-  - resource_group
   - user_aadid
   - user_sid
   - user_name
@@ -47,13 +52,21 @@ entities:
   - dst_nat
   attributes:
   - ip_addr
-  - port
+  - port_number
 - name: source
   prefix:
   - src
   attributes:
   - bytes
-  - host_name
+  - dvc_hostname
+  - dvc_fqdn
+  - dvc_ip_addr
+  - dvc_mac_addr
+  - dvc_domain
+  - dvc_os
+  - dvc_model_name
+  - dvc_model_number
+  - dvc_type
   - interface_name
   - interface_guid
   - ip_addr
@@ -63,10 +76,9 @@ entities:
   - geo_latitude
   - geo_longitude
   - mac_addr
-  - port
+  - port_number
   - packets
   - resource_id
-  - resource_group
   - user_aadid
   - user_sid
   - user_name
@@ -78,7 +90,7 @@ entities:
   - src_nat
   attributes:
   - ip_addr
-  - port
+  - port_number
 - name: http
   prefix:
   - http
@@ -90,7 +102,8 @@ entities:
   - status_code
   - content_type
   - referrer_original
-  - xff
+  - request_xff
+  - user_agent_original
 - name: file
   prefix:
   - file
@@ -110,7 +123,7 @@ entities:
   attributes:
   - category
   - original
-  - host_name
+  - hostname
 - name: network
   prefix:
   - network
@@ -124,6 +137,8 @@ entities:
   - protocol
   - icmp_code
   - icmp_type
+  - rule_name
+  - rule_number
 - name: event
   prefix:
   - event
@@ -139,45 +154,17 @@ entities:
   - vendor
   - product
   - product_version
-  - resource_group
   - resource_id
   - report_url
+  - result
+  - result_details
   - schema_version
-- name: custom
-  entities:
-  - name: threat
-    prefix:
-    - threat
-    attributes:
-    - name: category
-      type: string
-      description: The category of a threat identified by a security system such as Web Security Gateway of an IPS and is associated with this network session.
-      sample_value: 'Trojan'
-    - name: id
-      type: string
-      description: The ID of a threat identified by a security system such as Web Security Gateway of an IPS and is associated with this network session.
-      sample_value: 'tr.076'
-    - name: name
-      type: string
-      description: The name of the threat or malware identified
-      sample_value: 'Win32.Small.ahif(90603579)'
-  - name: operation
-    prefix:
-    - op
-    attributes:
-    - name: name
-      type: string
-      description: The activity associated with the record. Possible specific values are determined by the relevant schema.
-      sample_value: 'Traffic'
-  - name: result
-    prefix: 
-    - result
-    attributes:
-    - name: reason_type
-      type: string
-      description: Reason for the result reported in ResultType.
-      sample_value: 'Traffic'
-    - name: type
-      type: string
-      description: The result reported for the activity. Empty value when not applicable.
-      sample_value: 'Success'
+  - type
+  - sub_type
+- name: threat
+  prefix:
+  - threat
+  attributes:
+  - category
+  - id
+  - name

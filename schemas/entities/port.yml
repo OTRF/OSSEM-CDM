@@ -2,14 +2,14 @@ name: port
 prefix:
 - port
 id: 1BF5FD61-BDC1-4E13-84B8-D973BAA3A7E8
-description: Event fields used to define metadata about ports in a network connection.
+description: Event fields used to define/normalize metadata about ports in a network connection.
 extends_entities:
   - source
   - source_nat
   - destination
   - destination_nat
 attributes:
-- name: port
+- name: number
   type: integer
   description: Port number used in a network connection. This could be used in the context of source, destination and even NAT when it is provided by an intermediary NAT device such as a firewall. 
   sample_value: '138'
