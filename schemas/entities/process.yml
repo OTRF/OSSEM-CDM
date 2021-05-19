@@ -47,7 +47,7 @@ attributes:
 - name: file_product
   type: string
   description: The Image's file product name
-  sample_value: "Microsoft\xAE Windows\xAE Operating System"
+  sample_value: "Microsoft Windows Operating System"
 - name: company
   type: string
   description: Company name metadata of the Image file
