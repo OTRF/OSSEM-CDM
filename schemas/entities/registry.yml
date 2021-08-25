@@ -22,7 +22,7 @@ attributes:
   sample_value: HKEY_LOCAL_MACHINE\SAM
 - name: key_path
   type: string
-  description: Next-level down from registry root-keys. A key is a folder in the registry that contain other sub-keys. This field contains the full path of a registry key. This is a combination of the root key, hive, key, sub-key, and value.
+  description: Next-level down from registry root-keys. This field contains the full path of a registry key. This is a combination of the root key, hive, key, sub-key, and value. A key is a folder in the registry that contain other sub-keys. 
   sample_value: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\WardogPersistence
 - name: key_name
   type: string
@@ -44,6 +44,14 @@ attributes:
     Registry key value data store the actual configuration data for the operating system and the programs that run on the system.
     As such, they are different from subtrees, keys, and subkeys, which are merely containers.
   sample_value: 'C:\Path\malware'
+- name: key_path_modified
+  type: string
+  description: Original registry key path before being modified.
+  sample_value: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\WardogPersistence
+- name: key_name_modified
+  type: string
+  description: Original registry key name before being modified.
+  sample_value: Run
 - name: value_name_modified
   type: string
   description: Original registry key vakue name before being modified.
