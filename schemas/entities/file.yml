@@ -103,6 +103,10 @@ attributes:
 - name: previous_name
   type: string
   description: The file's previous name
+  sample_value: cmd.exe
+- name: previous_path
+  type: string
+  description: The file's previous path
   sample_value: C:\\Windows\system32\cmd.exe
 - name: system_type
   type: string
