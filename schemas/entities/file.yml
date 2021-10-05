@@ -90,7 +90,6 @@ attributes:
 - name: previous_changed_time
   type: date
   description: When the file was previously changed
-  type: date
   sample_value: 2016-11-25 18:21:47
 - name: previous_creation_time
   type: date
