@@ -1,6 +1,6 @@
 # OSSEM Common Data Model
 
-The OSSEM commond data model (CDM) facilitates the normalization and consistency of diverse data sources by providing standardized and extensible data schemas.
+The OSSEM common data model (CDM) facilitates the normalization and consistency of diverse data sources by providing standardized and extensible data schemas.
 
 **This projects is designed to:**
 
