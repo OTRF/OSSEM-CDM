@@ -81,7 +81,7 @@ attributes:
   description: The amount of time in milliseconds it took to send the request to the server, if applicable.
   sample_value: 700
 - name: response_time
-  type: inte
+  type: integer
   description: The amount of time in milliseconds it took to receive a response in the server, if applicable.
   sample_value: 800
 - name: content_type
