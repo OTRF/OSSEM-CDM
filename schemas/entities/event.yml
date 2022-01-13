@@ -92,6 +92,10 @@ attributes:
   type: string
   description: The vendor of the product generating the event
   sample_value: 'Microsoft'
+- name: vendor_id
+  type: string
+  description: Global unique identifer used to identify the vendor of the product generating the event
+  sample_value: '64115818-57D3-4468-B767-D401066C28BE'
 - name: product
   type: string
   description: The product generating the event. Vendor and product might be the same for some data sources.
