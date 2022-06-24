@@ -1,11 +1,13 @@
 name: file
 prefix:
 - file
+- file_previous
 id: E94FB7C5-185A-459F-8C27-87600E32E598
 description: Event fields used to define/normalize metadata about files either locally or over the wire (Network Traffic). This entity and attributes can extend other entities such as source and destination.
 extends_entities:
 - source
 - destination
+- process
 attributes:
 - name: name
   type: string
@@ -83,30 +85,6 @@ attributes:
   type: date
   description: When the file was last modified. Also known as `mtime`
   sample_value: 2016-11-25 18:21:47
-- name: previous_accessed_time
-  type: date
-  description: When the file was previously accessed
-  sample_value: 2016-11-25 18:21:47
-- name: previous_changed_time
-  type: date
-  description: When the file was previously changed
-  sample_value: 2016-11-25 18:21:47
-- name: previous_creation_time
-  type: date
-  description: When the file was previously created
-  sample_value: 2016-11-25 18:21:47
-- name: previous_modified_time
-  type: date
-  description: When the file was previously modified
-  sample_value: 2016-11-25 18:21:47
-- name: previous_name
-  type: string
-  description: The file's previous name
-  sample_value: cmd.exe
-- name: previous_path
-  type: string
-  description: The file's previous path
-  sample_value: C:\\Windows\system32\cmd.exe
 - name: system_type
   type: string
   description: 'The file system type, ex:  fat32, ntfs, vmfs, ext3, ext4, xfs'

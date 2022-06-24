@@ -28,30 +28,6 @@ attributes:
   type: string
   description: The full path to the current directory for the process. The string can also specify a UNC path.
   sample_value: C:\Users\Panda\Test
-- name: file_name
-  type: string
-  description: Name of the Image file or executable file used to define the initial code and data mapped into the process' virtual address space. This does not contain the full patth of the Image file.
-  sample_value: conhost.exe
-- name: file_path
-  type: string
-  description: The complete path and name of the Image file or executable file used to define the initial code and data mapped into the process' virtual address space.
-  sample_value: C:\Windows\System32\conhost.exe
-- name: file_version
-  type: string
-  description: Version of the Image file
-  sample_value: 10.0.16299.15 (WinBuild.160101.0800)
-- name: file_description
-  type: string
-  description: Description of the Image file
-  sample_value: Console Window Host
-- name: file_product
-  type: string
-  description: The Image's file product name
-  sample_value: "Microsoft Windows Operating System"
-- name: company
-  type: string
-  description: Company name metadata of the Image file
-  sample_value: Microsoft Corporation
 - name: command_line
   type: string
   description: Command arguments that were were executed by the process in the endpoint.
