@@ -1,7 +1,7 @@
 name: registry
 prefix:
 - registry
-- registry_modified
+- registry_previous
 id: 46295005-AC42-41CA-A45E-4CB669E39030
 description: Event fields used to define metadata about Windows registry entries in a system.
   The registry is a hierarchical database that contains data that is critical for the operation of Windows and the applications and services that run on Windows.
@@ -29,6 +29,10 @@ attributes:
   type: string
   description: This field contains the key name without the full path. Take in consideration the name of the key value in the registry key path.
   sample_value: Run
+- name: key_handle_id
+  type: string
+  description: This field contains the hexadecimal value of the handle requested to the registry key.
+  sample_value: '0xa40'
 - name: value_name
   type: string
   description: Registry values are the lowest-level element in the registry.
