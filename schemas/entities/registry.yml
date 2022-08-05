@@ -1,6 +1,7 @@
 name: registry
 prefix:
 - registry
+- registry_previous
 id: 46295005-AC42-41CA-A45E-4CB669E39030
 description: Event fields used to define metadata about Windows registry entries in a system.
   The registry is a hierarchical database that contains data that is critical for the operation of Windows and the applications and services that run on Windows.
@@ -28,6 +29,10 @@ attributes:
   type: string
   description: This field contains the key name without the full path. Take in consideration the name of the key value in the registry key path.
   sample_value: Run
+- name: key_handle_id
+  type: string
+  description: This field contains the hexadecimal value of the handle requested to the registry key.
+  sample_value: '0xa40'
 - name: value_name
   type: string
   description: Registry values are the lowest-level element in the registry.
@@ -44,32 +49,16 @@ attributes:
     Registry key value data store the actual configuration data for the operating system and the programs that run on the system.
     As such, they are different from subtrees, keys, and subkeys, which are merely containers.
   sample_value: 'C:\Path\malware'
-- name: key_path_modified
-  type: string
-  description: Original registry key path before being modified.
-  sample_value: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\WardogPersistence
-- name: key_name_modified
-  type: string
-  description: Original registry key name before being modified.
-  sample_value: Run
-- name: value_name_modified
-  type: string
-  description: Original registry key vakue name before being modified.
-  sample_value: WardogPersistence
-- name: value_type_modified
-  type: string
-  description: Original registry key vakue type before being modified.
-  sample_value: REG_EXPAND_SZ
-- name: value_data_modified
-  type: string
-  description: Original registry key value data before being modified.
-  sample_value: C:\malware.exe
 - name: key_access_rights
   type: string
   description: The Windows security model enables you to control access to registry keys.
     The valid access rights for registry keys include the DELETE, READ_CONTROL, WRITE_DAC, and WRITE_OWNER standard access rights.
     Registry keys do not support the SYNCHRONIZE standard access right.
   sample_value: KEY_ALL_ACCESS (0xF003F)
+- name: event_type
+  type: string
+  description: Describes the activity around registry keys and values such as creation, deletion and modification.
+  sample_value: CreateKey
 references:
 - https://support.microsoft.com/en-us/help/256986/windows-registry-information-for-advanced-users
 - https://docs.microsoft.com/en-us/windows/win32/sysinfo/structure-of-the-registry
