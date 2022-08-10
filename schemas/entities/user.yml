@@ -80,5 +80,9 @@ attributes:
   type: string
   description: The User Azure AD ID of the identity associated with a cloud network session. It applies to source and destination entities.
   sample_value: '5e8b0f4d-2cd4-4e17-9467-b0f6a5c0c4d0'
+- name: access_list
+  type: UnicodeString
+  description: List of access rights which were requested or used by the user when interacting with objects such as registry keys and services. These access rights depend on the object type.
+  sample_value: '%%1538 %%1541 %%4416 %%4417 %%4418 %%4419 %%4420 %%4423 %%4424'
 references: []
 tags: []
