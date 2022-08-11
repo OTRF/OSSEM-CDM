@@ -52,10 +52,6 @@ attributes:
   type: integer
   description: A hexadecimal value of the paired logon session.
   sample_value: '0x0'
-- name: sid_list
-  type: string
-  description: the list of special group SIDs, which New Logon\Security ID is a member of.
-  sample_value: '{S-1-5-21-3457937927-2839227994-823803824-512}'
 - name: security_package
   type: string
   description: the name of Security Package used during an authentication event.

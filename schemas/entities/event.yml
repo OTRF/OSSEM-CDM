@@ -112,14 +112,6 @@ attributes:
   type: string
   description: If there are subsets of an event log type, this field carries the next level value. i.e For windows, it would be the Security channel.
   sample_value: Security
-- name: category_type
-  type: string
-  description: If the event contains a category, then this it. i.e For the Windows Security channel, this could be something such as Audit object access. For Zeek conn.log, this would be network-protocols. 
-  sample_value: Audit Object Access
-- name: sub_category_type
-  type: string
-  description: If the event contains a sub-category, then this it. i.e For the Windows Security channel, this could be something such as Audit Registry.
-  sample_value: Audit Registry
 - name: type_detailed
   type: string
   description: Additional description of type if applicable
