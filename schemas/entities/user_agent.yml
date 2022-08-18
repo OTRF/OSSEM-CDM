@@ -1,12 +1,12 @@
-name: user_agent
+name: UserAgent
 prefix:
-- user_agent
+- UserAgent
 id: 219C796B-99A5-4CE3-B381-6B74EDDCF5F9
 description: Event fields used to define/normalize metadata related to user agents in http requests.
 extends_entities:
-  - http
+- Http
 attributes:
-- name: original
+- name: Original
   type: string
   description: The User agent seen in the HTTP request.
   sample_value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36

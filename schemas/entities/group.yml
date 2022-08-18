@@ -1,37 +1,28 @@
-name: group
+name: Group
 prefix:
-- group
+- Group
 id: 1DB9799D-8463-4962-92D3-93F0D6AD65F1
 description: Event fields used to define/normalize metadata about a security group, or distribution group that is created changed or deleted.
 attributes:
-- name: name
+- name: Name
   type: string
   description: the name of a security group, or a distribution group that is created,changed, or deleted
   sample_value: AccountOperators
-- name: domain
+- name: Domain
   type: string
   description: domain or computer name of the group
   sample_value: CONTOSO
-- name: sid
+- name: Sid
   type: string
   description: SID of a group
   sample_value: S-1-5-21-3457937927-2839227994-823803824-6605
-- name: sam_name
+- name: SamName
   type: string
-  description: 'this is a name of the group used to support clients and servers from
-    previous versions of Windows (pre-Windows 2000 logon name). The value of sAMAccountName
-    attribute of new group object. For example: ServiceDesk. For local groups it is
-    simply a name of new group'
+  description: 'this is a name of the group used to support clients and servers from previous versions of Windows (pre-Windows 2000 logon name). The value of sAMAccountName attribute of new group object. For example: ServiceDesk. For local groups it is simply a name of new group'
   sample_value: AccountOperators
-- name: sid_history
+- name: SidHistory
   type: string
-  description: contains previous SIDs used for the object if the object was moved
-    from another domain. Whenever an object is moved from one domain to another, a
-    new SID is created and becomes the objectSID. The previous SID is added to the
-    sIDHistory property. This parameter contains the value of sIDHistory attribute
-    of a group object. This parameter might not be captured in the event, and in that
-    case appears as "-". For local groups it is not applicable and always has "-"
-    value.
+  description: contains previous SIDs used for the object if the object was moved from another domain. Whenever an object is moved from one domain to another, a new SID is created and becomes the objectSID. The previous SID is added to the sIDHistory property. This parameter contains the value of sIDHistory attribute of a group object. This parameter might not be captured in the event, and in that case appears as "-". For local groups it is not applicable and always has "-" value.
   sample_value: '-'
 references: []
 tags: []

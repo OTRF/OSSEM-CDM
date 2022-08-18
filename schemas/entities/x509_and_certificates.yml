@@ -1,24 +1,22 @@
-name: certificate
+name: Certificate
 prefix:
-- certificate
+- Certificate
 id: 0CBE0892-F642-4F26-A31D-636386749B05
 description: This document is a work in progress, but is a foundational. Specifically the main foundations of certificate information is already in here.
 extends_entities:
-  - destination
+- Destination
 attributes:
-- name: issuer
+- name: Issuer
   type: string
   description: Information about the CA that issued the certificate
   sample_value: CN=neu5ron.local,OU=Admin
-- name: subject
+- name: Subject
   type: string
   description: Information about the CA that issued the certificate
   sample_value: CN=natetoken,OU=Admin,DC=neu5ron,DC=local
-- name: serial_number
+- name: SerialNumber
   type: string
-  description: Serial number, this is chosen by the CA (certificate authority) which
-    issued the certificate. Therefore this can relatively be arbritary if the CA does
-    not follow a standard or is malicious.
+  description: Serial number, this is chosen by the CA (certificate authority) which issued the certificate. Therefore this can relatively be arbritary if the CA does not follow a standard or is malicious.
   sample_value: '5157550'
 references: []
 tags: []

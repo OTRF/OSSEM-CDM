@@ -1,57 +1,57 @@
-name: device
-prefix: 
-- dvc
+name: Device
+prefix:
+- Dvc
 id: 4DA0ECFA-E640-44E7-B374-E31DA9EB8BE4
 description: Events used to normalize events for the device or endpoint that generated the event (source or destination).
 extends_entities:
-  - source
-  - destination
+- Source
+- Destination
 attributes:
-- name: action
+- name: Action
   type: string
   description: If reported by an intermediary device such as a firewall, the action taken by device.
   sample_value: 'allow'
-- name: inbound_interface
+- name: InboundInterface
   type: string
   description: If reported by an intermediary device such as a firewall, the network interface used by it for the connection to the source device
   sample_value: 'eth0'
-- name: outbound_interface
+- name: OutboundInterface
   type: string
   description: If reported by an intermediary device such as a firewall, the network interface used by it for the connection to the destination device.
   sample_value: 'Ethernet 4'
-- name: hostname
+- name: Hostname
   type: string
   description: The host name from which the event/log came from. There may be multiple host names in an event (i.e. syslog could have forwarder host name), this field is to be the most true log host name (i.e. NOT the forwarders name).
   sample_value: bobs.uncle-pc
-- name: domain
+- name: Domain
   type: string
   description: Name of the domain the device is part of.
   sample_value: hunt.wardog.com
-- name: fqdn
+- name: Fqdn
   type: string
   description: The fully qualified domain name of the host
   sample_value: WKHR001.hunt.wardog.com
-- name: interface_guid
+- name: InterfaceGuid
   type: string
   description: GUID of the network interface which was used for authentication request
   sample_value: '{2BB33827-6BB6-48DB-8DE6-DB9E0B9F9C9B}'
-- name: interface_name
+- name: InterfaceName
   type: string
   description: the name (description) of the network interface that was used for authentication request. You can get the list of all available network adapters using "ipconfig /all" command
   sample_value: Microsoft Hyper-V Network Adapter
-- name: os
+- name: Os
   type: string
   description: The OS of the device
   sample_value: 'iOS'
-- name: model_name
+- name: ModelName
   type: string
   description: The model name of the device
   sample_value: 'Samsung Galaxy Note'
-- name: model_number
+- name: ModelNumber
   type: string
   description: The model number of the device
   sample_value: '10'
-- name: type
+- name: Type
   type: string
   description: The type of the device
   sample_value: 'mobile'

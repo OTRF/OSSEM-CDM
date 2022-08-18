@@ -1,6 +1,6 @@
-name: source_nat
+name: SourceNat
 prefix:
-- src_nat
+- SrcNat
 id: 034C3864-6220-475D-98DD-DDE36A88E7CA
 description: Event fields used to define the destination NAT (network address translation) in a network connection event.
 attributes: []

@@ -1,25 +1,24 @@
-name: pipe
+name: Pipe
 prefix:
-- pipe
+- Pipe
 id: 7192E569-54E3-4979-89F8-12342AC4B38E
 description: Event fields used to define/normalize metadata about pipes being created or connected for inter-process communication locally or remotely.
 attributes:
-- name: name
+- name: Name
   type: string
   description: name of pipe created or connected
   sample_value: \srvsvc
-- name: instances
+- name: Instances
   type: integer
   description: Number of instances of the named pipe
   sample_value: ''
-- name: max_instances
+- name: MaxInstances
   type: integer
   description: The maximum number of instances creatable for this pipe
   sample_value: ''
-- name: flags
+- name: Flags
   type: string
-  description: The flags indicating whether this pipe connection is a server or client
-    end, and if the pipe for sending messages or bytes
+  description: The flags indicating whether this pipe connection is a server or client end, and if the pipe for sending messages or bytes
   sample_value: ''
 references: []
 tags: []

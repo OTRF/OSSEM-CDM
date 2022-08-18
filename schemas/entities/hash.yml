@@ -1,30 +1,30 @@
-name: hash
+name: Hash
 prefix:
-- hash
+- Hash
 id: 42C1A34E-D474-468D-8EFB-09454CA8BFC2
 description: Event fields used to define/normalize data related to hashes of an image/binary/file.
 extends_entities:
-- file
-- certificate
-- process
+- File
+- Certificate
+- Process
 attributes:
-- name: md5
+- name: Md5
   type: string
   description: MD5 hash of the image/binary/file
   sample_value: 6A255BEBF3DBCD13585538ED47DBAFD7
-- name: sha1
+- name: Sha1
   type: string
   description: SHA1 hash of the image/binary/file
   sample_value: B0BF5AC2E81BBF597FAD5F349FEEB32CAC449FA2
-- name: sha256
+- name: Sha256
   type: string
   description: SHA256 hash of the image/binary/file
   sample_value: 4668BB2223FFB983A5F1273B9E3D9FA2C5CE4A0F1FB18CA5C1B285762020073C
-- name: sha512
+- name: Sha512
   type: string
   description: SHA512 hash of the image/binary/file
   sample_value: 1AD1D79F85D8F6A50EA282F63898D652661DAA0C1FD361C22647CABC98A70E8CBCE83200D579D10DD0A3D46BE9496DCDFDDF28B0C5E9709343B032A8796FBECB
-- name: imphash
+- name: Imphash
   type: string
   description: IMPHASH hash of the image/binary/file
   sample_value: 2505BD03D7BD285E50CE89CEC02B333B

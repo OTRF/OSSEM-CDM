@@ -1,34 +1,34 @@
-name: alert
-prefix: 
-- alert
+name: Alert
+prefix:
+- Alert
 id: C433BF57-A975-4950-9E67-4427199D6C5D
 description: Alert fields that describe/normalize an indicator from a tool of a possible issue.
 attributes:
-- name: id
+- name: Id
   type: integer
   description: Alert identifier defined by the tool or system that triggered the alert. Alert ids might repeat across different data sources
   sample_value: '1234'
-- name: signature
+- name: Signature
   type: string
   description: The name or title of an alert
   sample_value: EvilActor:CnCv2
-- name: message
+- name: Message
   type: string
   description: The message provided by the alert
   sample_value: A file exhibiting behavior of the evil/actor command and control framework 2 was detected.
-- name: description
+- name: Description
   type: string
   description: The expanded description of the alert event
   sample_value: 'This is event x'
-- name: severity
+- name: Severity
   type: string
   description: The severity of an alert
   sample_value: Priority 5
-- name: category
+- name: Category
   type: string
   description: The category of an alert
   sample_value: Malware
-- name: version
+- name: Version
   type: string
   description: A signature or alert version
   sample_value: '1.2'

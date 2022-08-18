@@ -1,25 +1,25 @@
-name: ip
+name: Ip
 prefix:
-- ip
+- Ip
 id: 3D673B51-773A-433E-AE6B-EA4CD6B5F775
 description: Event fields used to define/normalize metadata about IP addresses in a network. It follows the standard from the Destination, Source and device categories.
 extends_entities:
-  - destination
-  - destination_nat
-  - source
-  - source_nat
-  - any
-  - device
+- Destination
+- DestinationNat
+- Source
+- SourceNat
+- Any
+- Device
 attributes:
-- name: addr
+- name: Addr
   type: ip
   description: IP address assigned to the device generating the event and/or the IP address in the network packet. This could be used in the context of source, destination, device and even NAT when it is provided by an intermediary NAT device such as a firewall.
   sample_value: 192.168.1.2
-- name: is_ipv6
+- name: IsIpv6
   type: boolean
   description: If IP address is IP version 6
   sample_value: 'false'
-- name: dhcp_assigned_ip_addr
+- name: DhcpAssignedIpAddr
   type: ip
   description: IP address assigned by the DHCP server.
   sample_value: 192.168.1.2
