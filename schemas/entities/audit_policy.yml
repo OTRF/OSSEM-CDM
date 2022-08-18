@@ -1,0 +1,68 @@
+name: audit policy
+prefix:
+- audit_policy
+- audit_policy_previous
+id: 8630A479-E521-43BA-81B9-526049143F71
+description: Event fields used to define/normalize metadata about security audit policy.
+attributes:
+- name: id
+  type: HexInt64
+  description: unique Audit Policy hexadecimal identifier.
+  sample_value: '0x703e'
+- name: sd
+  type: UnicodeString
+  description: Security Descriptor Definition Language (SDDL) value for the configuration
+  sample_value: 'D:(A;;DCSWRPDTRC;;;BA)(D;;DCSWRPDTRC;;;SY)S:NO\_ACCESS\_CONTROL'
+- name: category
+  type: string
+  description: Audit policy category description. i.e For the Windows Security channel, this could be something such as Detailed Tracking. For Zeek conn.log, this would be network-protocols. 
+  sample_value: Detailed tracking
+- name: category_id
+  type: string
+  description: Audit policy category id. i.e For the Windows Security channel, this could be something such as %%8276 for Detailed Tracking.
+  sample_value: '%%8276'
+- name: category_guid
+  type: string
+  description: Unique GUID for audit policy category. i.e For the Windows Security channel, this could be something such as {6997984C-797A-11D9-BED3-505054503030} for Detailed Tracking category.
+  sample_value: {6997984C-797A-11D9-BED3-505054503030}
+- name: sub_category
+  type: string
+  description: Audit policy sub-category description. i.e For the Windows Security channel, this could be something such as Process Creation.
+  sample_value: Process Creation
+- name: sub_category_id
+  type: string
+  description: Audit policy sub-category id. i.e For the Windows Security channel, this could be something such as %%13312 for Process Creation.
+  sample_value: '%%13312'
+- name: sub_category_guid
+  type: string
+  description: Unique GUID for audit policy sub-category. i.e For the Windows Security channel, this could be something such as {0CCE922B-69AE-11D9-BED3-505054503030} for Process Creation subcategory.
+  sample_value: {0CCE922B-69AE-11D9-BED3-505054503030}
+- name: changes
+  type: UnicodeString
+  description: Changes which were made for configuration
+  sample_value: '%%8448, %%8450'
+- name: users_count
+  type: UInt32
+  description: Number of users for which the configuration was defined
+  sample_value: '2'
+- name: crash_on_audit_fail_value
+  type: UInt32
+  description: Contains new value of CrashOnAuditFail flag for configuration.
+  sample_value: '1'
+- name: sid_list
+  type: string
+  description: The list of special group SIDs, which New Logon\Security ID is a member of.
+  sample_value: '{S-1-5-21-3457937927-2839227994-823803824-512}'
+- name: source
+  type: UnicodeString
+  description: The name of registered security event source. You can see all registered security event source names in this registry path:“HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security”
+  sample_value: 'FSRM Audit'
+- name: source_id
+  type: HexInt64
+  description: The unique hexadecimal identifier of registered security event source
+  sample_value: 'FSRM Audit'
+references:
+- https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/security-policy-settings
+- https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/administer-security-policy-
+- https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4908
+tags: []
