@@ -29,8 +29,8 @@ attributes:
   sample_value: Lima
 - name: country_code
   type: string
-  description: 51
-  sample_value: Country code
+  description: Country code
+  sample_value: 51
 - name: city
   type: string
   description: The city associated to the IP address in the network session.
