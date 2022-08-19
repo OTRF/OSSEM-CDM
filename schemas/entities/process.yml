@@ -1,66 +1,55 @@
-name: process
-prefix: 
-- process
-- process_parent
+name: Process
+prefix:
+- Process
+- ProcessParent
 id: C9573023-9A39-4C94-88BD-B911E3C800A6
-description: Event fields used to define metadata about processes in an system.
-  Isolated memory address space that is used to run a program.
-  Inside a processes' address space the system can load code modules, but must have at latest one thread running to do so.
+description: Event fields used to define metadata about processes in an system. Isolated memory address space that is used to run a program. Inside a processes' address space the system can load code modules, but must have at latest one thread running to do so.
 extends_entities:
-- source
-- target
+- Source
+- Target
 attributes:
-- name: id
+- name: Id
   type: integer
   description: Process unique identifier used by the current operating system to identify a process.
   sample_value: 4756
-- name: guid
+- name: Guid
   type: string
-  description: Process global unique identifer used to identify a process across other operating systems.
-    This can be created by group hashing values such as Process Name, Process Id, Process Start Time, Process Path and even Computer Name.
-    Datasets such as Sysmon call this the ProcessGuid. This is similar to the output from the UUIDGEN command.
+  description: Process global unique identifer used to identify a process across other operating systems. This can be created by group hashing values such as Process Name, Process Id, Process Start Time, Process Path and even Computer Name. Datasets such as Sysmon call this the ProcessGuid. This is similar to the output from the UUIDGEN command.
   sample_value: A98268C1-9C2E-5ACD-0000-0010396CAB00
-- name: name
+- name: Name
   type: string
   description: Name of the process derived from the Image file or executable file used to define the initial code and data mapped into the process' virtual address space. This does not contain the full patth of the Image file.
   sample_value: conhost.exe
-- name: current_directory
+- name: CurrentDirectory
   type: string
   description: The full path to the current directory for the process. The string can also specify a UNC path.
   sample_value: C:\Users\Panda\Test
-- name: command_line
+- name: CommandLine
   type: string
   description: Command arguments that were were executed by the process in the endpoint.
   sample_value: C:\WINDOWS\system32\conhost.exe 0xffffffff -ForceV1
-- name: integrity_level
+- name: IntegrityLevel
   type: string
   description: Integrity label assigned to a process
   sample_value: Medium
-- name: injected_address
+- name: InjectedAddress
   type: string
   description: The memory address where the subprocess is injected
   sample_value: '0xFFFFBC6422DD9C20'
-- name: granted_access
+- name: GrantedAccess
   type: string
   description: granted access code requested/used to open a target process
   sample_value: '0x1000'
-- name: call_trace
+- name: CallTrace
   type: string
   description: Stack trace of where open process is called
-  sample_value: C:\WINDOWS\SYSTEM32\ntdll.dll+a0344 | C:\WINDOWS\System32\KERNELBASE.dll+64794|
-    c:\windows\system32\lsm.dll+10e93| c:\windows\system32\lsm.dll+f9ea| C:\WINDOWS\System32\RPCRT4.dll+76d23|
-    C:\WINDOWS\System32\RPCRT4.dll+d9390| C:\WINDOWS\System32\RPCRT4.dll+a81c| C:\WINDOWS\System32\RPCRT4.dll+273b4|
-    C:\WINDOWS\System32\RPCRT4.dll+2654e| C:\WINDOWS\System32\RPCRT4.dll+26cfb| C:\WINDOWS\System32\RPCRT4.dll+3083f|
-    C:\WINDOWS\System32\RPCRT4.dll+313a6| C:\WINDOWS\System32\RPCRT4.dll+2d12e| C:\WINDOWS\System32\RPCRT4.dll+2e853|
-    C:\WINDOWS\System32\RPCRT4.dll+5cc68| C:\WINDOWS\SYSTEM32\ntdll.dll+365ce| C:\WINDOWS\SYSTEM32\ntdll.dll+34b46|
-    C:\WINDOWS\System32\KERNEL32.DLL+11fe4| C:\WINDOWS\SYSTEM32\ntdll.dll+6efc1
-- name: is_hidden
+  sample_value: C:\WINDOWS\SYSTEM32\ntdll.dll+a0344 | C:\WINDOWS\System32\KERNELBASE.dll+64794| c:\windows\system32\lsm.dll+10e93| c:\windows\system32\lsm.dll+f9ea| C:\WINDOWS\System32\RPCRT4.dll+76d23| C:\WINDOWS\System32\RPCRT4.dll+d9390| C:\WINDOWS\System32\RPCRT4.dll+a81c| C:\WINDOWS\System32\RPCRT4.dll+273b4| C:\WINDOWS\System32\RPCRT4.dll+2654e| C:\WINDOWS\System32\RPCRT4.dll+26cfb| C:\WINDOWS\System32\RPCRT4.dll+3083f| C:\WINDOWS\System32\RPCRT4.dll+313a6| C:\WINDOWS\System32\RPCRT4.dll+2d12e| C:\WINDOWS\System32\RPCRT4.dll+2e853| C:\WINDOWS\System32\RPCRT4.dll+5cc68| C:\WINDOWS\SYSTEM32\ntdll.dll+365ce| C:\WINDOWS\SYSTEM32\ntdll.dll+34b46| C:\WINDOWS\System32\KERNEL32.DLL+11fe4| C:\WINDOWS\SYSTEM32\ntdll.dll+6efc1
+- name: IsHidden
   type: boolean
   description: Describes if the process is hidden.
   sample_value: "True"
 references:
-  - https://www.hackers-arise.com/post/2017/07/04/reverse-engineering-malware-part-4-windows-internals
-  - https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.processstartinfo.filename?view=netcore-3.1
-  - https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa
+- https://www.hackers-arise.com/post/2017/07/04/reverse-engineering-malware-part-4-windows-internals
+- https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.processstartinfo.filename?view=netcore-3.1
+- https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa
 tags: []
-  

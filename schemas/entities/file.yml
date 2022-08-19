@@ -1,95 +1,95 @@
-name: file
+name: File
 prefix:
-- file
-- file_previous
+- File
+- FilePrevious
 id: E94FB7C5-185A-459F-8C27-87600E32E598
 description: Event fields used to define/normalize metadata about files either locally or over the wire (Network Traffic). This entity and attributes can extend other entities such as source and destination.
 extends_entities:
-- source
-- destination
-- process
+- Source
+- Destination
+- Process
 attributes:
-- name: name
+- name: Name
   type: string
   description: name of the file without its full path. This could be a local file or one transmitted over the network.
   sample_value: a.exe
-- name: path
+- name: Path
   type: string
   description: full path of a file including the name of the file. This could be a local file or one transmitted over the network.
   sample_value: C:\users\wardog\z.exe
-- name: extension
+- name: Extension
   type: string
   description: The extension name or type of the file.
   sample_value: exe
-- name: company
+- name: Company
   type: string
   description: Company name a file belongs to
   sample_value: Microsoft Corporation
-- name: product
+- name: Product
   type: string
   description: The file's product name
   sample_value: Microsoft® Windows® Operating System
-- name: description
+- name: Description
   type: string
   description: Description of a file
   sample_value: Console Window Host
-- name: mime_type
+- name: MimeType
   type: string
   description: MIME type name specified for the file
   sample_value: application/msword
-- name: size
+- name: Size
   type: integer
   description: Size of the file, in bytes.
   sample_value: '45'
-- name: system_block_size
+- name: SystemBlockSize
   type: integer
   description: Block size of filesystem
   sample_value: ''
-- name: directory
+- name: Directory
   type: string
   description: Directory of file(s). It does not include the file name
   sample_value: C:\users\wardog\
-- name: inode
+- name: Inode
   type: integer
   description: Filesystem inode number
   sample_value: ''
-- name: hard_links
+- name: HardLinks
   type: integer
   description: Number of hard links
   sample_value: '3'
-- name: symlink
+- name: Symlink
   type: integer
   description: 1 if the path is a symlink, otherwise 0
   sample_value: '0'
-- name: symlink_name
+- name: SymlinkName
   type: string
   description: path of the symlink
   sample_value: C:\Docs\My.exe
-- name: link_name
+- name: LinkName
   type: string
   description: path of the hard link
   sample_value: C:\Docs\My.exe
-- name: accessed_time
+- name: AccessedTime
   type: date
   description: When the file was last accessed . Also known as `atime`
   sample_value: 2016-11-25 18:21:47
-- name: creation_time
+- name: CreationTime
   type: date
   description: When the file was created. Also known as `crtime`
   sample_value: 2016-11-25 18:21:47
-- name: changed_time
+- name: ChangedTime
   type: date
   description: When the file was last changed. Also known as `ctime`
   sample_value: 2016-11-25 18:21:47
-- name: modified_time
+- name: ModifiedTime
   type: date
   description: When the file was last modified. Also known as `mtime`
   sample_value: 2016-11-25 18:21:47
-- name: system_type
+- name: SystemType
   type: string
   description: 'The file system type, ex:  fat32, ntfs, vmfs, ext3, ext4, xfs'
   sample_value: ntfs
-- name: version
+- name: Version
   type: string
   description: file version. i.e. image loaded version
   sample_value: 10.0.16299.15 (WinBuild.160101.0800)

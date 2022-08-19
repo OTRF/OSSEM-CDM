@@ -1,61 +1,47 @@
-name: registry
+name: Registry
 prefix:
-- registry
-- registry_previous
+- Registry
+- RegistryPrevious
 id: 46295005-AC42-41CA-A45E-4CB669E39030
-description: Event fields used to define metadata about Windows registry entries in a system.
-  The registry is a hierarchical database that contains data that is critical for the operation of Windows and the applications and services that run on Windows.
-  The data is structured in a tree format. Each node in the tree is called a key.
-  Each key can contain both subkeys and data entries called values.
-  Sometimes, the presence of a key is all the data that an application requires; other times, an application opens a key and uses the values associated with the key.
-  A key can have any number of values, and the values can be in any form.
+description: Event fields used to define metadata about Windows registry entries in a system. The registry is a hierarchical database that contains data that is critical for the operation of Windows and the applications and services that run on Windows. The data is structured in a tree format. Each node in the tree is called a key. Each key can contain both subkeys and data entries called values. Sometimes, the presence of a key is all the data that an application requires; other times, an application opens a key and uses the values associated with the key. A key can have any number of values, and the values can be in any form.
 attributes:
-- name: root_key
+- name: RootKey
   type: string
-  description: Root-Keys are the root, or primary divisions, of the registry.
-    They do not contain configuration data; they contain the keys, subkeys, and values in which the data is stored.
-    There are six root keys (HKCU, HKU, HKCR, HKLM, HKCC and HKPD) that store information related to currently looged on users, local accounts, performance, and even the current hardware profile.
-    Root-key names represent Windows handles (H) to Keys (K).
+  description: Root-Keys are the root, or primary divisions, of the registry. They do not contain configuration data; they contain the keys, subkeys, and values in which the data is stored. There are six root keys (HKCU, HKU, HKCR, HKLM, HKCC and HKPD) that store information related to currently looged on users, local accounts, performance, and even the current hardware profile. Root-key names represent Windows handles (H) to Keys (K).
   sample_value: HKLM or HKEY_LOCAL_MAHINE
-- name: hive_path
+- name: HivePath
   type: string
   description: A hive is a logical group of keys, subkeys, and values in the registry that has a set of supporting files loaded into memory when the operating system is started or a user logs in.
   sample_value: HKEY_LOCAL_MACHINE\SAM
-- name: key_path
+- name: KeyPath
   type: string
-  description: Next-level down from registry root-keys. This field contains the full path of a registry key. This is a combination of the root key, hive, key, sub-key, and value. A key is a folder in the registry that contain other sub-keys. 
+  description: Next-level down from registry root-keys. This field contains the full path of a registry key. This is a combination of the root key, hive, key, sub-key, and value. A key is a folder in the registry that contain other sub-keys.
   sample_value: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\WardogPersistence
-- name: key_name
+- name: KeyName
   type: string
   description: This field contains the key name without the full path. Take in consideration the name of the key value in the registry key path.
   sample_value: Run
-- name: key_handle_id
+- name: KeyHandleId
   type: string
   description: This field contains the hexadecimal value of the handle requested to the registry key.
   sample_value: '0xa40'
-- name: value_name
+- name: ValueName
   type: string
-  description: Registry values are the lowest-level element in the registry.
-    They appear in the right pane of the registry editor window. Each entry consists of the value name, its Data Types in the Registry (which defines the length and format of data that the entry can store), and a field known as the data of the registry value.
-    These are also known as registry entries. This field contains the key value name without the full registry key path.
+  description: Registry values are the lowest-level element in the registry. They appear in the right pane of the registry editor window. Each entry consists of the value name, its Data Types in the Registry (which defines the length and format of data that the entry can store), and a field known as the data of the registry value. These are also known as registry entries. This field contains the key value name without the full registry key path.
   sample_value: WardogPersistence
-- name: value_type
+- name: ValueType
   type: string
   description: values store different kinds of data such as REG_NONE (No value type), REG_SZ (Fixed-length Unicode string), REG_EXPAND_SZ (Variable-length Unicode string that can have embedded environment variables), etc.
   sample_value: REG_EXPAND_SZ
-- name: value_data
+- name: ValueData
   type: string
-  description: Each registry key value consists of a value name and its associated data.
-    Registry key value data store the actual configuration data for the operating system and the programs that run on the system.
-    As such, they are different from subtrees, keys, and subkeys, which are merely containers.
+  description: Each registry key value consists of a value name and its associated data. Registry key value data store the actual configuration data for the operating system and the programs that run on the system. As such, they are different from subtrees, keys, and subkeys, which are merely containers.
   sample_value: 'C:\Path\malware'
-- name: key_access_rights
+- name: KeyAccessRights
   type: string
-  description: The Windows security model enables you to control access to registry keys.
-    The valid access rights for registry keys include the DELETE, READ_CONTROL, WRITE_DAC, and WRITE_OWNER standard access rights.
-    Registry keys do not support the SYNCHRONIZE standard access right.
+  description: The Windows security model enables you to control access to registry keys. The valid access rights for registry keys include the DELETE, READ_CONTROL, WRITE_DAC, and WRITE_OWNER standard access rights. Registry keys do not support the SYNCHRONIZE standard access right.
   sample_value: KEY_ALL_ACCESS (0xF003F)
-- name: event_type
+- name: EventType
   type: string
   description: Describes the activity around registry keys and values such as creation, deletion and modification.
   sample_value: CreateKey

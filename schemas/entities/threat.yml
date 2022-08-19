@@ -1,18 +1,18 @@
-name: threat
+name: Threat
 prefix:
-- threat
+- Threat
 id: D43449A2-E178-4B04-BAF4-A06B263F93BA
 description: Event fields used to define/normalize metadata about threats in an network.
 attributes:
-- name: name
+- name: Name
   type: string
   description: The name of the threat or malware identified
   sample_value: EICAR Test File
-- name: id
+- name: Id
   type: string
   description: The ID of a threat identified by a security system such as Web Security Gateway of an IPS and is associated with this network session.
   sample_value: Tr.124
-- name: category
+- name: Category
   type: string
   description: Trojan The category of a threat identified by a security system such as Web Security Gateway of an IPS and is associated with this network session.
   sample_value: Trojan

@@ -1,101 +1,94 @@
-name: network
+name: Network
 prefix:
-- network 
+- Network
 id: D495B0FC-EECA-48D9-8B3C-6BA971CFAB1E
-description: Event fields used to define metadata about network information seen in
-  a typical OSI layer. This includes data both from an endpoint as well as a network
-  monitoring device/application (NSM, Firewall, IPS, IDS, etc...). This differentiates
-  from data that is specific to Source and Destination specific information such as
-  Source or Destination bytes, packets, IP address, mac address, TCP flags.
+description: Event fields used to define metadata about network information seen in a typical OSI layer. This includes data both from an endpoint as well as a network monitoring device/application (NSM, Firewall, IPS, IDS, etc...). This differentiates from data that is specific to Source and Destination specific information such as Source or Destination bytes, packets, IP address, mac address, TCP flags.
 attributes:
-- name: fingerprint_network_community_id
+- name: FingerprintNetworkCommunityId
   type: string
-  description: Network community ID as outlined by the standard from https://github.com/corelight/community-id-spec.
-    Standardized hashing of network tuple. The combination, most commonly, of Source
-    IP, Source Port, Destination IP, Destination Port, and IP Protocol allows pivoting
-    between multiple log types
+  description: Network community ID as outlined by the standard from https://github.com/corelight/community-id-spec. Standardized hashing of network tuple. The combination, most commonly, of Source IP, Source Port, Destination IP, Destination Port, and IP Protocol allows pivoting between multiple log types
   sample_value: 1:EeVyZ07VGj1n0rld+xCLFdM+u8M=
-- name: application_name
+- name: ApplicationName
   type: string
   description: Layer 7 (application) name specific to service/name/software as provided by a device or user
   sample_value: google-drive
-- name: application_protocol
+- name: ApplicationProtocol
   type: string
   description: 'Layer 7 (application) in the OSI model. Ex: HTTP,SMB,FTP,SSH, etc.'
   sample_value: HTTP
-- name: bytes
+- name: Bytes
   type: integer
   description: Total bytes for the session. If this field does not exist in the log source, then its possible in your ETL pipeline to combine the source and destination bytes.
   sample_value: '102034'
-- name: connection_history
+- name: ConnectionHistory
   type: string
   description: TCP Flags and other potential IP header info
   sample_value: ''
-- name: connection_history_detailed
+- name: ConnectionHistoryDetailed
   type: string
   description: Detailed description of the information in connection_history
   sample_value: ''
-- name: connection_state
+- name: ConnectionState
   type: string
   description: The end state of the session/connection as defined in short abbreviation
   sample_value: ''
-- name: connection_state_detailed
+- name: ConnectionStateDetailed
   type: string
   description: Detailed description of the information in network_connection_state
   sample_value: ''
-- name: direction
+- name: Direction
   type: string
   description: User/Device defined name of the direction of the connection or session (Inbound or Outbound).
   sample_value: outbound
-- name: initiated
+- name: Initiated
   type: boolean
   description: 'Whether the session was initiated or received. Most commonly used in relation to an endpoint/device. False = the endpoint did not initiate the session (ie: was scanned or RDP connection made to it)'
   sample_value: 'TRUE'
-- name: inner_vlan_id
+- name: InnerVlanId
   type: integer
   description: Normally the VLAN can not be determined as source/destination and VLANs are stacked/wrapped. This is the VLAN "inside"
   sample_value: '150'
-- name: ip_bytes
+- name: IpBytes
   type: long
   description: Total IP bytes, according to ip headers, for the session. If this field does not exist in the log source, then its possible in your ETL pipeline to combine the source and destination bytes
   sample_value: '14564'
-- name: missed_bytes
+- name: MissedBytes
   type: long
   description: bytes that a network sensor or other system/application may have missed
   sample_value: '5'
-- name: outer_vlan_id
+- name: OuterVlanId
   type: integer
   description: Normally the VLAN can not be determined as source/destination and VLANs are stacked/wrapped. This is the VLAN on the "outside"
   sample_value: '160'
-- name: packets
+- name: Packets
   type: long
   description: Total packets for the session. If this field does not exist in the log source, then its possible in your ETL pipeline to combine the source and destination packets
   sample_value: '143'
-- name: protocol
+- name: Protocol
   type: string
   description: 'Transport layer in the OSI model. Also known as, IP Protocol. Ex: TCP,UDP,ICMP,ICMP-v6, etc. Convert to lowercase'
   sample_value: tcp
-- name: session_id
+- name: SessionId
   type: string
   description: The session identifier as reported by the network sensor device. Typically, not available for connections.
   sample_value: 'S198_13_1_27_12321_D205_13_1_27_443_0012'
-- name: duration
+- name: Duration
   type: integer
   description: The amount of time, in millisecond, for the completion of the network session or connection.
   sample_value: 1500
-- name: icmp_code
+- name: IcmpCode
   type: integer
   description: For an ICMP message, ICMP message type numeric value (RFC 2780 or RFC 4443).
   sample_value: 34
-- name: icmp_type
+- name: IcmpType
   type: string
   description: For an ICMP message, ICMP message type text representation (RFC 2780 or RFC 4443)
   sample_value: 'Destination Unreachable'
-- name: rule_name
+- name: RuleName
   type: string
   description: The name or ID of the rule by which DeviceAction was decided upon
   sample_value: AnyAnyDrop
-- name: rule_number
+- name: RuleNumber
   type: integer
   description: Matched rule number
   sample_value: 23

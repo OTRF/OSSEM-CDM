@@ -1,154 +1,158 @@
-name: event
+name: Event
 prefix:
-- event
+- Event
 id: 6483A215-4827-4F06-BC2C-EC9FCF41CA96
-description: Event attributes used to define/normalize specific metadata of the event itself. This also includes information about the host where the event was originally generated. In scenarios where an event is forwarded (Windows Event Forwarding, Syslog, etc), the ETL entity must be used. 
+description: Event attributes used to define/normalize specific metadata of the event itself. This also includes information about the host where the event was originally generated. In scenarios where an event is forwarded (Windows Event Forwarding, Syslog, etc), the ETL entity must be used.
 attributes:
-- name: timestamp
+- name: Timestamp
   type: datetime
-  description: 'The most accurate timestamp of the log. Commonly this will be the
-    original reporting timestamp from the log. However, if you believe the log timestamp
-    has been altered or skewed (ie: either due to timezone issues or NTP skew)then
-    replace this field with the most likely timestamp. Always keep the original log
-    timestamp in the field creation_timestamp'
+  description: 'The most accurate timestamp of the log. Commonly this will be the original reporting timestamp from the log. However, if you believe the log timestamp has been altered or skewed (ie: either due to timezone issues or NTP skew)then replace this field with the most likely timestamp. Always keep the original log timestamp in the field creation_timestamp'
   sample_value: '2017-01-21 09:12:34'
-- name: duration
+- name: Duration
   type: float
   description: The length/duration of the event in seconds (e.g., 1 min is 60.0)
   sample_value: '60'
-- name: error
+- name: Error
   type: string
   description: Information about an error
   sample_value: 'an error occurred'
-- name: error_code
+- name: ErrorCode
   type: integer
   description: Integer that defines a particular error
   sample_value: '4564'
-- name: id
+- name: Id
   type: integer
   description: event identifier for specific event logs. Event ids might repeat across different data sources. This is most common in Windows using EventID
   sample_value: 4688
-- name: start_time
+- name: StartTime
   type: datetime
   description: The time in which the event stated
   sample_value: '2017-01-21 09:12:34'
-- name: end_time
+- name: EndTime
   type: datetime
   description: The time in which the event ended
   sample_value: '2017-04-12 12:00:00'
-- name: creation_time
+- name: CreationTime
   type: datetime
   description: original time when event/log was created as reported from the log source itself
   sample_value: '2017-01-21 09:12:34'
-- name: time_ingested
+- name: TimeIngested
   type: datetime
   description: The time the event was ingested to SIEM or data pipeline.
   sample_value: 2157-01-21 09:12:34
-- name: schema_version
+- name: SchemaVersion
   type: string
   description: Azure Sentinel Schema Version
   sample_value: '0.1'
-- name: category_type
+- name: CategoryType
   type: string
   description: A description of the event, which can help with categorization. If the vendor defines a category/grouping for its log. i.e. Zeek has a few category types for its many logs (network-protocols, network-observations, etc...). Example. sysmon event id 12 is EventType field is this.
   sample_value: network-protocols
-- name: original_message
+- name: OriginalMessage
   type: string
   description: The (original) log message from the source before any ETL manipulations/modifications
   sample_value: 'a long message'
-- name: original_time
+- name: OriginalTime
   type: datetime
   description: original time when event/log was created as reported from the log source itself.
   sample_value: 4/11/2018 5:46:18
-- name: recorded_time
+- name: RecordedTime
   type: datetime
   description: The time the log was recorded on disk or data plane or if there is another timestamp with the log (common scenario if there is a a manager of many devices or the log itself tracks log time and log written/recorded time) (e.g., 1 min is 60.0).
   sample_value: 4/11/2018 5:46:18
-- name: severity
+- name: Severity
   type: string
   description: The severity of the event as defined manually or usually via the original log, commonly this would be syslog severity. The number codes should be converted to their corresponding string value.
   sample_value: high
-- name: status
+- name: Status
   type: string
   description: Defines the status of a particular event
   sample_value: User logon with expired account
-- name: status_code
+- name: StatusCode
   type: integer
   description: Integer that defines a particular status
   sample_value: '3221225875'
-- name: sub_status
+- name: SubStatus
   type: string
   description: Additional status information
   sample_value: Account expired 300 days ago
-- name: sub_status_code
+- name: SubStatusCode
   type: integer
   description: Integer that defines a particular event_sub_status
   sample_value: '0'
-- name: timezone
+- name: Timezone
   type: string
   description: Timezone of the event if it can be determined. Format such as UTC, UTC+1, UTC-5, etc..
   sample_value: UTC
-- name: vendor
+- name: Vendor
   type: string
   description: The vendor of the product generating the event
   sample_value: 'Microsoft'
-- name: vendor_id
+- name: VendorId
   type: string
   description: Global unique identifer used to identify the vendor of the product generating the event
   sample_value: '64115818-57D3-4468-B767-D401066C28BE'
-- name: product
+- name: Product
   type: string
   description: The product generating the event. Vendor and product might be the same for some data sources.
   sample_value: 'Windows'
-- name: product_version
+- name: ProductVersion
   type: string
   description: The version of the product generating the event
   sample_value: '10'
-- name: type
+- name: Type
   type: string
   description: Type of event being collected. i.e For Windows it would be the Event Provider (Microsoft-Windows-Security-Auditing). I.e. Paloalto, it would be the type of event such as Traffic or Threat. I.e. Zeek Logs, one example could be the conn.log.
   sample_value: Microsoft-Windows-Security-Auditing
-- name: sub_type
+- name: SubType
   type: string
   description: If there are subsets of an event log type, this field carries the next level value. i.e For windows, it would be the Security channel.
   sample_value: Security
-- name: type_detailed
+- name: CategoryType
+  type: string
+  description: If the event contains a category, then this it. i.e For the Windows Security channel, this could be something such as Audit object access. For Zeek conn.log, this would be network-protocols.
+  sample_value: Audit Object Access
+- name: SubCategoryType
+  type: string
+  description: If the event contains a sub-category, then this it. i.e For the Windows Security channel, this could be something such as Audit Registry.
+  sample_value: Audit Registry
+- name: TypeDetailed
   type: string
   description: Additional description of type if applicable
   sample_value: '``'
-- name: original_uid
+- name: OriginalUid
   type: string
   description: Original unique ID specific to the log/event as recorded from the source.
   sample_value: CMzY3i4YoNZ3mT5yu5
-- name: uid
+- name: Uid
   type: string
   description: Original unique ID specific to the log/event assigned to the event (not original).
   sample_value: 516a64e3-8360-4f1e-a67c-d96b3d52df54
-- name: count
+- name: Count
   type: integer
   description: The number of aggregated events, if applicable
   sample_value: 10
-- name: message
+- name: Message
   type: string
   description: A general message or description, either included in, or generated from the record
   sample_value: 'TCP access denied'
-- name: resource_group
+- name: ResourceGroup
   type: string
   description: The resource group to which the device generating the record belongs. This might be an AWS account, or an Azure subscription or Resource Group
   sample_value: 'DBVM'
-- name: resource_id
+- name: ResourceId
   type: string
   description: The resource ID of the device generating the message.
   sample_value: '/subscriptions/aaabbbcc-dddd-eeee-1234-1234567890ab/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine'
-- name: report_url
+- name: ReportUrl
   type: string
-  description: url of the full analysis report, if applicable 
+  description: url of the full analysis report, if applicable
   sample_value: 'https://192.168.1.1/reports/ade-123-afa.log'
-- name: result 
+- name: Result
   type: string
   description: The result reported for the activity. Empty value when not applicable
   sample_value: success
-- name: result_details
+- name: ResultDetails
   type: string
   description: Reason or details for the result reported in event_result
   sample_value: Wrong Password

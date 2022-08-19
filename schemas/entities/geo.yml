@@ -1,41 +1,41 @@
-name: geo
+name: Geo
 prefix:
-- geo
+- Geo
 id: F5C320EA-B930-4AEA-BE49-AC424D39760E
 description: Event fields used to define/normalize metadata about a geographical location.
 extends_entities:
-  - source
-  - destination
+- Source
+- Destination
 attributes:
-- name: latitude
+- name: Latitude
   type: string
   description: The latitude of the geographical coordinate associated with the IP address in the network session.
   sample_value: "38.8951"
-- name: longitude
+- name: Longitude
   type: string
   description: The longitude of the geographical coordinate associated with the IP address in the network session.
   sample_value: "-77.0364"
-- name: continent
+- name: Continent
   type: string
   description: The continent associated with the IP address in the network session.
   sample_value: South America
-- name: country
+- name: Country
   type: string
   description: The country associated with the IP address in the network session.
   sample_value: Peru
-- name: country_capital
+- name: CountryCapital
   type: string
   description: The capital of the country associated with the IP address in the network session.
   sample_value: Lima
-- name: country_code
+- name: CountryCode
   type: string
   description: 51
   sample_value: Country code
-- name: city
+- name: City
   type: string
   description: The city associated to the IP address in the network session.
   sample_value: San Miguel
-- name: region
+- name: Region
   type: string
   description: The region within a country associated with the IP address in the network session.
   sample_value: East US
