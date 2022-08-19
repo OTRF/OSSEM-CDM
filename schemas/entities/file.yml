@@ -8,6 +8,7 @@ extends_entities:
 - Source
 - Destination
 - Process
+- Service
 attributes:
 - name: Name
   type: string

@@ -10,7 +10,7 @@ attributes:
   sample_value: EventLog
 - name: DisplayName
   type: string
-  description: Display name of the service
+  description: The display name to be used by user interface programs to identify the service.
   sample_value: Windows Event Log
 - name: ImagePath
   type: string
@@ -22,7 +22,7 @@ attributes:
   sample_value: '0x20'
 - name: StartType
   type: string
-  description: The service start type can have one of the following values (see:https://msdn.microsoft.com/library/windows/desktop/ms682450(v=vs.85).aspx)
+  description: The service start type.
   sample_value: '2'
 - name: AccountName
   type: UnicodeString
@@ -37,4 +37,5 @@ references:
 - https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/infrastructure-services/Services_and_Daemons/
 - https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-services_and_daemons
 - https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-37/System-Configuration/Services-and-Daemons-in-Cumulus-Linux/
+- https://docs.microsoft.com/en-us/windows/win32/api/winsvc/nf-winsvc-createservicea
 tags: []
