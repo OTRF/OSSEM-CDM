@@ -1,0 +1,41 @@
+name: Service
+prefix:
+- Service
+id: 3229C925-3CED-46AA-8B42-EEEDFD9F81A4
+description: Event fields used to define/normalize metadata about services or deamons in a network environment.
+attributes:
+- name: Name
+  type: string
+  description: Name of the service
+  sample_value: EventLog
+- name: DisplayName
+  type: string
+  description: The display name to be used by user interface programs to identify the service.
+  sample_value: Windows Event Log
+- name: ImagePath
+  type: string
+  description: This is the fully rooted path to the file that will execute to start the service. The path can also include arguments for an auto-start service. For example, "d:\myshare\myservice.exe arg1 arg2". These arguments are passed to the service entry point (typically the main function).
+  sample_value: '%windir%\system32\svchost.exe -k apphost'
+- name: Type
+  type: string
+  description: Indicates the type of service.
+  sample_value: '0x20'
+- name: StartType
+  type: string
+  description: The service start type.
+  sample_value: '2'
+- name: AccountName
+  type: UnicodeString
+  description: The security context that the service will run as when started.
+  sample_value: LocalSystem
+- name: HandleId
+  type: string
+  description: This field contains the hexadecimal value of the handle requested to the service object.
+  sample_value: '0x16fa36af2a0'
+references:
+- https://docs.microsoft.com/en-us/windows/win32/services/about-services
+- https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/infrastructure-services/Services_and_Daemons/
+- https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-services_and_daemons
+- https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-37/System-Configuration/Services-and-Daemons-in-Cumulus-Linux/
+- https://docs.microsoft.com/en-us/windows/win32/api/winsvc/nf-winsvc-createservicea
+tags: []

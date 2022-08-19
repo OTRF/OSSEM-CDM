@@ -1,50 +1,50 @@
-name: source
+name: Source
 prefix:
-- src
+- Src
 id: A72A1C38-7DEF-4E9F-8686-9372C16C76AE
 description: Event fields used to define/normalize the source (client) in a network connection event.
 attributes:
-- name: domain_hostname
+- name: DomainHostname
   type: string
   description: The source server, host, hostname, domain, or domain name. Some examples, would include the TLS server name, HTTP Host, DNS Query Name, etc. For information on how to define and use this field refer to the documentation [here](https://ossemproject.com/cdm/guidelines/domain_or_hostname_or_fqdn.html)
   sample_value: www.google.com
-- name: bytes
+- name: Bytes
   type: integer
   description: The number of bytes sent from the source to the destination for the connection or session.
   sample_value: '100'
-- name: mime_type
+- name: MimeType
   type: string
   description: Source MIME type as seen in (layer 7) application layer details or as defined by an application scanner such as an anti-virus/EDR. For HTTP this is usually from the server's "Content-Type" header. https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
   sample_value: application/pdf
-- name: packets
+- name: Packets
   type: integer
   description: The number of packets sent from the source to the destination for the connection or session. The meaning of a packet is defined by the reporting device.
   sample_value: '5'
-- name: vlan_id
+- name: VlanId
   type: integer
   description: The Source VLAN ID if it can be determined. Most commonly if from a firewall/switch/router then it can be determined
   sample_value: '100'
-- name: vlan_name
+- name: VlanName
   type: string
   description: The Source VLAN Name. Most commonly if from a firewall/switch/router then it can be determined
   sample_value: management
-- name: zone
+- name: Zone
   type: string
   description: The network zone of the source, as defined by the reporting device.
   sample_value: 'dmz'
-- name: interface_guid
+- name: InterfaceGuid
   type: string
   description: GUID of the network interface which was used for authentication request (if applicable). Most of the time you would use the interface_name field for the uid.
   sample_value: 7C202E90-2FBE-4275-AB0E-9BF67E04BEDF
-- name: interface_name
+- name: InterfaceName
   type: string
   description: The network interface used for the connection or session by the source device.
   sample_value: eth02
-- name: resource_id
+- name: ResourceId
   type: string
   description: The resource Id of the source device in a network connection
   sample_value: '/subscriptions/33333333-8888-4444-a115-aaaaaaaaaaaa/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine2'
-- name: resource_group
+- name: ResourceGroup
   type: string
   description: The ID of the group to which the source device belongs in a network connection. This might be an AWS account, or an Azure subscription or Resource Group
   sample_value: 'DatabaseVMs'

@@ -1,58 +1,58 @@
-name: destination
+name: Destination
 prefix:
-- dst
+- Dst
 id: F02F775F-69EB-40D2-94F6-78207C015F46
 description: Event fields used to define/normalize the destination (server) in a network connection event.
 attributes:
-- name: domain_hostname
+- name: DomainHostname
   type: string
   description: The destination server, host, hostname, domain, domain name or what people commonly might refer to as a domain or website when someone is browsing the Internet. Some examples, would include the TLS server name, HTTP Host, DNS Query Name, etc. For information on how to define and use this field refer to the documentation [here](https://ossemproject.com/cdm/guidelines/domain_or_hostname_or_fqdn.html)
   sample_value: www.google.com
-- name: bytes
+- name: Bytes
   type: integer
   description: The number of bytes sent from the destination to the source for the connection or session.
   sample_value: '100'
-- name: mime_type
+- name: MimeType
   type: string
   description: Destination MIME type as seen in (layer 7) application layer details or as defined by an application scanner such as an anti-virus/EDR. For HTTP this is usually from the server's "Content-Type" header. https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
   sample_value: application/pdf
-- name: packets
+- name: Packets
   type: integer
   description: The number of packets sent from the destination to the source for the connection or session (Reply). The meaning of a packet is defined by the reporting device.
   sample_value: '5'
-- name: vlan_id
+- name: VlanId
   type: integer
   description: The destination VLAN ID if it can be determined. Most commonly if from a firewall/switch/router then it can be determined
   sample_value: '1000'
-- name: vlan_name
+- name: VlanName
   type: string
   description: The destination VLAN Name. Most commonly if from a firewall/switch/router then it can be determined
   sample_value: untrust-dmz
-- name: meta_dst_host_name_category
+- name: MetaDstHostNameCategory
   type: string
   description: The defined grouping of a URL (or could be just based on the domain in the URL) related to what it is (ie adult, news, advertising, parked domains, etc)
   sample_value: Search Engines
-- name: zone
+- name: Zone
   type: string
   description: The network zone of the destination, as defined by the reporting device.
   sample_value: 'dmz'
-- name: interface_guid
+- name: InterfaceGuid
   type: string
   description: GUID of the network interface which was used for authentication request (if applicable). Most of the time you would use the interface_name field for the uid.
   sample_value: 7C202E90-2FBE-4275-AB0E-9BF67E04BEDF
-- name: interface_name
+- name: InterfaceName
   type: string
   description: The network interface used for the connection or session by the destination device.
   sample_value: eth02
-- name: resource_id
+- name: ResourceId
   type: string
   description: The resource Id of the destination device in a network connection
   sample_value: '/subscriptions/33333333-8888-4444-a115-aaaaaaaaaaaa/resourcegroups/shokobo/providers/microsoft.compute/virtualmachines/sysmachine2'
-- name: resource_group
+- name: ResourceGroup
   type: string
   description: The ID of the group to which the destination device belongs in a network connection. This might be an AWS account, or an Azure subscription or Resource Group
   sample_value: 'DatabaseVMs'
-- name: original_value
+- name: OriginalValue
   type: string
   description: original value of a destination before any ETL modifications. For example, if wanting to cleanup a network share and keep the IP - this field would be used to keep the original value
   sample_value: "8.8.8.8"

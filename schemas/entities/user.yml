@@ -1,84 +1,88 @@
-name: user
+name: User
 prefix:
-- user
+- User
 id: CA1218A4-D188-4B95-8793-882A58AA3F89
 description: Event fields used to define/normalize metadata about users in a network environment.
 extends_entities:
-  - source
-  - destination
-  - target
+- Source
+- Destination
+- Target
 attributes:
-- name: name
+- name: Name
   type: string
   description: Name of the user associated with the main event (i.e. Network session). There could be a sense of direction depending how it is used together with other entities (i.e. src_user_name or dst_user_name)
   sample_value: wardog
-- name: domain
+- name: Domain
   type: string
   description: The domain or computer name associated to the user in a session. In active directory, this would be the name of the domain the user belongs to.
   sample_value: CONTOSO
-- name: session_id
+- name: SessionId
   type: integer
   description: ID of the session the user belongs to.
   sample_value: '1'
-- name: reporter_sid
+- name: ReporterSid
   type: string
   description: SID of account that reported information about the main event
   sample_value: S-1-5-18
-- name: reporter_name
+- name: ReporterName
   type: string
   description: the name of the account that reported information about the main event
   sample_value: WIN-GG82ULGC9GO$
-- name: reporter_domain
+- name: ReporterDomain
   type: string
   description: domain name of the user that reported the main event
   sample_value: WORKGROUP
-- name: reporter_id
+- name: ReporterId
   type: integer
   description: unique identifier of the user that reported the main event
   sample_value: '0x3e7'
-- name: sid
+- name: Sid
   type: string
   description: Security identifier of the user. Typically, the identity used to authenticate a server.
   sample_value: S-1-5-21-1377283216-344919071-3415362939-500
-- name: network_account_name
+- name: NetworkAccountName
   type: string
   description: User name used for outbound (network) connections
   sample_value: '-'
-- name: network_account_domain
+- name: NetworkAccountDomain
   type: string
   description: Domain for the user that will be used for outbound (network) connections.
   sample_value: '-'
-- name: linked_logon_id
+- name: LinkedLogonId
   type: integer
   description: A hexadecimal value of the paired logon session.
   sample_value: '0x0'
-- name: sid_list
+- name: SidList
   type: string
   description: the list of special group SIDs, which New Logon\Security ID is a member of.
   sample_value: '{S-1-5-21-3457937927-2839227994-823803824-512}'
-- name: security_package
+- name: SecurityPackage
   type: string
   description: the name of Security Package used during an authentication event.
   sample_value: CREDSSP
-- name: upn
+- name: Upn
   type: string
   description: In Active Directory, the User Principal Name (UPN) attribute is a user identifier for logging in, separate from a Windows domain login.
   sample_value: dadmin@contoso
-- name: cred_type
+- name: CredType
   type: string
   description: types of credentials which were presented for delegation
   sample_value: '%%8098'
-- name: identity
+- name: Identity
   type: string
   description: User Principal Name (UPN) or another type of account identifier for which 802.1x authentication request was made.
   sample_value: host/XXXXXXXX.redmond.corp.microsoft.com
-- name: password
+- name: Password
   type: string
   description: User password if seen in the request. Commonly seen in network logs and authentication proxy/logs.
   sample_value: bobspassword
-- name: aadid
+- name: Aadid
   type: string
   description: The User Azure AD ID of the identity associated with a cloud network session. It applies to source and destination entities.
   sample_value: '5e8b0f4d-2cd4-4e17-9467-b0f6a5c0c4d0'
+- name: AccessList
+  type: UnicodeString
+  description: List of access rights which were requested or used by the user when interacting with objects such as registry keys and services. These access rights depend on the object type.
+  sample_value: '%%1538 %%1541 %%4416 %%4417 %%4418 %%4419 %%4420 %%4423 %%4424'
 references: []
 tags: []

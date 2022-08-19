@@ -1,94 +1,94 @@
-name: etl
+name: Etl
 prefix:
-  - etl
+- Etl
 id: D3BAF300-8CA2-4B2D-A908-62294220B8D9
 description: Event fields used to define/normalize specific metadata about the event during the processing of an ETL (Extract, Transform, Load) pipeline.
 attributes:
-- name: format_applied
+- name: FormatApplied
   type: string
   description: Formatting or encoding applied during the ETL processing. Also referred to as CODEC in some use cases. Can be an array if multiple formats were applied/determined
   sample_value: '[ "sylog", "json" ]'
-- name: format_is_cef
+- name: FormatIsCef
   type: boolean
   description: During ETL processing, event is determined to be CEF (format)
   sample_value: 'false'
-- name: format_is_json
+- name: FormatIsJson
   type: boolean
   description: During ETL processing, event is determined to be JSON (format)
   sample_value: 'true'
-- name: format_is_syslog
+- name: FormatIsSyslog
   type: boolean
   description: 'During ETL processing, event is determined to be Syslog (format). Technically you could send data encoded in different format over syslog (ie: CEF or JSON), therefore an event/log can have this tag/field as well as other format fields'
   sample_value: 'true'
-- name: format_is_xml
+- name: FormatIsXml
   type: boolean
   description: During ETL processing, event is determined to be XML (format)
   sample_value: 'true'
-- name: host_agent_type
+- name: HostAgentType
   type: string
   description: Type of forwarder from the client (i.e. winlogbeat, nxlog, rsyslog, etc)
   sample_value: nxlog
-- name: host_agent_uid
+- name: HostAgentUid
   type: string
   description: UID for the host's software/agent a part of the event
   sample_value: fe4fb818-088f-4529-a343-b94baf057a53
-- name: info_tags
+- name: InfoTags
   type: string
   description: Use for any additional information about an event/log during ETL/processing pipeline. Commonly, you would use this for things that are rare but happen (i.e. parsing error for non conforming RFC). Use this field to alert or give context to a user/analyst when looking at the data.
   sample_value: inferred network_protocol as udp
-- name: input_application_name
+- name: InputApplicationName
   type: string
   description: Application name used to receive or gather the log for the very first portion of the ETL processing (i.e. kafka, beats, syslog)
   sample_value: kafka
-- name: input_application_protocol
+- name: InputApplicationProtocol
   type: string
   description: 'Application protocol used to receive or gather the log for the very first portion of the ETL processing (ex: syslog, http, sftp)'
   sample_value: kafka
-- name: input_src_port
+- name: InputSrcPort
   type: integer
   description: The Port (network) the client/source used to send the log for the very first portion of the ETL processing. Mostly used in syslog
   sample_value: 48231
-- name: input_port
+- name: InputPort
   type: integer
   description: Port (network) used to receive or gather the log for the very first portion of the ETL processing
   sample_value: '9092'
-- name: input_protocol
+- name: InputProtocol
   type: string
   description: 'Protocol (network) used to receive or gather the log for the very first portion of the ETL processing (ie: tcp, udp, icmp)'
   sample_value: tcp
-- name: kafka_consumer_group
+- name: KafkaConsumerGroup
   type: string
   description: Consumer group that the etl was apart of from consuming from a Kafka topic
   sample_value: helk_logstash
-- name: kafka_key
+- name: KafkaKey
   type: string
   description: Record key, if any
   sample_value: ''
-- name: kafka_offset
+- name: KafkaOffset
   type: long
   description: Kafka partition for the event
   sample_value: 204802842
-- name: kafka_partition
+- name: KafkaPartition
   type: integer
   description: Kafka partition for the event
   sample_value: 1
-- name: kafka_time
+- name: KafkaTime
   type: date
   description: Depending on your Kafka broker configuration, this can be either when the record was created (default) or when it was received by the broker
   sample_value: 4/11/2018 5:49:25
-- name: kafka_topic
+- name: KafkaTopic
   type: string
   description: Kafka topic name
   sample_value: winevent
-- name: pipeline
+- name: Pipeline
   type: string
   description: Used to keep track of tags related to transforms, enrichment, or modifications made in an ETL pipeline
   sample_value: all-add_processed_timestamp
-- name: processed_time
+- name: ProcessedTime
   type: date
   description: The first time the event gets processed by the ETL (processing pipeline)
   sample_value: 4/11/2018 5:49:25
-- name: version
+- name: Version
   type: string
   description: The schema or transform versioning that is being applied
   sample_value: v1.0.1

@@ -1,13 +1,10 @@
-name: target
+name: Target
 prefix:
-- target
+- Target
 id: EDC82376-035A-45CD-9E59-3D53AB5B32FF
-description: Event fields used to define entities being targeted by other entities
-  locally in a system. This is different from a network connection event. It is more
-  related to events that involve relationships defined locally by entities such as
-  files, processes,users, etc.
+description: Event fields used to define entities being targeted by other entities locally in a system. This is different from a network connection event. It is more related to events that involve relationships defined locally by entities such as files, processes,users, etc.
 attributes:
-- name: server_name
+- name: ServerName
   type: string
   description: the name of the server on which the new process was run. Has "localhost" value if the process was run locally.
   sample_value: localhost

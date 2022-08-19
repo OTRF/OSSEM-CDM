@@ -1,30 +1,30 @@
-name: kerberos
+name: Kerberos
 prefix:
-- krb
+- Krb
 id: 76E77A91-9DBB-4B5F-BFC8-B788023DC824
 description: 'Event fields used to define/normalize Kerberos Ticket Granting Service and Kerberos Ticket Granting Tickets. For certificate information within Kerberos see the ./x509_and_certificates.md'
 attributes:
-- name: service_name
+- name: ServiceName
   type: string
   description: the name of the account or computer for which the TGS ticket was requested
   sample_value: WIN2008R2$
-- name: ticket_options
+- name: TicketOptions
   type: string
   description: this is a set of different ticket flags in hexadecimal format.
   sample_value: '0x40810010'
-- name: ticket_status
+- name: TicketStatus
   type: string
   description: hexadecimal result code of TGS issue operation.
   sample_value: '0x0'
-- name: ticket_encryption_type
+- name: TicketEncryptionType
   type: string
   description: the cryptographic suite that was used for issued TGS.
   sample_value: '0x12'
-- name: ticket_request_type
+- name: TicketRequestType
   type: string
   description: Request type - Authentication Service ("AS") or Ticket Granting Service ("TGS")
   sample_value: TGS
-- name: ticket_pre_auth_type
+- name: TicketPreAuthType
   type: integer
   description: the code number of pre-Authentication type which was used in TGT request.
   sample_value: '15'

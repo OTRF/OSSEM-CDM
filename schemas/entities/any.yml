@@ -1,43 +1,38 @@
-name: any
-prefix: 
-- any
+name: Any
+prefix:
+- Any
 id: 2BE52B26-EE8E-4552-8C88-B17F1C379607
-description: 'Fields used to define metadata for a single field to include data from
-  multiple fields with similar/same values/data.  This data is most commonly created
-  from an ETL pipeline. Any fields below that contain a ''*'' indicates those are searches and not actual
-  fields (key/values). This is because certain values are not desirable to copy/duplicate.
-  However, because of a common schema we can still find are values for a specific
-  common type, without duplicating or copying everything to one field!'
+description: 'Fields used to define metadata for a single field to include data from multiple fields with similar/same values/data.  This data is most commonly created from an ETL pipeline. Any fields below that contain a ''*'' indicates those are searches and not actual fields (key/values). This is because certain values are not desirable to copy/duplicate. However, because of a common schema we can still find are values for a specific common type, without duplicating or copying everything to one field!'
 attributes:
-- name: event_id
+- name: EventId
   type: string
   description: Allows searching a single field for all log IDs. All log ID fields copied/duplicated to a single field as an array.
   sample_value: '``'
-- name: hash
+- name: Hash
   type: string
   description: Allows searching a single field for all hashes. All hash fields copied/duplicated to a single field as an array.
   sample_value: '``'
-- name: ip_addr
+- name: IpAddr
   type: ip
   description: Allows searching a single field for all IPs. All IP fields copied/duplicated to a single field as an array.
   sample_value: '``'
-- name: ip_geo.as_org
+- name: IpGeo.asOrg
   type: string
   description: Allows searching a single field for all BGP AS Organization Names. All AS name fields copied/duplicated to a single field as an array.
   sample_value: '``'
-- name: ip_geo.asn
+- name: IpGeo.asn
   type: integer
   description: Allows searching a single field for all BGP AS Numbers. All AS number fields copied/duplicated to a single field as an array.
   sample_value: '``'
-- name: mac_addr
+- name: MacAddr
   type: string
   description: Allows searching a single field for all MAC addresses. All MAC address fields copied/duplicated to a single field as an array.
   sample_value: '``'
-- name: user
+- name: User
   type: string
   description: Allows searching a single field for all users. All user fields copied/duplicated to a single field as an array.
   sample_value: '``'
-- name: vlan_id
+- name: VlanId
   type: integer
   description: Allows searching a single field for all VLAN IDs. All VLAN ID fields copied/duplicated to a single field as an array.
   sample_value: ''
